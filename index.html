@@ -2,6 +2,7 @@
 <html lang="pl" data-lang="pl">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dmytro Zatserkivnyi — Fullstack Developer</title>
 <meta name="description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end, praca zdalna.">
@@ -16,478 +17,27 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23141413'/%3E%3Crect x='1' y='1' width='62' height='62' rx='11' fill='none' stroke='%2333332f' stroke-width='2'/%3E%3Ctext x='32' y='45' font-family='Consolas,Menlo,monospace' font-size='38' font-weight='700' fill='%2300c896' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #141413;
-    --bg-raised: #1c1c1a;
-    --bg-card: #1f1f1d;
-    --border: #33332f;
-    --border-strong: #47473f;
-    --text: #f2f0ea;
-    --text-secondary: #a8a69c;
-    --text-muted: #8a8878; /* min 4.5:1 na --bg i --bg-card (WCAG AA) */
-    --accent: #00c896;
-    --accent-dim: #0a3d30;
-    --mono: 'JetBrains Mono', monospace;
-    --sans: 'Inter', sans-serif;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  a:focus-visible, button:focus-visible, input:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      transition-duration: 0.01ms !important;
-      animation-duration: 0.01ms !important;
-    }
-  }
-
-  .wrap {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ---------- NAV ---------- */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(20, 20, 19, 0.88);
-    backdrop-filter: blur(8px);
-    border-bottom: 0.5px solid var(--border);
-  }
-  nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-  .nav-logo {
-    font-family: var(--mono);
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -0.02em;
-  }
-  .nav-logo span { color: var(--accent); }
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-  }
-  .nav-links a {
-    font-size: 14px;
-    color: var(--text-secondary);
-    transition: color 0.15s;
-  }
-  .nav-links a:hover { color: var(--text); }
-  .lang-toggle {
-    font-family: var(--mono);
-    font-size: 13px;
-    border: 0.5px solid var(--border-strong);
-    border-radius: 6px;
-    padding: 6px 10px;
-    cursor: pointer;
-    background: transparent;
-    color: var(--text-secondary);
-    display: flex;
-    gap: 6px;
-  }
-  .lang-toggle:hover { border-color: var(--accent); color: var(--text); }
-  .lang-opt { opacity: 0.4; }
-  .lang-opt.active { opacity: 1; color: var(--accent); }
-
-  /* ---------- HERO ---------- */
-  .hero {
-    padding: 96px 0 72px;
-    border-bottom: 0.5px solid var(--border);
-  }
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .eyebrow::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent);
-  }
-  h1 {
-    font-family: var(--mono);
-    font-weight: 700;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-  }
-  h1 .dim { color: var(--text-muted); }
-  .hero-sub {
-    font-size: 18px;
-    color: var(--text-secondary);
-    max-width: 560px;
-    margin-bottom: 36px;
-  }
-  .hero-sub code {
-    font-family: var(--mono);
-    color: var(--accent);
-    font-size: 16px;
-  }
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 64px;
-  }
-
-  @media (max-width: 640px) {
-    nav .wrap {
-      flex-wrap: wrap;
-      height: auto;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      row-gap: 6px;
-    }
-    .nav-links { gap: 14px; }
-    .nav-links a { font-size: 13px; }
-    .hero { padding: 64px 0 48px; }
-  }
-  .btn {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.15s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-primary {
-    background: var(--accent);
-    color: #072620;
-    border: none;
-  }
-  .btn-primary:hover { background: #1dd9a8; }
-  .btn-secondary {
-    background: transparent;
-    color: var(--text);
-    border: 0.5px solid var(--border-strong);
-  }
-  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ---------- LIVE DEMO (signature element) ---------- */
-  .demo-box {
-    background: var(--bg-raised);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .demo-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
-    border-bottom: 0.5px solid var(--border);
-    background: var(--bg-card);
-  }
-  .demo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); }
-  .demo-title {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-left: 4px;
-  }
-  .demo-body {
-    padding: 24px;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 24px;
-  }
-  @media (max-width: 640px) {
-    .demo-body { grid-template-columns: 1fr; }
-  }
-  .filter-group { display: flex; flex-direction: column; gap: 10px; }
-  .filter-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 4px;
-  }
-  .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--text-secondary);
-    cursor: pointer;
-  }
-  .checkbox-row input {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent);
-    cursor: pointer;
-  }
-  .checkbox-row:hover { color: var(--text); }
-  .results-count {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-    margin-bottom: 14px;
-  }
-  .result-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 14px;
-    background: var(--bg-card);
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    transition: opacity 0.15s;
-  }
-  .result-card .rname { font-weight: 500; }
-  .result-card .rtags {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-  .result-card .rprice {
-    font-family: var(--mono);
-    color: var(--accent);
-    font-size: 14px;
-  }
-  .result-hidden { display: none; }
-
-  /* ---------- SECTIONS ---------- */
-  section { padding: 72px 0; border-bottom: 0.5px solid var(--border); }
-  .section-eyebrow {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-  h2 {
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
-
-  /* ---------- PROJECTS ---------- */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-  .project-card {
-    background: var(--bg-raised);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.15s;
-  }
-  .project-card:hover { border-color: var(--border-strong); }
-  .project-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--accent-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-  .project-name {
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 17px;
-    margin-bottom: 8px;
-  }
-  .project-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 18px;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    border: 0.5px solid var(--border);
-    border-radius: 5px;
-    padding: 3px 8px;
-  }
-  .project-links {
-    display: flex;
-    gap: 16px;
-    padding-top: 16px;
-    border-top: 0.5px solid var(--border);
-  }
-  .project-links a {
-    font-size: 13px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .project-links a:hover { color: var(--accent); }
-
-  /* ---------- STACK ---------- */
-  .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 24px;
-  }
-  .stack-group-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-  }
-  .stack-items { display: flex; flex-direction: column; gap: 8px; }
-  .stack-item {
-    font-size: 14px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .stack-item::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--border-strong);
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about-text {
-    font-size: 16px;
-    color: var(--text-secondary);
-    max-width: 640px;
-    line-height: 1.8;
-  }
-  .about-text strong { color: var(--text); font-weight: 500; }
-  .about-meta {
-    display: flex;
-    gap: 32px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-  }
-  .meta-item .meta-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-  }
-  .meta-item .meta-value { font-size: 15px; color: var(--text); }
-
-  /* ---------- CONTACT ---------- */
-  .contact-section { border-bottom: none; padding-bottom: 96px; }
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 8px;
-  }
-  .contact-card {
-    background: var(--bg-raised);
-    border: 0.5px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 22px;
-    flex: 1;
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    transition: border-color 0.15s;
-  }
-  .contact-card:hover { border-color: var(--accent); }
-  .contact-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .contact-value { font-size: 15px; color: var(--text); }
-
-  footer {
-    padding: 32px 0;
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-
-  [data-i18n], [data-i18n-html] { }
-  html[data-lang="en"] [data-lang-pl] { display: none; }
-  html[data-lang="pl"] [data-lang-en] { display: none; }
-</style>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<a href="#main" class="skip-link" data-i18n="ui.skip">Przejdź do treści</a>
 
 <nav>
   <div class="wrap">
     <div class="nav-logo">Dmytro<span>.</span>dev</div>
     <div class="nav-links">
-      <a href="#projects" data-lang-pl>Projekty</a>
-      <a href="#projects" data-lang-en>Projects</a>
-      <a href="#stack" data-lang-pl>Stack</a>
-      <a href="#stack" data-lang-en>Stack</a>
-      <a href="#about" data-lang-pl>O mnie</a>
-      <a href="#about" data-lang-en>About</a>
-      <a href="#contact" data-lang-pl>Kontakt</a>
-      <a href="#contact" data-lang-en>Contact</a>
-      <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <a href="#projects" class="u-link" data-i18n="nav.projects">Projekty</a>
+      <a href="#process" class="u-link" data-i18n="nav.process">Proces</a>
+      <a href="#stack" class="u-link" data-i18n="nav.stack">Stack</a>
+      <a href="#about" class="u-link" data-i18n="nav.about">O mnie</a>
+      <a href="#contact" class="u-link" data-i18n="nav.contact">Kontakt</a>
+      <button class="lang-toggle" id="langToggle">
         <span class="lang-opt" data-opt="pl">PL</span>/<span class="lang-opt" data-opt="en">EN</span>
       </button>
     </div>
@@ -496,66 +46,39 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow" data-lang-pl>dostępny do współpracy</div>
-    <div class="eyebrow" data-lang-en>available for work</div>
+    <div class="eyebrow anim" style="--d:0ms" data-i18n="hero.eyebrow">dostępny do współpracy</div>
 
-    <h1>
-      <span data-lang-pl>Dmytro Zatserkivnyi</span>
-      <span data-lang-en>Dmytro Zatserkivnyi</span>
-      <br><span class="dim">Fullstack developer.</span>
+    <h1 class="anim" style="--d:70ms">
+      Dmytro Zatserkivnyi
+      <br><span class="dim">Fullstack developer.</span><span class="cursor" aria-hidden="true"></span>
     </h1>
 
-    <p class="hero-sub" data-lang-pl>
+    <p class="hero-sub anim" style="--d:140ms" data-i18n-html="hero.sub">
       Buduję aplikacje webowe od backendu po front —
       <code>Next.js</code>, <code>Node.js</code>, <code>PostgreSQL</code>,
       integracje płatności. Student informatyki, pracuję z klientami na zlecenie.
     </p>
-    <p class="hero-sub" data-lang-en>
-      I build web applications end to end —
-      <code>Next.js</code>, <code>Node.js</code>, <code>PostgreSQL</code>,
-      payment integrations. CS student, working with clients on a freelance basis.
-    </p>
 
-    <div class="cta-row">
-      <a href="#projects" class="btn btn-primary">
-        <span data-lang-pl>Zobacz projekty</span>
-        <span data-lang-en>See projects</span>
-      </a>
-      <a href="#contact" class="btn btn-secondary">
-        <span data-lang-pl>Napisz do mnie</span>
-        <span data-lang-en>Get in touch</span>
-      </a>
+    <div class="cta-row anim" style="--d:210ms">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
+      <a href="#projects" class="text-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
     </div>
 
     <!-- LIVE SIGNATURE DEMO -->
-    <div class="demo-box">
+    <div class="demo-box anim" style="--d:280ms">
       <div class="demo-header">
         <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
-        <span class="demo-title" data-lang-pl>filtr-demo.tsx — działa na żywo</span>
-        <span class="demo-title" data-lang-en>filter-demo.tsx — live, not a screenshot</span>
+        <span class="demo-title" data-i18n="demo.title">vehicles.api.ts — na żywo</span>
       </div>
       <div class="demo-body">
-        <div class="filter-group">
-          <div class="filter-label" data-lang-pl>Standard pojazdu</div>
-          <div class="filter-label" data-lang-en>Vehicle standard</div>
-          <label class="checkbox-row">
-            <input type="checkbox" class="demo-filter" data-tag="winda">
-            <span data-lang-pl>Winda dla wózków</span>
-            <span data-lang-en>Wheelchair lift</span>
-          </label>
-          <label class="checkbox-row">
-            <input type="checkbox" class="demo-filter" data-tag="klima">
-            <span data-lang-pl>Klimatyzacja</span>
-            <span data-lang-en>Air conditioning</span>
-          </label>
-          <label class="checkbox-row">
-            <input type="checkbox" class="demo-filter" data-tag="med">
-            <span data-lang-pl>Wyposażenie medyczne</span>
-            <span data-lang-en>Medical equipment</span>
-          </label>
+        <div class="filter-group" id="filterGroup">
+          <div class="filter-label" data-i18n="demo.filterLabel">Standard pojazdu</div>
         </div>
         <div>
-          <div class="results-count" id="resultsCount"></div>
+          <div class="demo-req"><span class="method">GET</span><span id="demoUrl">/vehicles</span></div>
+          <div class="demo-status" aria-live="polite">
+            <span class="ok">200 OK</span><span id="demoMeta"></span>
+          </div>
           <div id="resultsList"></div>
         </div>
       </div>
@@ -563,256 +86,106 @@
   </div>
 </header>
 
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<main id="main">
+
 <section id="projects">
   <div class="wrap">
-    <div class="section-eyebrow" data-lang-pl>wybrane realizacje</div>
-    <div class="section-eyebrow" data-lang-en>selected work</div>
-    <h2 data-lang-pl>Projekty</h2>
-    <h2 data-lang-en>Projects</h2>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-icon">B</div>
-        <div class="project-name">Bazarek</div>
-        <p class="project-desc" data-lang-pl>
-          Fullstack platforma ogłoszeniowa. Backend w całości mój — schemat bazy,
-          REST API, autoryzacja. Obroniony na uczelni.
-        </p>
-        <p class="project-desc" data-lang-en>
-          Fullstack marketplace platform. Backend entirely mine — database schema,
-          REST API, authorization. Presented at a university defense.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Angular 19</span><span class="tag">Express</span><span class="tag">MongoDB</span>
-        </div>
-        <div class="project-links">
-          <a href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-lang-pl>→ Demo</a>
-          <a href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-lang-en>→ Demo</a>
-          <a href="https://github.com/DmRzAt/bazarek" target="_blank" rel="noopener">→ GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">Q</div>
-        <div class="project-name">Quotly</div>
-        <p class="project-desc" data-lang-pl>
-          Panel partnera z płatnościami: Stripe Connect (onboarding Express,
-          automatyczny podział prowizji), webhooki do śledzenia weryfikacji.
-        </p>
-        <p class="project-desc" data-lang-en>
-          Partner panel with payments: Stripe Connect (Express onboarding,
-          automatic commission split), webhooks for verification tracking.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Stripe Connect</span>
-        </div>
-        <div class="project-links">
-          <a href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" data-lang-pl>→ Demo</a>
-          <a href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" data-lang-en>→ Demo</a>
-          <a href="https://github.com/DmRzAt/quotly" target="_blank" rel="noopener">→ GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">P</div>
-        <div class="project-name">Przewozy24</div>
-        <p class="project-desc" data-lang-pl>
-          Makieta ekranu wyszukiwania dla klienta z branży transportu osób
-          niepełnosprawnych. Pełna dostępność klawiaturowa i ARIA.
-        </p>
-        <p class="project-desc" data-lang-en>
-          Search screen mockup for a client in accessible transport. Full
-          keyboard accessibility and ARIA support.
-        </p>
-        <div class="project-tags">
-          <span class="tag">Next.js</span><span class="tag">a11y</span><span class="tag">Client work</span>
-        </div>
-        <div class="project-links">
-          <a href="https://przewozy24-makieta.vercel.app" target="_blank" rel="noopener" data-lang-pl>→ Demo</a>
-          <a href="https://przewozy24-makieta.vercel.app" target="_blank" rel="noopener" data-lang-en>→ Demo</a>
-        </div>
-      </div>
-
+    <div class="reveal">
+      <div class="section-eyebrow" data-i18n="projects.eyebrow">wybrane realizacje</div>
+      <h2 data-i18n="projects.title">Projekty</h2>
     </div>
+    <div id="projectsGrid"></div>
+  </div>
+</section>
+
+<section id="a11y">
+  <div class="wrap reveal">
+    <div class="section-eyebrow" data-i18n="a11y.eyebrow">standard, nie dodatek</div>
+    <h2 data-i18n="a11y.title">Dostępność</h2>
+    <p class="section-lead" data-i18n="a11y.text">Dostępność traktuję jak standard, nie dodatek. Ta strona też tak działa — sprawdź samym Tabem.</p>
+    <div class="process-grid grid-3" id="a11yGrid"></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap reveal">
+    <div class="section-eyebrow" data-i18n="process.eyebrow">jak pracuję</div>
+    <h2 data-i18n="process.title">Proces</h2>
+    <div class="process-grid is-sequence" id="processGrid"></div>
   </div>
 </section>
 
 <section id="stack">
-  <div class="wrap">
-    <div class="section-eyebrow" data-lang-pl>narzędzia</div>
-    <div class="section-eyebrow" data-lang-en>tools</div>
-    <h2 data-lang-pl>Stack</h2>
-    <h2 data-lang-en>Stack</h2>
-
-    <div class="stack-grid">
-      <div>
-        <div class="stack-group-label">Frontend</div>
-        <div class="stack-items">
-          <div class="stack-item">Next.js / React</div>
-          <div class="stack-item">Angular</div>
-          <div class="stack-item">TypeScript</div>
-        </div>
-      </div>
-      <div>
-        <div class="stack-group-label">Backend</div>
-        <div class="stack-items">
-          <div class="stack-item">Node.js / Express</div>
-          <div class="stack-item">FastAPI (Python)</div>
-        </div>
-      </div>
-      <div>
-        <div class="stack-group-label" data-lang-pl>Baza danych</div>
-        <div class="stack-group-label" data-lang-en>Database</div>
-        <div class="stack-items">
-          <div class="stack-item">PostgreSQL</div>
-          <div class="stack-item">MongoDB</div>
-        </div>
-      </div>
-      <div>
-        <div class="stack-group-label" data-lang-pl>Płatności / inne</div>
-        <div class="stack-group-label" data-lang-en>Payments / other</div>
-        <div class="stack-items">
-          <div class="stack-item">Stripe Connect</div>
-          <div class="stack-item">Docker</div>
-          <div class="stack-item">Git</div>
-        </div>
-      </div>
-    </div>
+  <div class="wrap reveal">
+    <div class="section-eyebrow" data-i18n="stack.eyebrow">narzędzia</div>
+    <h2>Stack</h2>
+    <div class="stack-grid" id="stackGrid"></div>
   </div>
 </section>
 
 <section id="about">
-  <div class="wrap">
-    <div class="section-eyebrow" data-lang-pl>kim jestem</div>
-    <div class="section-eyebrow" data-lang-en>who I am</div>
-    <h2 data-lang-pl>O mnie</h2>
-    <h2 data-lang-en>About</h2>
+  <div class="wrap reveal">
+    <div class="section-eyebrow" data-i18n="about.eyebrow">kim jestem</div>
+    <h2 data-i18n="about.title">O mnie</h2>
 
-    <p class="about-text" data-lang-pl>
+    <p class="about-text" data-i18n-html="about.text">
       Student informatyki (3 rok) na uczelni w okolicach Tarnowa. Buduję aplikacje
       webowe od backendu po front — <strong>autoryzację, REST API, integracje
       płatności</strong>. Do każdego projektu podchodzę analitycznie: zanim
       zacznę kodować, zadaję pytania, które realnie wpływają na architekturę
       i wycenę — nie zgaduję.
     </p>
-    <p class="about-text" data-lang-en>
-      Computer Science student (3rd year), based near Tarnów, Poland. I build web
-      applications end to end — <strong>authorization, REST APIs, payment
-      integrations</strong>. I approach every project analytically: before writing
-      code, I ask the questions that actually shape architecture and pricing —
-      I don't guess.
-    </p>
 
     <div class="about-meta">
       <div class="meta-item">
-        <div class="meta-label" data-lang-pl>Lokalizacja</div>
-        <div class="meta-label" data-lang-en>Location</div>
+        <div class="meta-label" data-i18n="about.loc.label">Lokalizacja</div>
         <div class="meta-value">Tarnów, Polska</div>
       </div>
       <div class="meta-item">
-        <div class="meta-label" data-lang-pl>Dostępność</div>
-        <div class="meta-label" data-lang-en>Availability</div>
-        <div class="meta-value" data-lang-pl>Zdalnie, cała Polska</div>
-        <div class="meta-value" data-lang-en>Remote, worldwide</div>
+        <div class="meta-label" data-i18n="about.av.label">Dostępność</div>
+        <div class="meta-value" data-i18n="about.av.value">Zdalnie, cała Polska</div>
       </div>
       <div class="meta-item">
-        <div class="meta-label" data-lang-pl>Języki</div>
-        <div class="meta-label" data-lang-en>Languages</div>
-        <div class="meta-value" data-lang-pl>Polski, ukraiński, angielski</div>
-        <div class="meta-value" data-lang-en>Polish, Ukrainian, English</div>
+        <div class="meta-label" data-i18n="about.lang.label">Języki</div>
+        <div class="meta-value" data-i18n="about.lang.value">Polski, ukraiński, angielski</div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="contact" class="contact-section">
-  <div class="wrap">
-    <div class="section-eyebrow" data-lang-pl>współpraca</div>
-    <div class="section-eyebrow" data-lang-en>let's talk</div>
-    <h2 data-lang-pl>Kontakt</h2>
-    <h2 data-lang-en>Contact</h2>
+  <div class="wrap reveal">
+    <div class="section-eyebrow" data-i18n="contact.eyebrow">współpraca</div>
+    <h2 data-i18n="contact.title">Kontakt</h2>
 
-    <div class="contact-row">
-      <a href="mailto:dmytro.dev.zats@gmail.com" class="contact-card">
-        <span class="contact-label">Email</span>
-        <span class="contact-value">dmytro.dev.zats@gmail.com</span>
-      </a>
-      <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="contact-card">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">github.com/DmRzAt</span>
-      </a>
-      <div class="contact-card">
-        <span class="contact-label" data-lang-pl>Freelance</span>
-        <span class="contact-label" data-lang-en>Freelance</span>
-        <span class="contact-value">useme.com</span>
-      </div>
+    <p class="contact-lead stagger" style="--sd:0ms" data-i18n="contact.lead">Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.</p>
+    <a href="mailto:dmytro.dev.zats@gmail.com" class="mail-big u-link stagger" style="--sd:45ms">dmytro.dev.zats@gmail.com</a>
+
+    <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="contact-useme stagger" style="--sd:90ms">
+      <span class="cu-k" data-i18n="contact.useme.k">preferowana ścieżka współpracy</span>
+      <span class="cu-v" data-i18n="contact.useme.v">Zatrudnij mnie przez useme →</span>
+      <span class="cu-sub" data-i18n="contact.useme.sub">Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy. Zero ryzyka dla obu stron.</span>
+    </a>
+
+    <div class="contact-links stagger" style="--sd:135ms">
+      <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="u-link">GitHub ↗</a>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    Dmytro Zatserkivnyi — 2026
+</main>
+
+<noscript>
+  <div style="max-width:960px;margin:0 auto;padding:24px;font-family:monospace;color:#a8a69c">
+    Ta strona renderuje sekcje przez JavaScript. Bez JS działa kontakt:
+    dmytro.dev.zats@gmail.com · github.com/DmRzAt
   </div>
-</footer>
+</noscript>
 
-<script>
-  // ---- Language toggle ----
-  const html = document.documentElement;
-  const langToggle = document.getElementById('langToggle');
-  function setLang(lang) {
-    html.setAttribute('data-lang', lang);
-    html.setAttribute('lang', lang);
-    document.querySelectorAll('.lang-opt').forEach(el => {
-      el.classList.toggle('active', el.dataset.opt === lang);
-    });
-    localStorage.setItem('site-lang', lang);
-  }
-  langToggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-lang');
-    setLang(current === 'pl' ? 'en' : 'pl');
-  });
-  setLang(localStorage.getItem('site-lang') || html.getAttribute('data-lang') || 'pl');
-
-  // ---- Live demo filter (signature element) ----
-  const vehicles = [
-    { name: 'Mercedes Sprinter', price: '92,50 zł', tags: ['winda', 'klima'] },
-    { name: 'Volkswagen Crafter', price: '84,00 zł', tags: ['klima'] },
-    { name: 'Renault Master', price: '98,00 zł', tags: ['winda', 'med'] },
-    { name: 'Ford Transit', price: '76,00 zł', tags: ['klima'] },
-  ];
-
-  function renderResults() {
-    const active = Array.from(document.querySelectorAll('.demo-filter:checked')).map(el => el.dataset.tag);
-    const filtered = active.length === 0
-      ? vehicles
-      : vehicles.filter(v => active.every(tag => v.tags.includes(tag)));
-
-    const lang = html.getAttribute('data-lang');
-    const n = filtered.length;
-    const plPlural = n === 1 ? 'pojazd' : (n >= 2 && n <= 4 ? 'pojazdy' : 'pojazdów');
-    const countLabel = lang === 'pl' ? plPlural : (n === 1 ? 'vehicle' : 'vehicles');
-    document.getElementById('resultsCount').textContent = `${n} ${countLabel}`;
-
-    const list = document.getElementById('resultsList');
-    list.innerHTML = filtered.map(v => `
-      <div class="result-card">
-        <div>
-          <div class="rname">${v.name}</div>
-          <div class="rtags">${v.tags.join(' · ')}</div>
-        </div>
-        <div class="rprice">${v.price}</div>
-      </div>
-    `).join('');
-  }
-
-  document.querySelectorAll('.demo-filter').forEach(el => {
-    el.addEventListener('change', renderResults);
-  });
-  langToggle.addEventListener('click', renderResults);
-  renderResults();
-</script>
-
+<script src="app.js" defer></script>
 </body>
 </html>

@@ -5,19 +5,51 @@ student informatyki, freelance dla klientów z Polski i nie tylko.
 
 **Live:** https://dmytro-dev.vercel.app
 
-## Co to jest
+## Struktura
 
-Celowo pojedynczy plik `index.html` (HTML + CSS + JS, bez frameworków i bez builda) —
-prosty hosting, zero zależności. W środku:
+Bez frameworków i bez builda — czysta statyka, wrzucasz katalog na Vercel i działa:
 
-- ciemny „engineering" design, mono font, zielony akcent,
-- przełącznik języka PL/EN (zapamiętywany w `localStorage`),
-- działający na żywo mini-filtr pojazdów w hero (nie screenshot),
-- WCAG AA: kontrasty, focus-visible, `prefers-reduced-motion`.
+```
+index.html   — struktura strony (HTML)
+styles.css   — cały wygląd i animacje (CSS)
+app.js       — dane (PROJECTS, STACK, I18N…) + logika renderowania
+assets/      — zrzuty projektów (webp), tekstura tła, og-image
+```
+
+W środku:
+
+- ciemny „engineering / editorial" design, mono font, zielony akcent, filmowe ziarno w tle,
+- przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
+- działające na żywo demo w hero jako „odpowiedź API" (GET /vehicles → 200 OK + wyniki),
+- projekty jako edytorskie case-rows z prawdziwymi zrzutami ekranu (naprzemienne L/P),
+- live status-check demo w tle (fetch no-cors) — „dostępne / wolne" na żywo,
+- spójny system animacji: staggered hero, scroll-reveal (IntersectionObserver),
+  marquee usług, rysowane podkreślenia, pasek postępu, scroll-spy, kreski pod nagłówkami,
+- kontakt ukierunkowany na useme (link do profilu, bezpieczna płatność) + bezpośredni mail,
+- WCAG AA: kontrasty, focus-visible, skip-link, `prefers-reduced-motion`,
+- Lighthouse: Performance 100 / Accessibility 100 / Best Practices 100 (CLS 0).
 
 ## Uruchomienie lokalne
 
 Wystarczy otworzyć `index.html` w przeglądarce.
+
+## Jak rozbudowywać
+
+Cała treść siedzi w obiektach JS na górze `app.js` — HTML-a nie trzeba ruszać:
+
+- **Nowy projekt** → dopisz obiekt do tablicy `PROJECTS` (id, name, img —
+  zrzut ekranu 760px szer. w `assets/*.webp`, alt `{pl, en}`, desc `{pl, en}`,
+  tags, demo, github, status: `live`/`demo`/`mockup`).
+- **Nowy krok procesu / grupa stacku** → analogicznie `PROCESS` / `STACK`.
+- **Nowy tekst interfejsu** → klucz w słowniku `I18N.pl` i `I18N.en`
+  + `data-i18n="klucz"` na elemencie HTML.
+- **Pasek usług (marquee)** → tablica `MARQUEE` w `app.js`.
+- **Trzeci język (np. UA)** → nowy obiekt `I18N.ua` + pola `ua` w danych
+  + opcja w przełączniku.
+- **Nowa sekcja** → funkcja `renderCośtam()` wołana w `applyLang()`.
+
+Jeśli kiedyś dojdzie blog/CMS i single-file przestanie wystarczać — dopiero
+wtedy migracja na Astro/Next; nie wcześniej.
 
 ## Projekty pokazane na stronie
 
