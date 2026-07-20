@@ -86,22 +86,32 @@
       <a href="#projects" class="text-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
     </div>
 
-    <!-- LIVE SIGNATURE DEMO -->
+    <!-- INTERACTIVE SIGNATURE DEMO -->
     <div class="demo-box anim" style="--d:280ms">
       <div class="demo-header">
         <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
-        <span class="demo-title" data-i18n="demo.title">vehicles.api.ts — na żywo</span>
+        <span class="demo-title" data-i18n="demo.title">booking.flow.ts — interaktywne demo</span>
       </div>
-      <div class="demo-body">
-        <div class="filter-group" id="filterGroup">
-          <div class="filter-label" data-i18n="demo.filterLabel">Standard pojazdu</div>
-        </div>
-        <div>
-          <div class="demo-req"><span class="method">GET</span><span id="demoUrl">/vehicles</span></div>
-          <div class="demo-status" aria-live="polite">
-            <span class="ok">200 OK</span><span id="demoMeta"></span>
+      <div class="demo-body booking-demo">
+        <div class="booking-controls">
+          <div>
+            <div class="filter-label" data-i18n="demo.serviceLabel">Usługa</div>
+            <div class="service-options" id="serviceOptions"></div>
           </div>
-          <div id="resultsList"></div>
+          <div>
+            <div class="filter-label" data-i18n="demo.timeLabel">Dostępny termin</div>
+            <div class="time-options" id="timeOptions"></div>
+          </div>
+          <button class="demo-book-btn" id="demoBookBtn" type="button"></button>
+          <p class="demo-note" data-i18n="demo.note">Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.</p>
+        </div>
+        <div class="booking-output">
+          <div class="demo-req"><span class="method" id="demoMethod">GET</span><span id="demoUrl">/api/slots</span></div>
+          <div class="demo-status" aria-live="polite">
+            <span class="ok" id="demoStatusBadge">200 OK</span><span id="demoMeta"></span>
+          </div>
+          <ol class="flow-list" id="flowList"></ol>
+          <div class="payment-summary" id="paymentSummary" hidden></div>
         </div>
       </div>
     </div>

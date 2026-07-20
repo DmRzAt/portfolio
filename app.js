@@ -168,17 +168,19 @@ const A11Y = [
 */
 const TESTIMONIALS = [];
 
-const VEHICLES = [
-  { name: 'Mercedes Sprinter', price: '92,50 zł', tags: ['winda', 'klima'] },
-  { name: 'Volkswagen Crafter', price: '84,00 zł', tags: ['klima'] },
-  { name: 'Renault Master', price: '98,00 zł', tags: ['winda', 'med'] },
-  { name: 'Ford Transit', price: '76,00 zł', tags: ['klima'] },
+const BOOKING_SERVICES = [
+  { id: 'consultation', price: 120, label: { pl: 'Konsultacja · 30 min', en: 'Consultation · 30 min' } },
+  { id: 'wcag-audit', price: 240, label: { pl: 'Audyt WCAG', en: 'WCAG audit' } },
+  { id: 'api-review', price: 180, label: { pl: 'Przegląd API', en: 'API review' } },
 ];
 
-const FILTERS = [
-  { tag: 'winda', label: { pl: 'Winda dla wózków', en: 'Wheelchair lift' } },
-  { tag: 'klima', label: { pl: 'Klimatyzacja', en: 'Air conditioning' } },
-  { tag: 'med', label: { pl: 'Wyposażenie medyczne', en: 'Medical equipment' } },
+const BOOKING_TIMES = ['10:00', '12:30', '16:00'];
+
+const BOOKING_STEPS = [
+  { method: 'GET', path: '/api/slots', label: { pl: 'Pobrano wolne terminy', en: 'Available slots loaded' } },
+  { method: 'POST', path: '/api/bookings', label: { pl: 'Utworzono rezerwację', en: 'Booking created' } },
+  { method: 'POST', path: '/api/payments', label: { pl: 'Potwierdzono płatność', en: 'Payment confirmed' } },
+  { method: 'EVENT', path: 'payment_intent.succeeded', label: { pl: 'Odebrano webhook Stripe', en: 'Stripe webhook received' } },
 ];
 
 /* pas przewijany — CO konkretnie robię (usługi), nie tylko nazwy technologii */
@@ -218,8 +220,19 @@ const I18N = {
     'hero.sub': 'Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.',
     'hero.cta1': 'Zobacz projekty',
     'hero.cta2': 'Napisz do mnie',
-    'demo.title': 'vehicles.api.ts — na żywo',
-    'demo.filterLabel': 'Standard pojazdu',
+    'demo.title': 'booking.flow.ts — interaktywne demo',
+    'demo.serviceLabel': 'Usługa',
+    'demo.timeLabel': 'Dostępny termin',
+    'demo.book': 'Zarezerwuj demo',
+    'demo.repeat': 'Powtórz demo',
+    'demo.processing': 'Przetwarzanie…',
+    'demo.note': 'Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.',
+    'demo.slots': '3 terminy · symulacja',
+    'demo.paid': 'opłacono · 0 danych wysłanych',
+    'demo.waiting': 'czeka',
+    'demo.exampleSplit': 'Przykładowe rozliczenie',
+    'demo.partner': 'Partner',
+    'demo.platform': 'Platforma',
     'projects.eyebrow': 'wybrane realizacje',
     'projects.title': 'Projekty',
     'a11y.eyebrow': 'standard, nie dodatek',
@@ -266,8 +279,19 @@ const I18N = {
     'hero.sub': 'I build web applications and B2B dashboards with payments — from analysis to deployment.',
     'hero.cta1': 'See projects',
     'hero.cta2': 'Get in touch',
-    'demo.title': 'vehicles.api.ts — live',
-    'demo.filterLabel': 'Vehicle standard',
+    'demo.title': 'booking.flow.ts — interactive demo',
+    'demo.serviceLabel': 'Service',
+    'demo.timeLabel': 'Available time',
+    'demo.book': 'Book demo slot',
+    'demo.repeat': 'Run demo again',
+    'demo.processing': 'Processing…',
+    'demo.note': 'Interface simulation — you are not buying anything and no data is sent.',
+    'demo.slots': '3 slots · simulation',
+    'demo.paid': 'paid · 0 data sent',
+    'demo.waiting': 'waiting',
+    'demo.exampleSplit': 'Example settlement',
+    'demo.partner': 'Partner',
+    'demo.platform': 'Platform',
     'projects.eyebrow': 'selected work',
     'projects.title': 'Projects',
     'a11y.eyebrow': 'a standard, not an add-on',
@@ -408,79 +432,147 @@ function renderMarquee() {
     items.map(s => `<span>${s}</span>`).join('<b>·</b>');
 }
 
-/* ---- live demo: checkboxy + karty budowane raz, filtr przełącza klasy ---- */
+/* ---- interaktywny booking flow: wyłącznie symulacja UI, bez requestów sieciowych ---- */
+
+const bookingDemoState = { service: 'consultation', time: '10:00' };
+let bookingDemoTimers = [];
+
+function clearBookingDemoTimers() {
+  bookingDemoTimers.forEach(clearTimeout);
+  bookingDemoTimers = [];
+}
+
+function selectedBookingService() {
+  return BOOKING_SERVICES.find(service => service.id === bookingDemoState.service) || BOOKING_SERVICES[0];
+}
+
+function formatDemoPrice(value) {
+  return new Intl.NumberFormat(currentLang() === 'pl' ? 'pl-PL' : 'en-GB', {
+    style: 'currency',
+    currency: 'PLN',
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function renderFlowSteps(completedIndex = 0, activeIndex = -1) {
+  const lang = currentLang();
+  document.getElementById('flowList').innerHTML = BOOKING_STEPS.map((step, index) => {
+    const state = index <= completedIndex ? 'complete' : (index === activeIndex ? 'active' : 'waiting');
+    const status = state === 'complete' ? '✓' : (state === 'active' ? '···' : t('demo.waiting'));
+    return `
+      <li class="flow-step is-${state}">
+        <span class="flow-index">0${index + 1}</span>
+        <span class="flow-copy">
+          <strong>${step.label[lang]}</strong>
+          <code>${step.method} ${step.path}</code>
+        </span>
+        <span class="flow-state">${status}</span>
+      </li>
+    `;
+  }).join('');
+}
+
+function setDemoRequest(method, path, status, meta, pending = false) {
+  document.getElementById('demoMethod').textContent = method;
+  document.getElementById('demoUrl').textContent = path;
+  const badge = document.getElementById('demoStatusBadge');
+  badge.textContent = status;
+  badge.classList.toggle('pending', pending);
+  document.getElementById('demoMeta').textContent = `· ${meta}`;
+}
+
+function resetBookingDemoOutput() {
+  const query = `/api/slots?service=${bookingDemoState.service}&time=${bookingDemoState.time}`;
+  setDemoRequest('GET', query, '200 OK', t('demo.slots'));
+  renderFlowSteps(0);
+  const summary = document.getElementById('paymentSummary');
+  summary.hidden = true;
+  summary.replaceChildren();
+}
 
 function renderDemo() {
+  clearBookingDemoTimers();
   const lang = currentLang();
-  const group = document.getElementById('filterGroup');
-  const checked = Array.from(document.querySelectorAll('.demo-filter:checked')).map(el => el.dataset.tag);
-  group.querySelectorAll('.checkbox-row').forEach(el => el.remove());
-  FILTERS.forEach(f => {
-    const label = document.createElement('label');
-    label.className = 'checkbox-row';
-    label.innerHTML = `<input type="checkbox" class="demo-filter" data-tag="${f.tag}"><span>${f.label[lang]}</span>`;
-    const input = label.querySelector('input');
-    input.checked = checked.includes(f.tag);
-    input.addEventListener('change', onFilterChange);
-    group.appendChild(label);
-  });
+  const serviceOptions = document.getElementById('serviceOptions');
+  const timeOptions = document.getElementById('timeOptions');
+  const bookButton = document.getElementById('demoBookBtn');
 
-  document.getElementById('resultsList').innerHTML = VEHICLES.map((v, i) => `
-    <div class="result" data-idx="${i}">
-      <div class="result-inner">
-        <div class="result-card">
-          <div>
-            <div class="rname">${v.name}</div>
-            <div class="rtags">${v.tags.join(' · ')}</div>
-          </div>
-          <div class="rprice">${v.price}</div>
-        </div>
-      </div>
-    </div>
+  serviceOptions.innerHTML = BOOKING_SERVICES.map(service => `
+    <button type="button" class="service-option${service.id === bookingDemoState.service ? ' is-selected' : ''}"
+      data-service="${service.id}" aria-pressed="${service.id === bookingDemoState.service}">
+      <span>${service.label[lang]}</span><small>${formatDemoPrice(service.price)}</small>
+    </button>
   `).join('');
-  applyFilter();
-}
 
-function currentQuery() {
-  const active = Array.from(document.querySelectorAll('.demo-filter:checked')).map(el => el.dataset.tag);
-  return { active, url: active.length ? `/vehicles?features=${active.join(',')}` : '/vehicles' };
-}
+  timeOptions.innerHTML = BOOKING_TIMES.map(time => `
+    <button type="button" class="time-option${time === bookingDemoState.time ? ' is-selected' : ''}"
+      data-time="${time}" aria-pressed="${time === bookingDemoState.time}">${time}</button>
+  `).join('');
 
-function applyFilter() {
-  const { active, url } = currentQuery();
-  let count = 0;
-  document.querySelectorAll('#resultsList .result').forEach(el => {
-    const v = VEHICLES[el.dataset.idx];
-    const show = active.every(tag => v.tags.includes(tag));
-    el.classList.toggle('hidden', !show);
-    if (show) count++;
+  serviceOptions.querySelectorAll('[data-service]').forEach(button => {
+    button.addEventListener('click', () => {
+      bookingDemoState.service = button.dataset.service;
+      renderDemo();
+    });
   });
-  const lang = currentLang();
-  const label = lang === 'pl'
-    ? (count === 1 ? 'pojazd' : (count >= 2 && count <= 4 ? 'pojazdy' : 'pojazdów'))
-    : (count === 1 ? 'vehicle' : 'vehicles');
+  timeOptions.querySelectorAll('[data-time]').forEach(button => {
+    button.addEventListener('click', () => {
+      bookingDemoState.time = button.dataset.time;
+      renderDemo();
+    });
+  });
 
-  // "odpowiedź API": request URL + status z (pozorowanym, ale stabilnym) czasem
-  const ms = 6 + active.length * 3 + count;
-  document.getElementById('demoUrl').textContent = url;
-  document.getElementById('demoMeta').textContent = `· ${count} ${label} · ${ms} ms`;
+  bookButton.textContent = t('demo.book');
+  bookButton.disabled = false;
+  bookButton.addEventListener('click', runBookingDemo);
+  resetBookingDemoOutput();
 }
 
-let pendingTimer;
-/* zaznaczenie filtra = wysłanie requestu: URL od razu, badge "···",
-   po chwili "200 OK" i wyniki — cykl żądanie→odpowiedź */
-function onFilterChange() {
-  document.getElementById('demoUrl').textContent = currentQuery().url;
-  const badge = document.querySelector('.demo-status .ok');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { applyFilter(); return; }
-  badge.textContent = '···';
-  badge.classList.add('pending');
-  clearTimeout(pendingTimer);
-  pendingTimer = setTimeout(() => {
-    badge.classList.remove('pending');
-    badge.textContent = '200 OK';
-    applyFilter();
-  }, 240);
+function finishBookingDemo() {
+  const service = selectedBookingService();
+  const platformFee = Math.round(service.price * 0.1);
+  const partnerAmount = service.price - platformFee;
+  renderFlowSteps(BOOKING_STEPS.length - 1);
+  setDemoRequest('EVENT', 'payment_intent.succeeded', '200 PAID', t('demo.paid'));
+
+  const summary = document.getElementById('paymentSummary');
+  summary.innerHTML = `
+    <div class="payment-summary-title">${t('demo.exampleSplit')}</div>
+    <div><span>${t('demo.partner')}</span><strong>${formatDemoPrice(partnerAmount)}</strong></div>
+    <div><span>${t('demo.platform')} · 10%</span><strong>${formatDemoPrice(platformFee)}</strong></div>
+  `;
+  summary.hidden = false;
+
+  document.querySelectorAll('.booking-controls button').forEach(button => { button.disabled = false; });
+  document.getElementById('demoBookBtn').textContent = t('demo.repeat');
+}
+
+function runBookingDemo() {
+  clearBookingDemoTimers();
+  document.querySelectorAll('.booking-controls button').forEach(button => { button.disabled = true; });
+  document.getElementById('demoBookBtn').textContent = t('demo.processing');
+  document.getElementById('paymentSummary').hidden = true;
+
+  const stages = [
+    { completed: 0, active: 1, method: 'POST', path: '/api/bookings', status: '···' },
+    { completed: 1, active: 2, method: 'POST', path: '/api/payments', status: '201 CREATED' },
+    { completed: 2, active: 3, method: 'EVENT', path: 'payment_intent.succeeded', status: '200 PAID' },
+  ];
+
+  const applyStage = stage => {
+    renderFlowSteps(stage.completed, stage.active);
+    setDemoRequest(stage.method, stage.path, stage.status, t('demo.processing'), true);
+  };
+
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    finishBookingDemo();
+    return;
+  }
+
+  stages.forEach((stage, index) => {
+    bookingDemoTimers.push(setTimeout(() => applyStage(stage), index * 480));
+  });
+  bookingDemoTimers.push(setTimeout(finishBookingDemo, stages.length * 480));
 }
 
 /* ---- i18n: [data-i18n] tekst, [data-i18n-html] markup ze słownika ---- */

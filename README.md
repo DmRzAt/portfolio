@@ -21,7 +21,7 @@ W środku:
 - ciemny „engineering / editorial" design, mono font, zielony akcent, filmowe ziarno w tle,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
 - jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
-- działające na żywo demo w hero jako „odpowiedź API" (GET /vehicles → 200 OK + wyniki),
+- interaktywne demo flow rezerwacji w hero (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
 - projekty jako edytorskie case-rows z prawdziwymi zrzutami ekranu (naprzemienne L/P),
 - sekcja Opinie gotowa w kodzie (ukryta, aż dodasz pierwszy realny cytat),
 - live status-check demo w tle (fetch no-cors) — „dostępne / wolne" na żywo,
