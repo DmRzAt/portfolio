@@ -3,7 +3,7 @@
 Moja strona-wizytówka: fullstack developer (Next.js, Node.js, PostgreSQL, Stripe Connect),
 student informatyki, freelance dla klientów z Polski i nie tylko.
 
-**Live:** https://dmytro-dev.vercel.app
+**Live:** jeszcze niewdrożone — adres zostanie dodany po publikacji tej wersji.
 
 ## Struktura
 
@@ -20,11 +20,13 @@ W środku:
 
 - ciemny „engineering / editorial" design, mono font, zielony akcent, filmowe ziarno w tle,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
+- jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
 - działające na żywo demo w hero jako „odpowiedź API" (GET /vehicles → 200 OK + wyniki),
 - projekty jako edytorskie case-rows z prawdziwymi zrzutami ekranu (naprzemienne L/P),
+- sekcja Opinie gotowa w kodzie (ukryta, aż dodasz pierwszy realny cytat),
 - live status-check demo w tle (fetch no-cors) — „dostępne / wolne" na żywo,
 - spójny system animacji: staggered hero, scroll-reveal (IntersectionObserver),
-  marquee usług, rysowane podkreślenia, pasek postępu, scroll-spy, kreski pod nagłówkami,
+  statyczny pas usług, rysowane podkreślenia, pasek postępu, scroll-spy, kreski pod nagłówkami,
 - kontakt ukierunkowany na useme (link do profilu, bezpieczna płatność) + bezpośredni mail,
 - WCAG AA: kontrasty, focus-visible, skip-link, `prefers-reduced-motion`,
 - Lighthouse: Performance 100 / Accessibility 100 / Best Practices 100 (CLS 0).
@@ -44,6 +46,8 @@ Cała treść siedzi w obiektach JS na górze `app.js` — HTML-a nie trzeba rus
 - **Nowy tekst interfejsu** → klucz w słowniku `I18N.pl` i `I18N.en`
   + `data-i18n="klucz"` na elemencie HTML.
 - **Pasek usług (marquee)** → tablica `MARQUEE` w `app.js`.
+- **Opinia klienta** → dodaj obiekt do `TESTIMONIALS` (`name`, `role{pl,en}`,
+  `text{pl,en}`) — sekcja „Opinie" sama się odkryje.
 - **Trzeci język (np. UA)** → nowy obiekt `I18N.ua` + pola `ua` w danych
   + opcja w przełączniku.
 - **Nowa sekcja** → funkcja `renderCośtam()` wołana w `applyLang()`.
@@ -55,9 +59,9 @@ wtedy migracja na Astro/Next; nie wcześniej.
 
 | Projekt | Demo | Kod |
 |---|---|---|
+| Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
 | Quotly | https://quotly-flax.vercel.app | https://github.com/DmRzAt/quotly |
-| Przewozy24 (makieta) | https://przewozy24-makieta.vercel.app | — (praca dla klienta) |
 
 ## Kontakt
 

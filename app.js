@@ -5,6 +5,33 @@
 
 const PROJECTS = [
   {
+    id: 'slotify',
+    name: 'Slotify',
+    img: 'assets/slotify.webp',
+    alt: {
+      pl: 'Slotify — strona główna z kalendarzem wolnych terminów',
+      en: 'Slotify — home page with an availability calendar',
+    },
+    summary: {
+      pl: 'Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.',
+      en: 'Local services booking — a concrete time slot instead of phone calls and double bookings.',
+    },
+    facts: {
+      pl: [
+        { label: 'Co w środku', value: 'Kalendarz wolnych slotów, rezerwacja terminu i płatność online (Stripe).' },
+        { label: 'Do kliknięcia', value: 'Tryb demo z trzema rolami — klient, partner i admin — bez zakładania konta.' },
+      ],
+      en: [
+        { label: 'Inside', value: 'Availability calendar, slot booking and online payment (Stripe).' },
+        { label: 'Try it', value: 'Demo mode with three roles — client, partner and admin — no sign-up needed.' },
+      ],
+    },
+    tags: ['Next.js', 'Prisma', 'Stripe'],
+    demo: 'https://slotify-rho.vercel.app',
+    github: 'https://github.com/DmRzAt/Slotify',
+    status: 'live',
+  },
+  {
     id: 'bazarek',
     name: 'Bazarek',
     img: 'assets/bazarek.webp',
@@ -12,9 +39,19 @@ const PROJECTS = [
       pl: 'Bazarek — strona główna platformy ogłoszeniowej',
       en: 'Bazarek — marketplace platform home page',
     },
-    desc: {
-      pl: 'Fullstack platforma ogłoszeniowa. Backend w całości mój — schemat bazy, REST API, autoryzacja. Obroniony na uczelni.',
-      en: 'Fullstack marketplace platform. Backend entirely mine — database schema, REST API, authorization. Presented at a university defense.',
+    summary: {
+      pl: 'Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.',
+      en: 'A marketplace platform combining an Angular frontend with a custom backend.',
+    },
+    facts: {
+      pl: [
+        { label: 'Mój zakres', value: 'Schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.' },
+        { label: 'Rezultat', value: 'Działająca aplikacja fullstack, zaprezentowana i obroniona na uczelni.' },
+      ],
+      en: [
+        { label: 'My role', value: 'MongoDB schema, REST API and authorization — I built the entire backend.' },
+        { label: 'Outcome', value: 'A working full-stack application, presented and defended at university.' },
+      ],
     },
     tags: ['Angular 19', 'Express', 'MongoDB'],
     demo: 'https://bazarek-taw.onrender.com',
@@ -32,33 +69,27 @@ const PROJECTS = [
       pl: 'Quotly — landing z generatorem palet i płatnościami Stripe',
       en: 'Quotly — landing with palette generator and Stripe billing',
     },
-    desc: {
-      pl: 'Panel partnera z płatnościami: Stripe Connect (onboarding Express, automatyczny podział prowizji), webhooki do śledzenia weryfikacji.',
-      en: 'Partner panel with payments: Stripe Connect (Express onboarding, automatic commission split), webhooks for verification tracking.',
+    summary: {
+      pl: 'Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.',
+      en: 'A partner dashboard handling onboarding and settlements through Stripe Connect.',
+    },
+    facts: {
+      pl: [
+        { label: 'Mój zakres', value: 'Onboarding Express, automatyczny podział prowizji i webhooki śledzące weryfikację.' },
+        { label: 'Rezultat', value: 'Jeden spójny przepływ od weryfikacji konta do podziału płatności.' },
+      ],
+      en: [
+        { label: 'My role', value: 'Express onboarding, automatic commission splitting and verification webhooks.' },
+        { label: 'Outcome', value: 'One consistent flow from account verification to payment splitting.' },
+      ],
     },
     tags: ['Next.js', 'Node.js', 'Stripe Connect'],
     demo: 'https://quotly-flax.vercel.app',
     github: 'https://github.com/DmRzAt/quotly',
     status: 'live',
   },
-  {
-    id: 'przewozy24',
-    name: 'Przewozy24',
-    img: 'assets/przewozy24.webp',
-    alt: {
-      pl: 'Przewozy24 — ekran wyników wyszukiwania transportu bez barier',
-      en: 'Przewozy24 — accessible transport search results screen',
-    },
-    desc: {
-      pl: 'Makieta ekranu wyszukiwania dla klienta z branży transportu osób niepełnosprawnych. Pełna dostępność klawiaturowa i ARIA.',
-      en: 'Search screen mockup for a client in accessible transport. Full keyboard accessibility and ARIA support.',
-    },
-    tags: ['Next.js', 'a11y', 'Client work'],
-    demo: 'https://przewozy24-makieta.vercel.app',
-    github: null,
-    status: 'mockup',
-  },
 ];
+
 
 const STACK = [
   { label: { pl: 'Frontend', en: 'Frontend' }, items: ['Next.js / React', 'Angular', 'TypeScript'] },
@@ -125,6 +156,18 @@ const A11Y = [
   },
 ];
 
+/* Opinie klientów — DODAJ obiekt po pierwszym zakończonym projekcie.
+   Jedna cytata z prawdziwym imieniem i firmą waży więcej niż każdy element designu.
+   Póki tablica jest pusta, sekcja "Opinie" jest ukryta (nie renderuje się).
+   Wzór (uzupełnij PRAWDZIWYMI danymi — nie wymyślaj):
+   {
+     name: 'Imię Nazwisko',
+     role: { pl: 'rola · firma', en: 'role · company' },
+     text: { pl: 'Cytat po polsku.', en: 'Quote in English.' },
+   }
+*/
+const TESTIMONIALS = [];
+
 const VEHICLES = [
   { name: 'Mercedes Sprinter', price: '92,50 zł', tags: ['winda', 'klima'] },
   { name: 'Volkswagen Crafter', price: '84,00 zł', tags: ['klima'] },
@@ -168,8 +211,11 @@ const I18N = {
     'nav.stack': 'Stack',
     'nav.about': 'O mnie',
     'nav.contact': 'Kontakt',
+    'nav.menu': 'Menu',
+    'theme.toLight': 'Włącz jasny motyw',
+    'theme.toDark': 'Włącz ciemny motyw',
     'hero.eyebrow': 'dostępny do współpracy',
-    'hero.sub': 'Buduję aplikacje webowe od backendu po front — <code>Next.js</code>, <code>Node.js</code>, <code>PostgreSQL</code>, integracje płatności. Student informatyki, pracuję z klientami na zlecenie.',
+    'hero.sub': 'Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.',
     'hero.cta1': 'Zobacz projekty',
     'hero.cta2': 'Napisz do mnie',
     'demo.title': 'vehicles.api.ts — na żywo',
@@ -191,6 +237,8 @@ const I18N = {
     'about.av.value': 'Zdalnie, cała Polska',
     'about.lang.label': 'Języki',
     'about.lang.value': 'Polski, ukraiński, angielski',
+    'testimonials.eyebrow': 'opinie klientów',
+    'testimonials.title': 'Opinie',
     'contact.eyebrow': 'współpraca',
     'contact.title': 'Kontakt',
     'contact.lead': 'Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.',
@@ -211,8 +259,11 @@ const I18N = {
     'nav.stack': 'Stack',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.menu': 'Menu',
+    'theme.toLight': 'Switch to light theme',
+    'theme.toDark': 'Switch to dark theme',
     'hero.eyebrow': 'available for work',
-    'hero.sub': 'I build web applications end to end — <code>Next.js</code>, <code>Node.js</code>, <code>PostgreSQL</code>, payment integrations. CS student, working with clients on a freelance basis.',
+    'hero.sub': 'I build web applications and B2B dashboards with payments — from analysis to deployment.',
     'hero.cta1': 'See projects',
     'hero.cta2': 'Get in touch',
     'demo.title': 'vehicles.api.ts — live',
@@ -234,6 +285,8 @@ const I18N = {
     'about.av.value': 'Remote, worldwide',
     'about.lang.label': 'Languages',
     'about.lang.value': 'Polish, Ukrainian, English',
+    'testimonials.eyebrow': 'client feedback',
+    'testimonials.title': 'Testimonials',
     'contact.eyebrow': "let's talk",
     'contact.title': 'Contact',
     'contact.lead': 'Got a project or a pricing question? I usually reply the same day.',
@@ -269,7 +322,15 @@ function renderProjects() {
       <div class="case-info">
         <div class="case-num">0${i + 1}</div>
         <h3 class="project-name">${p.name}</h3>
-        <p class="project-desc">${p.desc[lang]}</p>
+        <p class="project-desc">${p.summary[lang]}</p>
+        <dl class="project-facts">
+          ${p.facts[lang].map(fact => `
+            <div class="project-fact">
+              <dt>${fact.label}</dt>
+              <dd>${fact.value}</dd>
+            </div>
+          `).join('')}
+        </dl>
         <div class="project-tags">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
         <div class="project-footer">
           <div class="project-links">
@@ -312,6 +373,23 @@ function renderProcess() {
   `).join('');
 }
 
+
+function renderTestimonials() {
+  const section = document.getElementById('testimonials');
+  if (!TESTIMONIALS.length) { section.hidden = true; return; } // brak danych → sekcja ukryta
+  const lang = currentLang();
+  section.hidden = false;
+  document.getElementById('testimonialsGrid').innerHTML = TESTIMONIALS.map((q, i) => `
+    <figure class="quote stagger" style="--sd:${i * 45}ms">
+      <blockquote>${q.text[lang]}</blockquote>
+      <figcaption>
+        <span class="q-name">${q.name}</span>
+        <span class="q-role">${q.role[lang]}</span>
+      </figcaption>
+    </figure>
+  `).join('');
+}
+
 function renderA11y() {
   const lang = currentLang();
   document.getElementById('a11yGrid').innerHTML = A11Y.map((item, i) => `
@@ -325,10 +403,9 @@ function renderA11y() {
 
 function renderMarquee() {
   const items = MARQUEE[currentLang()];
-  const part = items.map(s => `<span>${s}</span><b>·</b>`).join('');
-  // dwie identyczne kopie → bezszwowa pętla przy translateX(-50%)
+  // statyczny pas usług — separator tylko MIĘDZY pozycjami (bez końcowego)
   document.getElementById('marqueeTrack').innerHTML =
-    `<div class="marquee-part">${part}</div><div class="marquee-part">${part}</div>`;
+    items.map(s => `<span>${s}</span>`).join('<b>·</b>');
 }
 
 /* ---- live demo: checkboxy + karty budowane raz, filtr przełącza klasy ---- */
@@ -421,11 +498,13 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     el.innerHTML = t(el.dataset.i18nHtml);
   });
+  updateThemeControl();
   renderMarquee();
   renderProjects();
   renderA11y();
   renderStack();
   renderProcess();
+  renderTestimonials();
   renderDemo();
   setupReveal();
   checkAllStatuses();
@@ -493,10 +572,80 @@ function setupReveal() {
   });
 }
 
+/* ---- motyw: systemowy domyślnie, ręczny wybór zapamiętywany ---- */
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleLabel = document.getElementById('themeToggleLabel');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const systemThemeQuery = matchMedia('(prefers-color-scheme: light)');
+
+function storedTheme() {
+  try { return localStorage.getItem('site-theme'); }
+  catch (_) { return null; }
+}
+
+function currentTheme() {
+  return html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+function updateThemeControl() {
+  const label = t(currentTheme() === 'dark' ? 'theme.toLight' : 'theme.toDark');
+  themeToggle.setAttribute('aria-label', label);
+  themeToggle.setAttribute('title', label);
+  themeToggleLabel.textContent = label;
+}
+
+function setTheme(theme, persist = false) {
+  const resolved = theme === 'light' ? 'light' : 'dark';
+  html.setAttribute('data-theme', resolved);
+  themeColorMeta.setAttribute('content', resolved === 'light' ? '#f7f6f1' : '#141413');
+  if (persist) {
+    try { localStorage.setItem('site-theme', resolved); } catch (_) {}
+  }
+  updateThemeControl();
+}
+
+themeToggle.addEventListener('click', () => {
+  setTheme(currentTheme() === 'dark' ? 'light' : 'dark', true);
+});
+
+systemThemeQuery.addEventListener('change', event => {
+  if (!storedTheme()) setTheme(event.matches ? 'light' : 'dark');
+});
+
 document.getElementById('langToggle').addEventListener('click', () => {
   applyLang(currentLang() === 'pl' ? 'en' : 'pl');
 });
 
+/* ---- kompaktowa nawigacja mobilna ---- */
+const navToggle = document.getElementById('navToggle');
+const navLinksPanel = document.getElementById('navLinks');
+
+function setNavOpen(open) {
+  navToggle.setAttribute('aria-expanded', String(open));
+  navLinksPanel.classList.toggle('is-open', open);
+  document.body.classList.toggle('nav-open', open);
+}
+
+navToggle.addEventListener('click', () => {
+  setNavOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+});
+
+navLinksPanel.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => setNavOpen(false));
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    setNavOpen(false);
+    navToggle.focus();
+  }
+});
+
+matchMedia('(min-width: 641px)').addEventListener('change', event => {
+  if (event.matches) setNavOpen(false);
+});
+
+setTheme(currentTheme());
 applyLang(localStorage.getItem('site-lang') || 'pl');
 
 /* ---- pasek postępu czytania ---- */
