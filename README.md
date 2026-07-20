@@ -3,7 +3,7 @@
 Moja strona-wizytówka: fullstack developer (Next.js, Node.js, PostgreSQL, Stripe Connect),
 student informatyki, freelance dla klientów z Polski i nie tylko.
 
-**Live:** jeszcze niewdrożone — adres zostanie dodany po publikacji tej wersji.
+**Live:** https://portfolio-six-olive-25.vercel.app
 
 ## Struktura
 
