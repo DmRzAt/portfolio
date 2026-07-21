@@ -18,18 +18,20 @@ assets/      — zrzuty projektów (webp), tekstura tła, og-image
 
 W środku:
 
-- ciemny „engineering / editorial" design, mono font, zielony akcent, filmowe ziarno w tle,
+- styl „dokumentu technicznego": masthead z grubą linią, pasek meta, gigantyczna
+  typografia Archivo (pełna + konturowa), sekcje numerowane jako FIG. 0X,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
 - jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
 - interaktywne demo flow rezerwacji w hero (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
-- projekty jako edytorskie case-rows z prawdziwymi zrzutami ekranu (naprzemienne L/P),
+- projekty jako okno terminala (`projekty.sh`) — wiersz rozwija się w zrzut ekranu,
+  fakty i linki (`<details>`, więc działa też klawiaturą),
 - sekcja Opinie gotowa w kodzie (ukryta, aż dodasz pierwszy realny cytat),
 - live status-check demo w tle (fetch no-cors) — „dostępne / wolne" na żywo,
 - spójny system animacji: staggered hero, scroll-reveal (IntersectionObserver),
-  statyczny pas usług, rysowane podkreślenia, pasek postępu, scroll-spy, kreski pod nagłówkami,
+  rysowane podkreślenia, pasek postępu, scroll-spy, przewijany pas usług w stopce,
 - kontakt ukierunkowany na useme (link do profilu, bezpieczna płatność) + bezpośredni mail,
 - WCAG AA: kontrasty, focus-visible, skip-link, `prefers-reduced-motion`,
-- Lighthouse: Performance 100 / Accessibility 100 / Best Practices 100 (CLS 0).
+- Lighthouse: Performance 90–97 / Accessibility 100 / Best Practices 100 (CLS 0).
 
 ## Uruchomienie lokalne
 

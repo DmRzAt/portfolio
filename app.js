@@ -208,6 +208,14 @@ const MARQUEE = {
 const I18N = {
   pl: {
     'ui.skip': 'Przejdź do treści',
+    'mast.sub': 'FULLSTACK · WEB · B2B · PŁATNOŚCI',
+    'meta.nr': 'NR. 01 — PORTFOLIO',
+    'meta.loc': 'TARNÓW / ZDALNIE',
+    'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
+    'term.dir': 'projekty',
+    'about.lead': 'Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.',
+    'contact.head': 'Porozmawiajmy<span class="dot">.</span>',
     'nav.projects': 'Projekty',
     'nav.process': 'Proces',
     'nav.stack': 'Stack',
@@ -267,6 +275,14 @@ const I18N = {
   },
   en: {
     'ui.skip': 'Skip to content',
+    'mast.sub': 'FULLSTACK · WEB · B2B · PAYMENTS',
+    'meta.nr': 'NO. 01 — PORTFOLIO',
+    'meta.loc': 'TARNÓW / REMOTE',
+    'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
+    'term.dir': 'projects',
+    'about.lead': 'Before I write any code, I ask the questions that actually shape architecture and pricing.',
+    'contact.head': 'Let’s talk<span class="dot">.</span>',
     'nav.projects': 'Projects',
     'nav.process': 'Process',
     'nav.stack': 'Stack',
@@ -336,52 +352,47 @@ html.classList.add('js');
 const t = (key) => I18N[currentLang()][key] || key;
 const currentLang = () => html.getAttribute('data-lang') || 'pl';
 
+/* Projekt = wiersz terminala; kliknięcie rozwija szczegóły (zrzut, fakty, linki).
+   <details>/<summary> — działa klawiaturą i bez dodatkowego JS. */
 function renderProjects() {
   const lang = currentLang();
   document.getElementById('projectsGrid').innerHTML = PROJECTS.map((p, i) => `
-    <article class="case reveal">
-      <a class="case-shot" href="${p.demo}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-        <img src="${p.img}" alt="${p.alt[lang]}" width="1280" height="800" loading="lazy" decoding="async">
-      </a>
-      <div class="case-info">
-        <div class="case-num">0${i + 1}</div>
-        <h3 class="project-name">${p.name}</h3>
-        <p class="project-desc">${p.summary[lang]}</p>
-        <dl class="project-facts">
-          ${p.facts[lang].map(fact => `
-            <div class="project-fact">
-              <dt>${fact.label}</dt>
-              <dd>${fact.value}</dd>
-            </div>
-          `).join('')}
-        </dl>
-        <div class="project-tags">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-        <div class="project-footer">
-          <div class="project-links">
+    <details class="prow-item">
+      <summary class="prow">
+        <span class="prow-n">0${i + 1}</span>
+        <span class="prow-name">${p.name}</span>
+        <span class="prow-desc">${p.summary[lang]}</span>
+        <span class="prow-stack">${p.tags.join(' · ')}</span>
+        ${!p.demo ? '<span></span>' : (p.liveCheck === false
+          ? `<span class="prow-status slow" title="Render free tier"><span class="sdot" aria-hidden="true"></span><span class="status-text">${p.note[lang]}</span></span>`
+          : `<span class="prow-status checking" data-check="${p.demo}"><span class="sdot" aria-hidden="true"></span><span class="status-text">${t('status.checking')}</span></span>`)}
+      </summary>
+      <div class="prow-detail">
+        <a class="prow-shot" href="${p.demo}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="${p.img}" alt="${p.alt[lang]}" width="1280" height="800" loading="lazy" decoding="async">
+        </a>
+        <div>
+          <dl class="prow-facts">
+            ${p.facts[lang].map(fact => `
+              <div class="prow-fact"><dt>${fact.label}</dt><dd>${fact.value}</dd></div>
+            `).join('')}
+          </dl>
+          <div class="prow-links">
             ${p.demo ? `<a class="u-link" href="${p.demo}" target="_blank" rel="noopener">${t('links.demo')}</a>` : ''}
             ${p.github ? `<a class="u-link" href="${p.github}" target="_blank" rel="noopener">${t('links.github')}</a>` : ''}
           </div>
-          ${!p.demo ? '' : (p.liveCheck === false
-            ? `<div class="project-status slow" title="Render free tier">
-            <span class="sdot" aria-hidden="true"></span><span class="status-text">${p.note[lang]}</span>
-          </div>`
-            : `<div class="project-status checking" data-check="${p.demo}">
-            <span class="sdot" aria-hidden="true"></span><span class="status-text">${t('status.checking')}</span>
-          </div>`)}
         </div>
       </div>
-    </article>
+    </details>
   `).join('');
 }
 
 function renderStack() {
   const lang = currentLang();
-  document.getElementById('stackGrid').innerHTML = STACK.map((group, i) => `
-    <div class="stagger" style="--sd:${i * 45}ms">
-      <div class="stack-group-label">${group.label[lang]}</div>
-      <div class="stack-items">
-        ${group.items.map(item => `<div class="stack-item">${item}</div>`).join('')}
-      </div>
+  document.getElementById('stackGrid').innerHTML = STACK.map(group => `
+    <div class="col-stack">
+      <div class="col-cat">${group.label[lang]}</div>
+      <div class="col-items">${group.items.join(' · ')}</div>
     </div>
   `).join('');
 }
@@ -389,22 +400,21 @@ function renderStack() {
 function renderProcess() {
   const lang = currentLang();
   document.getElementById('processGrid').innerHTML = PROCESS.map((step, i) => `
-    <div class="process-step stagger" style="--sd:${i * 45}ms">
-      <div class="process-num">0${i + 1}</div>
-      <h3>${step.title[lang]}</h3>
-      <p>${step.desc[lang]}</p>
+    <div class="col-step">
+      <div class="col-num">0${i + 1}</div>
+      <h3 class="col-title"><span class="slash">/ </span>${step.title[lang]}</h3>
+      <p class="col-desc">${step.desc[lang]}</p>
     </div>
   `).join('');
 }
-
 
 function renderTestimonials() {
   const section = document.getElementById('testimonials');
   if (!TESTIMONIALS.length) { section.hidden = true; return; } // brak danych → sekcja ukryta
   const lang = currentLang();
   section.hidden = false;
-  document.getElementById('testimonialsGrid').innerHTML = TESTIMONIALS.map((q, i) => `
-    <figure class="quote stagger" style="--sd:${i * 45}ms">
+  document.getElementById('testimonialsGrid').innerHTML = TESTIMONIALS.map(q => `
+    <figure class="quote">
       <blockquote>${q.text[lang]}</blockquote>
       <figcaption>
         <span class="q-name">${q.name}</span>
@@ -416,20 +426,19 @@ function renderTestimonials() {
 
 function renderA11y() {
   const lang = currentLang();
-  document.getElementById('a11yGrid').innerHTML = A11Y.map((item, i) => `
-    <div class="process-step stagger" style="--sd:${i * 45}ms">
-      <div class="a11y-tag">${item.tag}</div>
-      <h3>${item.title[lang]}</h3>
-      <p>${item.desc[lang]}</p>
+  document.getElementById('a11yGrid').innerHTML = A11Y.map(item => `
+    <div class="col-step">
+      <div class="col-cat">#${item.tag}</div>
+      <h3 class="col-title"><span class="slash">/ </span>${item.title[lang]}</h3>
+      <p class="col-desc">${item.desc[lang]}</p>
     </div>
   `).join('');
 }
 
 function renderMarquee() {
-  const items = MARQUEE[currentLang()];
-  // statyczny pas usług — separator tylko MIĘDZY pozycjami (bez końcowego)
-  document.getElementById('marqueeTrack').innerHTML =
-    items.map(s => `<span>${s}</span>`).join('<b>·</b>');
+  const line = MARQUEE[currentLang()].join('&nbsp;&nbsp;//&nbsp;&nbsp;') + '&nbsp;&nbsp;//&nbsp;&nbsp;';
+  // dwie identyczne kopie → bezszwowa pętla przy translateX(-50%)
+  document.getElementById('marqueeTrack').innerHTML = `<span>${line}</span><span>${line}</span>`;
 }
 
 /* ---- interaktywny booking flow: wyłącznie symulacja UI, bez requestów sieciowych ---- */
@@ -636,7 +645,7 @@ function checkStatus(el, url) {
 }
 
 function checkAllStatuses() {
-  document.querySelectorAll('.project-status[data-check]').forEach(el => {
+  document.querySelectorAll('.prow-status[data-check]').forEach(el => {
     const url = el.dataset.check;
     if (statusCache[url]) applyStatus(el, statusCache[url]);
     else checkStatus(el, url);

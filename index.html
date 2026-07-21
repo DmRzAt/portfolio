@@ -13,7 +13,7 @@
   })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#141413">
+<meta name="theme-color" content="#0b0e0b">
 <title>Dmytro Zatserkivnyi — Fullstack Developer</title>
 <meta name="description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end, praca zdalna.">
 <meta property="og:type" content="website">
@@ -22,12 +22,12 @@
 <meta property="og:url" content="https://portfolio-six-olive-25.vercel.app/">
 <meta property="og:image" content="https://portfolio-six-olive-25.vercel.app/og-image.png">
 <link rel="canonical" href="https://portfolio-six-olive-25.vercel.app/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23141413'/%3E%3Crect x='1' y='1' width='62' height='62' rx='11' fill='none' stroke='%2333332f' stroke-width='2'/%3E%3Ctext x='32' y='45' font-family='Consolas,Menlo,monospace' font-size='38' font-weight='700' fill='%2300c896' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0e0b'/%3E%3Crect x='1' y='1' width='62' height='62' fill='none' stroke='%232ce8a0' stroke-width='2'/%3E%3Ctext x='32' y='45' font-family='Consolas,Menlo,monospace' font-size='38' font-weight='700' fill='%232ce8a0' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,19 +36,26 @@
 
 <a href="#main" class="skip-link" data-i18n="ui.skip">Przejdź do treści</a>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-logo">Dmytro<span>.</span>dev</div>
-    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
-      <span class="sr-only" data-i18n="nav.menu">Menu</span>
-      <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#projects" class="u-link" data-i18n="nav.projects">Projekty</a>
-      <a href="#process" class="u-link" data-i18n="nav.process">Proces</a>
-      <a href="#stack" class="u-link" data-i18n="nav.stack">Stack</a>
-      <a href="#about" class="u-link" data-i18n="nav.about">O mnie</a>
-      <a href="#contact" class="u-link" data-i18n="nav.contact">Kontakt</a>
+<div class="sheet">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div>
+      <div class="mast-name">DMYTRO ZATSERKIVNYI</div>
+      <div class="mast-sub" data-i18n="mast.sub">FULLSTACK · WEB · B2B · PŁATNOŚCI</div>
+    </div>
+    <div class="mast-right">
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="sr-only" data-i18n="nav.menu">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Główna nawigacja">
+        <a href="#projects" class="u-link" data-i18n="nav.projects">Projekty</a>
+        <a href="#process" class="u-link" data-i18n="nav.process">Proces</a>
+        <a href="#stack" class="u-link" data-i18n="nav.stack">Stack</a>
+        <a href="#about" class="u-link" data-i18n="nav.about">O mnie</a>
+        <a href="#contact" class="u-link" data-i18n="nav.contact">Kontakt</a>
+      </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Włącz jasny motyw" title="Włącz jasny motyw">
           <span class="sr-only" id="themeToggleLabel">Włącz jasny motyw</span>
@@ -65,163 +72,199 @@
         </button>
       </div>
     </div>
+  </header>
+
+  <!-- PASEK META -->
+  <div class="meta-strip">
+    <span data-i18n="meta.nr">NR. 01 — PORTFOLIO</span>
+    <span data-i18n="meta.loc">TARNÓW / ZDALNIE</span>
+    <span>PL · UA · EN</span>
+    <span class="live" data-i18n="hero.eyebrow">dostępny do współpracy</span>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow anim" style="--d:0ms" data-i18n="hero.eyebrow">dostępny do współpracy</div>
-
-    <h1 class="anim" style="--d:70ms">
-      Dmytro Zatserkivnyi
-      <br><span class="dim">Fullstack developer.</span><span class="cursor" aria-hidden="true"></span>
+  <!-- GIGANTYCZNY NAGŁÓWEK -->
+  <div class="headline">
+    <h1>
+      <span class="sr-only">Dmytro Zatserkivnyi — </span>
+      <span class="hl-line hl-solid anim" style="--d:0ms">FULL<span class="dot">·</span>STACK</span>
+      <span class="hl-line hl-outline anim" style="--d:80ms">DEVELOPER</span>
     </h1>
+    <div class="hl-note anim" style="--d:160ms" data-i18n="hl.note">↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE</div>
+  </div>
 
-    <p class="hero-sub anim" style="--d:140ms" data-i18n-html="hero.sub">
-      Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.
-    </p>
-
-    <div class="cta-row anim" style="--d:210ms">
-      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
-      <a href="#projects" class="text-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
-    </div>
-
-    <!-- INTERACTIVE SIGNATURE DEMO -->
-    <div class="demo-box anim" style="--d:280ms">
-      <div class="demo-header">
-        <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
-        <span class="demo-title" data-i18n="demo.title">booking.flow.ts — interaktywne demo</span>
+  <!-- LEAD + MODUŁ DEMO -->
+  <div class="lead-grid">
+    <div class="lead-col">
+      <p class="lead-text anim" style="--d:220ms" data-i18n-html="hero.sub">
+        Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.
+      </p>
+      <div class="cta-row anim" style="--d:280ms">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
+        <a href="#projects" class="text-link u-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
       </div>
-      <div class="demo-body booking-demo">
-        <div class="booking-controls">
-          <div>
-            <div class="filter-label" data-i18n="demo.serviceLabel">Usługa</div>
-            <div class="service-options" id="serviceOptions"></div>
-          </div>
-          <div>
-            <div class="filter-label" data-i18n="demo.timeLabel">Dostępny termin</div>
-            <div class="time-options" id="timeOptions"></div>
-          </div>
-          <button class="demo-book-btn" id="demoBookBtn" type="button"></button>
-          <p class="demo-note" data-i18n="demo.note">Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.</p>
+    </div>
+    <div class="demo-col">
+      <div class="fig-static" data-i18n="demo.fig">FIG. 02 — LIVE MODULE · booking.flow</div>
+      <div class="demo-box anim" style="--d:320ms">
+        <div class="demo-header">
+          <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
+          <span class="demo-title" data-i18n="demo.title">booking.flow.ts — interaktywne demo</span>
         </div>
-        <div class="booking-output">
-          <div class="demo-req"><span class="method" id="demoMethod">GET</span><span id="demoUrl">/api/slots</span></div>
-          <div class="demo-status" aria-live="polite">
-            <span class="ok" id="demoStatusBadge">200 OK</span><span id="demoMeta"></span>
+        <div class="booking-demo">
+          <div class="booking-controls">
+            <div>
+              <div class="filter-label" data-i18n="demo.serviceLabel">Usługa</div>
+              <div class="service-options" id="serviceOptions"></div>
+            </div>
+            <div>
+              <div class="filter-label" data-i18n="demo.timeLabel">Dostępny termin</div>
+              <div class="time-options" id="timeOptions"></div>
+            </div>
+            <button class="demo-book-btn" id="demoBookBtn" type="button"></button>
+            <p class="demo-note" data-i18n="demo.note">Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.</p>
           </div>
-          <ol class="flow-list" id="flowList"></ol>
-          <div class="payment-summary" id="paymentSummary" hidden></div>
+          <div class="booking-output">
+            <div class="demo-req"><span class="method" id="demoMethod">GET</span><span id="demoUrl">/api/slots</span></div>
+            <div class="demo-status" aria-live="polite">
+              <span class="ok" id="demoStatusBadge">200 OK</span><span id="demoMeta"></span>
+            </div>
+            <ol class="flow-list" id="flowList"></ol>
+            <div class="payment-summary" id="paymentSummary" hidden></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack"></div>
+  <main id="main">
+
+    <!-- PROJEKTY -->
+    <section id="projects">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="nav.projects">Projekty</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="projects.eyebrow">wybrane realizacje</span>
+      </div>
+      <div class="terminal reveal">
+        <div class="term-bar">
+          <div class="term-dots"><span></span><span></span><span></span></div>
+          <span class="term-title">projekty.sh</span>
+        </div>
+        <div class="term-cmd">guest@dmytro:~$ ls -la <span data-i18n="term.dir">projekty</span>/</div>
+        <div class="term-body" id="projectsGrid"></div>
+        <div class="term-end">guest@dmytro:~$ <span class="caret" aria-hidden="true"></span></div>
+      </div>
+    </section>
+
+    <!-- DOSTĘPNOŚĆ -->
+    <section id="a11y">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="a11y.title">Dostępność</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="a11y.eyebrow">standard, nie dodatek</span>
+      </div>
+      <p class="section-lead reveal" data-i18n="a11y.text">Dostępność traktuję jak standard, nie dodatek. Ta strona też tak działa — sprawdź samym Tabem.</p>
+      <div class="cols cols-3 reveal" id="a11yGrid"></div>
+    </section>
+
+    <!-- PROCES -->
+    <section id="process">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="process.title">Proces</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="process.eyebrow">jak pracuję</span>
+      </div>
+      <div class="cols cols-4 reveal" id="processGrid"></div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="nav.stack">Stack</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="stack.eyebrow">narzędzia</span>
+      </div>
+      <div class="cols cols-4 reveal" id="stackGrid"></div>
+    </section>
+
+    <!-- O MNIE -->
+    <section id="about">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="about.title">O mnie</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="about.eyebrow">kim jestem</span>
+      </div>
+      <div class="about-grid reveal">
+        <div>
+          <p class="about-lead" data-i18n="about.lead">Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.</p>
+          <p class="about-body" data-i18n-html="about.text">
+            Student informatyki (3 rok) na uczelni w okolicach Tarnowa. Buduję aplikacje
+            webowe od backendu po front — <strong>autoryzację, REST API, integracje płatności</strong>.
+          </p>
+        </div>
+        <div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.loc.label">Lokalizacja</span>
+            <span class="fact-v">Tarnów, Polska</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.av.label">Dostępność</span>
+            <span class="fact-v" data-i18n="about.av.value">Zdalnie, cała Polska</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.lang.label">Języki</span>
+            <span class="fact-v" data-i18n="about.lang.value">Polski, ukraiński, angielski</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPINIE: ukryta, dopóki TESTIMONIALS w app.js jest puste -->
+    <section id="testimonials" hidden>
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="testimonials.title">Opinie</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="testimonials.eyebrow">opinie klientów</span>
+      </div>
+      <div class="cols reveal">
+        <div class="quotes" id="testimonialsGrid"></div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="contact" class="contact">
+      <div class="fig-label" data-i18n="nav.contact">Kontakt</div>
+      <h2 class="contact-head" data-i18n-html="contact.head">Porozmawiajmy<span class="dot">.</span></h2>
+      <div class="contact-row">
+        <div>
+          <p class="contact-sub" data-i18n="contact.lead">Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.</p>
+          <a href="mailto:dmytro.dev.zats@gmail.com" class="mail-big u-link">dmytro.dev.zats@gmail.com</a>
+          <div class="contact-links" style="margin-top:18px">
+            <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="u-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="contact-side">
+          <span class="avail" data-i18n="hero.eyebrow">dostępny do współpracy</span>
+          <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="useme">
+            <span class="cu-k" data-i18n="contact.useme.k">preferowana ścieżka współpracy</span>
+            <span class="cu-v" data-i18n="contact.useme.v">Zatrudnij mnie przez useme →</span>
+            <span class="cu-sub" data-i18n="contact.useme.sub">Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STOPKA — pas usług -->
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
 </div>
 
-<main id="main">
-
-<section id="projects">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="section-eyebrow" data-i18n="projects.eyebrow">wybrane realizacje</div>
-      <h2 data-i18n="projects.title">Projekty</h2>
-    </div>
-    <div id="projectsGrid"></div>
-  </div>
-</section>
-
-<section id="a11y">
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="a11y.eyebrow">standard, nie dodatek</div>
-    <h2 data-i18n="a11y.title">Dostępność</h2>
-    <p class="section-lead" data-i18n="a11y.text">Dostępność traktuję jak standard, nie dodatek. Ta strona też tak działa — sprawdź samym Tabem.</p>
-    <div class="process-grid grid-3" id="a11yGrid"></div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="process.eyebrow">jak pracuję</div>
-    <h2 data-i18n="process.title">Proces</h2>
-    <div class="process-grid is-sequence" id="processGrid"></div>
-  </div>
-</section>
-
-<section id="stack">
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="stack.eyebrow">narzędzia</div>
-    <h2>Stack</h2>
-    <div class="stack-grid" id="stackGrid"></div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="about.eyebrow">kim jestem</div>
-    <h2 data-i18n="about.title">O mnie</h2>
-
-    <p class="about-text" data-i18n-html="about.text">
-      Student informatyki (3 rok) na uczelni w okolicach Tarnowa. Buduję aplikacje
-      webowe od backendu po front — <strong>autoryzację, REST API, integracje
-      płatności</strong>. Do każdego projektu podchodzę analitycznie: zanim
-      zacznę kodować, zadaję pytania, które realnie wpływają na architekturę
-      i wycenę — nie zgaduję.
-    </p>
-
-    <div class="about-meta">
-      <div class="meta-item">
-        <div class="meta-label" data-i18n="about.loc.label">Lokalizacja</div>
-        <div class="meta-value">Tarnów, Polska</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label" data-i18n="about.av.label">Dostępność</div>
-        <div class="meta-value" data-i18n="about.av.value">Zdalnie, cała Polska</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label" data-i18n="about.lang.label">Języki</div>
-        <div class="meta-value" data-i18n="about.lang.value">Polski, ukraiński, angielski</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Opinie: ukryta dopóki TESTIMONIALS w app.js jest puste. Dodaj obiekt → sekcja się pokaże. -->
-<section id="testimonials" hidden>
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="testimonials.eyebrow">opinie klientów</div>
-    <h2 data-i18n="testimonials.title">Opinie</h2>
-    <div class="testimonials-grid" id="testimonialsGrid"></div>
-  </div>
-</section>
-
-<section id="contact" class="contact-section">
-  <div class="wrap reveal">
-    <div class="section-eyebrow" data-i18n="contact.eyebrow">współpraca</div>
-    <h2 data-i18n="contact.title">Kontakt</h2>
-
-    <p class="contact-lead stagger" style="--sd:0ms" data-i18n="contact.lead">Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.</p>
-    <a href="mailto:dmytro.dev.zats@gmail.com" class="mail-big u-link stagger" style="--sd:45ms">dmytro.dev.zats@gmail.com</a>
-
-    <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="contact-useme stagger" style="--sd:90ms">
-      <span class="cu-k" data-i18n="contact.useme.k">preferowana ścieżka współpracy</span>
-      <span class="cu-v" data-i18n="contact.useme.v">Zatrudnij mnie przez useme →</span>
-      <span class="cu-sub" data-i18n="contact.useme.sub">Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy. Zero ryzyka dla obu stron.</span>
-    </a>
-
-    <div class="contact-links stagger" style="--sd:135ms">
-      <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="u-link">GitHub ↗</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
 <noscript>
-  <div style="max-width:960px;margin:0 auto;padding:24px;font-family:monospace;color:#a8a69c">
+  <div style="max-width:1180px;margin:0 auto;padding:24px;font-family:monospace">
     Ta strona renderuje sekcje przez JavaScript. Bez JS działa kontakt:
     dmytro.dev.zats@gmail.com · github.com/DmRzAt
   </div>
