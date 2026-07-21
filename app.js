@@ -5,6 +5,32 @@
 
 const PROJECTS = [
   {
+    id: 'velmora-home',
+    name: 'Velmora Home',
+    img: 'assets/velmora-home.png',
+    alt: {
+      pl: 'Velmora Home — strona główna sklepu z meblami i dekoracjami',
+      en: 'Velmora Home — furniture and home decor store home page',
+    },
+    summary: {
+      pl: 'Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.',
+      en: 'A demo interior design store with furniture, lighting, decor and textile catalogues.',
+    },
+    facts: {
+      pl: [
+        { label: 'Co w środku', value: 'Kategorie i warianty produktów, koszyk, konto klienta, promocje oraz treści inspiracyjne.' },
+        { label: 'Technologia', value: 'WordPress z WooCommerce i Elementorem, uzupełniony dedykowanym motywem Velmora.' },
+      ],
+      en: [
+        { label: 'Inside', value: 'Product categories and variants, a cart, customer account, promotions and editorial inspiration.' },
+        { label: 'Technology', value: 'WordPress with WooCommerce and Elementor, complemented by a custom Velmora theme.' },
+      ],
+    },
+    tags: ['WordPress', 'WooCommerce', 'Elementor'],
+    demo: 'https://velmorahome-production.up.railway.app/',
+    status: 'live',
+  },
+  {
     id: 'slotify',
     name: 'Slotify',
     img: 'assets/slotify.webp',
