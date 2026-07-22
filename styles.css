@@ -381,16 +381,19 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
 }
 .featured-shot {
   display: block;
-  min-height: 100%;
+  min-height: 0;
+  align-self: start;
   overflow: hidden;
   border-right: 1px solid var(--rule);
   background: var(--shot-bg);
 }
 .featured-shot img {
+  display: block;
   width: 100%;
-  height: 100%;
-  min-height: 420px;
-  object-fit: cover;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
   object-position: top;
   transition: transform 0.45s var(--ease-out);
 }
@@ -943,7 +946,7 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
   .prow-shot { max-width: 420px; }
   .featured-shell { grid-template-columns: 1fr; }
   .featured-shot { border-right: none; border-bottom: 1px solid var(--rule); }
-  .featured-shot img { min-height: 0; aspect-ratio: 16 / 9; }
+  .featured-shot img { aspect-ratio: 16 / 10; }
   .case-body { grid-template-columns: 1fr; padding-left: 64px; }
   .case-media { max-width: 520px; }
   .demo-section-inner { grid-template-columns: 1fr; }
