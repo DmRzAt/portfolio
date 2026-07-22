@@ -33,8 +33,8 @@
   --text-2: #cfd6cd;
   --muted: #98a298;      /* 7.4:1 na --bg */
   --dim: #8a938a;        /* 6.2:1 */
-  --dim-2: #7b857c;      /* 5.2:1 — najmniejsze etykiety wciąż AA */
-  --faint: #5d675e;      /* tylko dekoracja / tekst nieistotny */
+  --dim-2: #7b857c;      /* 5.1:1 — małe etykiety */
+  --faint: #748075;      /* 4.7:1 — również dla znaczących podpisów */
   --ghost: #2a322a;      /* wielkie cyfry w tle — czysta dekoracja */
   --accent: #2ce8a0;
   --accent-hi: #7ff0c4;
@@ -58,8 +58,8 @@
   --text-2: #2c3329;
   --muted: #4f584d;
   --dim: #5c655a;
-  --dim-2: #6b746a;
-  --faint: #98a095;
+  --dim-2: #626b61;
+  --faint: #646d63;
   --ghost: #d7dbd2;
   --accent: #0e7a4e;
   --accent-hi: #0a5c3a;
@@ -82,6 +82,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; background: var(--bg); }
+main > section { scroll-margin-top: 92px; }
 
 body {
   background: var(--bg);
@@ -89,6 +90,7 @@ body {
   font-family: var(--mono);
   font-size: 13px;
   line-height: 1.6;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -302,7 +304,18 @@ summary:focus-visible {
   margin-top: 10px;
 }
 
-/* ---------- LEAD + DEMO ---------- */
+/* ---------- LEAD ---------- */
+.hero-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 26px var(--pad) 30px;
+  border-top: 1px solid var(--rule);
+}
+.hero-intro .lead-text { max-width: 720px; margin-bottom: 0; }
+
+/* Zachowane klasy dla starszego układu; booking.flow ma teraz własną sekcję. */
 .lead-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -355,6 +368,162 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
 .fig-label::before { content: 'FIG. 0' counter(fig) ' — '; }
 .fig-rule { flex: 1; height: 1px; background: var(--rule); }
 .fig-sub { font-size: 10px; color: var(--faint); white-space: nowrap; letter-spacing: 0.08em; }
+
+/* ---------- FEATURED CASE ---------- */
+.featured-shell {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  margin: 20px var(--pad) 38px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.featured-shot {
+  display: block;
+  min-height: 100%;
+  overflow: hidden;
+  border-right: 1px solid var(--rule);
+  background: var(--shot-bg);
+}
+.featured-shot img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.45s var(--ease-out);
+}
+.featured-shot:hover img { transform: scale(1.025); }
+.featured-content { padding: 28px; }
+.case-kicker {
+  margin-bottom: 9px;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.featured-title {
+  font-family: var(--display);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+.featured-summary {
+  max-width: 680px;
+  margin: 15px 0 22px;
+  color: var(--text-2);
+  font-family: var(--display);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.case-grid-featured { gap: 12px; }
+.case-fact {
+  padding: 12px 0 0;
+  border-top: 1px solid var(--rule-soft);
+}
+.case-fact:last-child { grid-column: 1 / -1; }
+.case-fact dt {
+  margin-bottom: 5px;
+  color: var(--accent);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.case-fact dd { color: var(--text-2); font-size: 11.5px; line-height: 1.55; }
+.case-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 22px; }
+
+/* ---------- CASE STUDIES W HTML ---------- */
+.case-study-list {
+  margin: 18px var(--pad) 38px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.case-card + .case-card { border-top: 1px solid var(--rule); }
+.case-summary {
+  display: grid;
+  grid-template-columns: 30px 145px minmax(0, 1fr) max-content max-content;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 18px;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease;
+}
+.case-summary::-webkit-details-marker { display: none; }
+.case-summary:hover { background: var(--accent-wash); }
+.case-summary::after {
+  content: '+';
+  display: none;
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1;
+}
+.case-card[open] > .case-summary { background: var(--accent-wash); }
+.case-card[open] > .case-summary::after { content: '−'; }
+.case-index { color: var(--faint); font-size: 11px; }
+.case-name { color: var(--accent); font-weight: 700; }
+.case-summary-copy { color: var(--muted); font-size: 12px; }
+.case-stack { color: var(--dim); font-size: 10.5px; white-space: nowrap; }
+.case-status {
+  padding: 3px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 9.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.case-status-warn { color: var(--amber); }
+.case-body {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: 24px;
+  padding: 4px 18px 24px 64px;
+}
+.case-media {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--rule-soft);
+  border-radius: 6px;
+  background: var(--shot-bg);
+}
+.case-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+.case-content { min-width: 0; }
+
+/* ---------- BOOKING DEMO PO CASE STUDIES ---------- */
+.demo-section-inner {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.45fr) minmax(0, 1.55fr);
+  gap: 28px;
+  align-items: start;
+  padding: 20px var(--pad) 38px;
+}
+.demo-section-copy { padding-top: 10px; }
+.demo-section-copy h3 {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-family: var(--display);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.demo-section-copy p { color: var(--dim); font-size: 12px; line-height: 1.65; }
 
 .section-lead {
   padding: 0 var(--pad);
@@ -772,6 +941,13 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .prow-detail { grid-template-columns: 1fr; }
   .prow-shot { max-width: 420px; }
+  .featured-shell { grid-template-columns: 1fr; }
+  .featured-shot { border-right: none; border-bottom: 1px solid var(--rule); }
+  .featured-shot img { min-height: 0; aspect-ratio: 16 / 9; }
+  .case-body { grid-template-columns: 1fr; padding-left: 64px; }
+  .case-media { max-width: 520px; }
+  .demo-section-inner { grid-template-columns: 1fr; }
+  .demo-section-copy { max-width: 620px; }
 }
 
 @media (max-width: 700px) {
@@ -790,6 +966,20 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
   .prow-status { grid-area: status; }
   .prow-desc { grid-area: desc; font-size: 12px; }
   .prow-stack { grid-area: stack; font-size: 10.5px; }
+  .case-summary {
+    grid-template-columns: 26px minmax(0, 1fr) max-content;
+    grid-template-areas:
+      'index name status'
+      '. summary summary'
+      '. stack stack';
+    gap: 5px 12px;
+  }
+  .case-index { grid-area: index; }
+  .case-name { grid-area: name; }
+  .case-summary-copy { grid-area: summary; }
+  .case-stack { grid-area: stack; white-space: normal; }
+  .case-status { grid-area: status; }
+  .case-body { padding: 8px 18px 24px 56px; }
 }
 
 @media (max-width: 640px) {
@@ -814,4 +1004,16 @@ main > section { counter-increment: fig; border-top: 1px solid var(--rule); }
   .terminal { margin: 16px var(--pad) 26px; }
   .term-body { padding: 0 10px 12px; }
   .contact-row { flex-direction: column; align-items: flex-start; }
+  main > section { scroll-margin-top: 124px; }
+  .hero-intro { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .fig-head { gap: 10px; }
+  .fig-sub { min-width: 0; white-space: normal; text-align: right; line-height: 1.35; }
+  .featured-content { padding: 22px 18px 24px; }
+  .case-grid { grid-template-columns: 1fr; }
+  .case-fact:last-child { grid-column: auto; }
+  .case-study-list { margin-left: 10px; margin-right: 10px; }
+  .case-summary { padding: 15px 12px; }
+  .case-body { padding: 8px 12px 22px 50px; }
+  .demo-section-inner { padding-left: 18px; padding-right: 18px; }
+  .contact-head { font-size: clamp(30px, 10vw, 38px); overflow-wrap: anywhere; }
 }

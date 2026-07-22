@@ -2,31 +2,31 @@
 <html lang="pl" data-lang="pl">
 <head>
 <meta charset="UTF-8">
-<script>
-  (() => {
-    const root = document.documentElement;
-    root.classList.add('js');
-    let savedTheme = null;
-    try { savedTheme = localStorage.getItem('site-theme'); } catch (_) {}
-    const systemTheme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    root.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme;
-  })();
-</script>
+<script src="theme-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0e0b">
 <title>Dmytro Zatserkivnyi — Fullstack Developer</title>
 <meta name="description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end, praca zdalna.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dmytro Zatserkivnyi — Fullstack Developer">
 <meta property="og:description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end.">
 <meta property="og:url" content="https://portfolio-six-olive-25.vercel.app/">
 <meta property="og:image" content="https://portfolio-six-olive-25.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dmytro Zatserkivnyi — Fullstack Developer, Next.js, Node.js, PostgreSQL i Stripe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dmytro Zatserkivnyi — Fullstack Developer">
+<meta name="twitter:description" content="Aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.">
+<meta name="twitter:image" content="https://portfolio-six-olive-25.vercel.app/og-image.png">
+<meta name="twitter:image:alt" content="Dmytro Zatserkivnyi — Fullstack Developer">
 <link rel="canonical" href="https://portfolio-six-olive-25.vercel.app/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0e0b'/%3E%3Crect x='1' y='1' width='62' height='62' fill='none' stroke='%232ce8a0' stroke-width='2'/%3E%3Ctext x='32' y='45' font-family='Consolas,Menlo,monospace' font-size='38' font-weight='700' fill='%232ce8a0' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -92,67 +92,172 @@
     <div class="hl-note anim" style="--d:160ms" data-i18n="hl.note">↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE</div>
   </div>
 
-  <!-- LEAD + MODUŁ DEMO -->
-  <div class="lead-grid">
-    <div class="lead-col">
-      <p class="lead-text anim" style="--d:220ms" data-i18n-html="hero.sub">
-        Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.
-      </p>
-      <div class="cta-row anim" style="--d:280ms">
-        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
-        <a href="#projects" class="text-link u-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
-      </div>
-    </div>
-    <div class="demo-col">
-      <div class="fig-static" data-i18n="demo.fig">FIG. 02 — LIVE MODULE · booking.flow</div>
-      <div class="demo-box anim" style="--d:320ms">
-        <div class="demo-header">
-          <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
-          <span class="demo-title" data-i18n="demo.title">booking.flow.ts — interaktywne demo</span>
-        </div>
-        <div class="booking-demo">
-          <div class="booking-controls">
-            <div>
-              <div class="filter-label" data-i18n="demo.serviceLabel">Usługa</div>
-              <div class="service-options" id="serviceOptions"></div>
-            </div>
-            <div>
-              <div class="filter-label" data-i18n="demo.timeLabel">Dostępny termin</div>
-              <div class="time-options" id="timeOptions"></div>
-            </div>
-            <button class="demo-book-btn" id="demoBookBtn" type="button"></button>
-            <p class="demo-note" data-i18n="demo.note">Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.</p>
-          </div>
-          <div class="booking-output">
-            <div class="demo-req"><span class="method" id="demoMethod">GET</span><span id="demoUrl">/api/slots</span></div>
-            <div class="demo-status" aria-live="polite">
-              <span class="ok" id="demoStatusBadge">200 OK</span><span id="demoMeta"></span>
-            </div>
-            <ol class="flow-list" id="flowList"></ol>
-            <div class="payment-summary" id="paymentSummary" hidden></div>
-          </div>
-        </div>
-      </div>
+  <!-- KRÓTKI LEAD; dowód pracy zaczyna się bezpośrednio poniżej -->
+  <div class="hero-intro">
+    <p class="lead-text anim" style="--d:220ms" data-i18n-html="hero.sub">
+      Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.
+    </p>
+    <div class="cta-row anim" style="--d:280ms">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
+      <a href="#projects" class="text-link u-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
     </div>
   </div>
 
   <main id="main">
 
-    <!-- PROJEKTY -->
-    <section id="projects">
+    <!-- GŁÓWNY CASE — widoczny przed symulacją booking.flow -->
+    <section id="projects" class="featured-project" data-project-id="slotify">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="nav.projects">Projekty</h2>
+        <h2 class="fig-label" data-i18n="projects.featuredTitle">Główny case</h2>
         <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.eyebrow">wybrane realizacje</span>
+        <span class="fig-sub" data-i18n="projects.featuredEyebrow">rezerwacje · płatności · trzy role</span>
       </div>
-      <div class="terminal reveal">
-        <div class="term-bar">
-          <div class="term-dots"><span></span><span></span><span></span></div>
-          <span class="term-title">projekty.sh</span>
+      <article class="featured-shell reveal" aria-labelledby="slotify-title">
+        <a class="featured-shot" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Slotify">
+          <img src="assets/slotify.webp" alt="Slotify — strona główna z kalendarzem wolnych terminów" width="1280" height="800" fetchpriority="high" decoding="async" data-project-image>
+        </a>
+        <div class="featured-content">
+          <div class="case-kicker">CASE 01 · <span data-project-stack>Next.js · Prisma · Stripe</span></div>
+          <h3 class="featured-title" id="slotify-title"><span data-project-name>Slotify</span><span class="dot">.</span></h3>
+          <p class="featured-summary" data-project-summary>Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.</p>
+          <dl class="case-grid case-grid-featured">
+            <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Telefoniczne rezerwacje i równoległe próby zajęcia tego samego terminu prowadzą do double-bookingu.</dd></div>
+            <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Pełny przepływ marketplace: klient, partner i administrator; rezerwacje, płatności, onboarding oraz import danych.</dd></div>
+            <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Next.js, PostgreSQL/Neon, Prisma i Stripe Connect Express; autoryzacja sprawdzana ponownie w route handlerach.</dd></div>
+            <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Warunkowy UPDATE w transakcji i UNIQUE na Booking.slotId blokują równoległe zajęcie jednego terminu.</dd></div>
+            <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo z trzema rolami, testowymi płatnościami i pełnym przepływem od wyboru slotu do webhooka.</dd></div>
+          </dl>
+          <div class="case-links">
+            <a class="btn btn-primary" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
+            <a class="text-link u-link" href="https://github.com/DmRzAt/Slotify" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+          </div>
         </div>
-        <div class="term-cmd">guest@dmytro:~$ ls -la <span data-i18n="term.dir">projekty</span>/</div>
-        <div class="term-body" id="projectsGrid"></div>
-        <div class="term-end">guest@dmytro:~$ <span class="caret" aria-hidden="true"></span></div>
+      </article>
+    </section>
+
+    <!-- POZOSTAŁE CASE STUDIES — treść jest w HTML, JS tylko tłumaczy i ulepsza -->
+    <section id="case-studies">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="projects.moreTitle">Pozostałe case studies</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="projects.moreEyebrow">problem · decyzje · rezultat</span>
+      </div>
+      <div class="case-study-list reveal" id="projectsGrid">
+        <details class="case-card" data-project-id="velmora-home">
+          <summary class="case-summary">
+            <span class="case-index">02</span>
+            <span class="case-name" data-project-name>Velmora Home</span>
+            <span class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</span>
+            <span class="case-stack" data-project-stack>WordPress · WooCommerce · Elementor</span>
+            <span class="case-status" data-project-status>demo</span>
+          </summary>
+          <div class="case-body">
+            <a class="case-media" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <picture>
+                <source srcset="assets/velmora-home.avif" type="image/avif">
+                <source srcset="assets/velmora-home.webp" type="image/webp">
+                <img src="assets/velmora-home.png" alt="Velmora Home — strona główna sklepu z meblami i dekoracjami" width="1440" height="900" loading="lazy" decoding="async" data-project-image>
+              </picture>
+            </a>
+            <div class="case-content">
+              <dl class="case-grid">
+                <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Połączyć szeroki katalog wnętrzarski z inspiracjami i prostą ścieżką zakupową.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Kategorie i warianty produktów, konto klienta, koszyk, promocje oraz treści inspiracyjne.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">WordPress, WooCommerce i Elementor uzupełnione dedykowanym motywem Velmora.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Spójna prezentacja wielu kategorii, wariantów, promocji i treści redakcyjnych w jednym sklepie.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo sklepu z pełnym katalogiem, kontem klienta i procesem zakupowym.</dd></div>
+              </dl>
+              <div class="case-links"><a class="u-link" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-card" data-project-id="bazarek">
+          <summary class="case-summary">
+            <span class="case-index">03</span>
+            <span class="case-name" data-project-name>Bazarek</span>
+            <span class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</span>
+            <span class="case-stack" data-project-stack>Angular 19 · Express · MongoDB</span>
+            <span class="case-status case-status-warn" data-project-status>cold start ~30 s</span>
+          </summary>
+          <div class="case-body">
+            <a class="case-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/bazarek.webp" alt="Bazarek — strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
+            <div class="case-content">
+              <dl class="case-grid">
+                <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Połączyć ogłoszenia, wyszukiwanie, czat, konta użytkowników i administrację w jednej aplikacji.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Angular 19, Express i MongoDB; access JWT 15 min oraz refresh token 7 dni w httpOnly cookie.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Bezpieczne odświeżanie sesji, uprawnienia owner/admin, czat, uploady i monitoring produkcyjny.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działająca aplikacja fullstack, 7 testów API i 11 testów komponentów Angular, zaprezentowana na uczelni.</dd></div>
+              </dl>
+              <div class="case-links">
+                <a class="u-link" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
+                <a class="u-link" href="https://github.com/DmRzAt/bazarek" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="case-card" data-project-id="quotly">
+          <summary class="case-summary">
+            <span class="case-index">04</span>
+            <span class="case-name" data-project-name>Quotly</span>
+            <span class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</span>
+            <span class="case-stack" data-project-stack>Next.js · Node.js · Stripe Connect</span>
+            <span class="case-status" data-project-status>demo</span>
+          </summary>
+          <div class="case-body">
+            <a class="case-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/quotly.webp" alt="Quotly — landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
+            <div class="case-content">
+              <dl class="case-grid">
+                <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Powiązać dostęp do funkcji SaaS z miesięcznym limitem oraz wypłatami dla sprzedawców.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Subskrypcje, quota, Stripe Connect Express, marketplace oraz testowe przepływy buyer/seller.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Next.js, Supabase Postgres/Auth, Prisma, Stripe Checkout, Connect i webhooki.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Quota liczona z rekordów, idempotentne webhooki i rozdział 90/10 liczony po stronie serwera w centach.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Testowy SaaS obejmujący dwa pełne łańcuchy: auth → subskrypcja → quota oraz onboarding → sprzedaż → split payout.</dd></div>
+              </dl>
+              <div class="case-links">
+                <a class="u-link" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
+                <a class="u-link" href="https://github.com/DmRzAt/quotly" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- INTERAKTYWNA SYMULACJA — po dowodach pracy -->
+    <section id="demo" class="demo-section">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="demo.sectionTitle">Interaktywne demo</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="demo.sectionEyebrow">slot → booking → payment → webhook</span>
+      </div>
+      <div class="demo-section-inner reveal">
+        <div class="demo-section-copy">
+          <h3 data-i18n="demo.sectionHead">Od wolnego terminu do potwierdzonej płatności.</h3>
+          <p data-i18n="demo.sectionCopy">Krótka symulacja pokazuje logikę przepływu bez wysyłania danych i bez prawdziwego zakupu.</p>
+        </div>
+        <div class="demo-box">
+          <div class="demo-header">
+            <div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div>
+            <span class="demo-title" data-i18n="demo.title">booking.flow.ts — interaktywne demo</span>
+          </div>
+          <div class="booking-demo">
+            <div class="booking-controls">
+              <div><div class="filter-label" data-i18n="demo.serviceLabel">Usługa</div><div class="service-options" id="serviceOptions"></div></div>
+              <div><div class="filter-label" data-i18n="demo.timeLabel">Dostępny termin</div><div class="time-options" id="timeOptions"></div></div>
+              <button class="demo-book-btn" id="demoBookBtn" type="button"></button>
+              <p class="demo-note" data-i18n="demo.note">Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.</p>
+            </div>
+            <div class="booking-output">
+              <div class="demo-req"><span class="method" id="demoMethod">GET</span><span id="demoUrl">/api/slots</span></div>
+              <div class="demo-status" aria-live="polite"><span class="ok" id="demoStatusBadge">200 OK</span><span id="demoMeta"></span></div>
+              <ol class="flow-list" id="flowList"></ol>
+              <div class="payment-summary" id="paymentSummary" hidden></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -265,8 +370,8 @@
 
 <noscript>
   <div style="max-width:1180px;margin:0 auto;padding:24px;font-family:monospace">
-    Ta strona renderuje sekcje przez JavaScript. Bez JS działa kontakt:
-    dmytro.dev.zats@gmail.com · github.com/DmRzAt
+    Case studies, linki i kontakt działają bez JavaScript. Interaktywne demo,
+    przełącznik języka i przełącznik motywu wymagają JavaScript.
   </div>
 </noscript>
 

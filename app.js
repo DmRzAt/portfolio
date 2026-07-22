@@ -1,6 +1,6 @@
 /* =====================================================================
-   DANE — nowy projekt / krok procesu / grupa stacku dodaje się TUTAJ,
-   nie w HTML. Teksty interfejsu: słownik I18N poniżej.
+   DANE — warianty językowe oraz dane do progressive enhancement.
+   Polski rdzeń case studies pozostaje w HTML dla SEO i działania bez JS.
    ===================================================================== */
 
 const PROJECTS = [
@@ -115,6 +115,76 @@ const PROJECTS = [
     status: 'live',
   },
 ];
+
+/* Treść case studies ma swój polski wariant bezpośrednio w HTML, dzięki czemu
+   najważniejsze informacje są dostępne bez JavaScript. Ten obiekt służy do
+   przełączenia języka i nie tworzy struktury dokumentu. */
+const CASE_STUDIES = {
+  'velmora-home': {
+    pl: {
+      problem: 'Połączyć szeroki katalog wnętrzarski z inspiracjami i prostą ścieżką zakupową.',
+      scope: 'Kategorie i warianty produktów, konto klienta, koszyk, promocje oraz treści inspiracyjne.',
+      architecture: 'WordPress, WooCommerce i Elementor uzupełnione dedykowanym motywem Velmora.',
+      challenge: 'Spójna prezentacja wielu kategorii, wariantów, promocji i treści redakcyjnych w jednym sklepie.',
+      result: 'Działające demo sklepu z pełnym katalogiem, kontem klienta i procesem zakupowym.',
+    },
+    en: {
+      problem: 'Combine a broad interiors catalogue with inspiration content and a clear purchasing path.',
+      scope: 'Product categories and variants, customer account, cart, promotions and editorial inspiration.',
+      architecture: 'WordPress, WooCommerce and Elementor complemented by the custom Velmora theme.',
+      challenge: 'Present many categories, variants, promotions and editorial content as one coherent store.',
+      result: 'A working store demo with a full catalogue, customer account and purchase flow.',
+    },
+  },
+  slotify: {
+    pl: {
+      problem: 'Telefoniczne rezerwacje i równoległe próby zajęcia tego samego terminu prowadzą do double-bookingu.',
+      scope: 'Pełny przepływ marketplace: klient, partner i administrator; rezerwacje, płatności, onboarding oraz import danych.',
+      architecture: 'Next.js, PostgreSQL/Neon, Prisma i Stripe Connect Express; autoryzacja sprawdzana ponownie w route handlerach.',
+      challenge: 'Warunkowy UPDATE w transakcji i UNIQUE na Booking.slotId blokują równoległe zajęcie jednego terminu.',
+      result: 'Działające demo z trzema rolami, testowymi płatnościami i pełnym przepływem od wyboru slotu do webhooka.',
+    },
+    en: {
+      problem: 'Phone bookings and concurrent attempts to reserve one time slot create a double-booking risk.',
+      scope: 'The complete marketplace flow: client, partner and admin; bookings, payments, onboarding and data import.',
+      architecture: 'Next.js, PostgreSQL/Neon, Prisma and Stripe Connect Express; authorization is rechecked in route handlers.',
+      challenge: 'A conditional UPDATE inside a transaction plus UNIQUE on Booking.slotId prevents concurrent slot claims.',
+      result: 'A working three-role demo with test payments and the full flow from slot selection to webhook processing.',
+    },
+  },
+  bazarek: {
+    pl: {
+      problem: 'Połączyć ogłoszenia, wyszukiwanie, czat, konta użytkowników i administrację w jednej aplikacji.',
+      scope: 'Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.',
+      architecture: 'Angular 19, Express i MongoDB; access JWT 15 min oraz refresh token 7 dni w httpOnly cookie.',
+      challenge: 'Bezpieczne odświeżanie sesji, uprawnienia owner/admin, czat, uploady i monitoring produkcyjny.',
+      result: 'Działająca aplikacja fullstack, 7 testów API i 11 testów komponentów Angular, zaprezentowana na uczelni.',
+    },
+    en: {
+      problem: 'Bring listings, search, chat, user accounts and administration into one application.',
+      scope: 'A team project; I built the MongoDB schema, REST API, authorization and the complete backend.',
+      architecture: 'Angular 19, Express and MongoDB; a 15-minute access JWT and 7-day refresh token in an httpOnly cookie.',
+      challenge: 'Secure session refresh, owner/admin permissions, chat, uploads and production monitoring.',
+      result: 'A working full-stack application with 7 API tests and 11 Angular component tests, presented at university.',
+    },
+  },
+  quotly: {
+    pl: {
+      problem: 'Powiązać dostęp do funkcji SaaS z miesięcznym limitem oraz wypłatami dla sprzedawców.',
+      scope: 'Subskrypcje, quota, Stripe Connect Express, marketplace oraz testowe przepływy buyer/seller.',
+      architecture: 'Next.js, Supabase Postgres/Auth, Prisma, Stripe Checkout, Connect i webhooki.',
+      challenge: 'Quota liczona z rekordów, idempotentne webhooki i rozdział 90/10 liczony po stronie serwera w centach.',
+      result: 'Testowy SaaS obejmujący dwa pełne łańcuchy: auth → subskrypcja → quota oraz onboarding → sprzedaż → split payout.',
+    },
+    en: {
+      problem: 'Tie SaaS feature access to a monthly quota while supporting seller payouts.',
+      scope: 'Subscriptions, quota enforcement, Stripe Connect Express, marketplace and buyer/seller demo flows.',
+      architecture: 'Next.js, Supabase Postgres/Auth, Prisma, Stripe Checkout, Connect and webhooks.',
+      challenge: 'Row-derived quota, idempotent webhooks and a server-side 90/10 split calculated in integer cents.',
+      result: 'A test-mode SaaS covering two complete chains: auth → subscription → quota and onboarding → sale → split payout.',
+    },
+  },
+};
 
 
 const STACK = [
@@ -239,6 +309,10 @@ const I18N = {
     'meta.loc': 'TARNÓW / ZDALNIE',
     'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
     'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
+    'demo.sectionTitle': 'Interaktywne demo',
+    'demo.sectionEyebrow': 'slot → booking → payment → webhook',
+    'demo.sectionHead': 'Od wolnego terminu do potwierdzonej płatności.',
+    'demo.sectionCopy': 'Krótka symulacja pokazuje logikę przepływu bez wysyłania danych i bez prawdziwego zakupu.',
     'term.dir': 'projekty',
     'about.lead': 'Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.',
     'contact.head': 'Porozmawiajmy<span class="dot">.</span>',
@@ -248,6 +322,7 @@ const I18N = {
     'nav.about': 'O mnie',
     'nav.contact': 'Kontakt',
     'nav.menu': 'Menu',
+    'lang.switch': 'Switch to English',
     'theme.toLight': 'Włącz jasny motyw',
     'theme.toDark': 'Włącz ciemny motyw',
     'hero.eyebrow': 'dostępny do współpracy',
@@ -269,6 +344,15 @@ const I18N = {
     'demo.platform': 'Platforma',
     'projects.eyebrow': 'wybrane realizacje',
     'projects.title': 'Projekty',
+    'projects.featuredTitle': 'Główny case',
+    'projects.featuredEyebrow': 'rezerwacje · płatności · trzy role',
+    'projects.moreTitle': 'Pozostałe case studies',
+    'projects.moreEyebrow': 'problem · decyzje · rezultat',
+    'case.problem': 'Problem',
+    'case.scope': 'Zakres',
+    'case.architecture': 'Architektura',
+    'case.challenge': 'Najtrudniejsze',
+    'case.result': 'Rezultat',
     'a11y.eyebrow': 'standard, nie dodatek',
     'a11y.title': 'Dostępność',
     'a11y.head': 'Interfejsy, z których korzysta każdy',
@@ -296,6 +380,7 @@ const I18N = {
     'status.up': 'dostępne',
     'status.slow': 'wolne',
     'status.down': 'niedostępne',
+    'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
   },
@@ -306,6 +391,10 @@ const I18N = {
     'meta.loc': 'TARNÓW / REMOTE',
     'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
     'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
+    'demo.sectionTitle': 'Interactive demo',
+    'demo.sectionEyebrow': 'slot → booking → payment → webhook',
+    'demo.sectionHead': 'From an available slot to a confirmed payment.',
+    'demo.sectionCopy': 'A short simulation shows the flow logic without sending data or making a real purchase.',
     'term.dir': 'projects',
     'about.lead': 'Before I write any code, I ask the questions that actually shape architecture and pricing.',
     'contact.head': 'Let’s talk<span class="dot">.</span>',
@@ -315,6 +404,7 @@ const I18N = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'nav.menu': 'Menu',
+    'lang.switch': 'Przełącz na polski',
     'theme.toLight': 'Switch to light theme',
     'theme.toDark': 'Switch to dark theme',
     'hero.eyebrow': 'available for work',
@@ -336,6 +426,15 @@ const I18N = {
     'demo.platform': 'Platform',
     'projects.eyebrow': 'selected work',
     'projects.title': 'Projects',
+    'projects.featuredTitle': 'Featured case',
+    'projects.featuredEyebrow': 'bookings · payments · three roles',
+    'projects.moreTitle': 'More case studies',
+    'projects.moreEyebrow': 'problem · decisions · outcome',
+    'case.problem': 'Problem',
+    'case.scope': 'Scope',
+    'case.architecture': 'Architecture',
+    'case.challenge': 'Hardest part',
+    'case.result': 'Outcome',
     'a11y.eyebrow': 'a standard, not an add-on',
     'a11y.title': 'Accessibility',
     'a11y.head': 'Interfaces everyone can use',
@@ -363,6 +462,7 @@ const I18N = {
     'status.up': 'online',
     'status.slow': 'slow',
     'status.down': 'offline',
+    'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
   },
@@ -378,39 +478,28 @@ html.classList.add('js');
 const t = (key) => I18N[currentLang()][key] || key;
 const currentLang = () => html.getAttribute('data-lang') || 'pl';
 
-/* Projekt = wiersz terminala; kliknięcie rozwija szczegóły (zrzut, fakty, linki).
-   <details>/<summary> — działa klawiaturą i bez dodatkowego JS. */
-function renderProjects() {
+/* Polski wariant case studies znajduje się w HTML. JavaScript odpowiada tylko
+   za przełączenie języka i drobne ulepszenia — bez usuwania treści z dokumentu. */
+function applyProjectLanguage() {
   const lang = currentLang();
-  document.getElementById('projectsGrid').innerHTML = PROJECTS.map((p, i) => `
-    <details class="prow-item">
-      <summary class="prow">
-        <span class="prow-n">0${i + 1}</span>
-        <span class="prow-name">${p.name}</span>
-        <span class="prow-desc">${p.summary[lang]}</span>
-        <span class="prow-stack">${p.tags.join(' · ')}</span>
-        ${!p.demo ? '<span></span>' : (p.liveCheck === false
-          ? `<span class="prow-status slow" title="Render free tier"><span class="sdot" aria-hidden="true"></span><span class="status-text">${p.note[lang]}</span></span>`
-          : `<span class="prow-status checking" data-check="${p.demo}"><span class="sdot" aria-hidden="true"></span><span class="status-text">${t('status.checking')}</span></span>`)}
-      </summary>
-      <div class="prow-detail">
-        <a class="prow-shot" href="${p.demo}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-          <img src="${p.img}" alt="${p.alt[lang]}" width="1280" height="800" loading="lazy" decoding="async">
-        </a>
-        <div>
-          <dl class="prow-facts">
-            ${p.facts[lang].map(fact => `
-              <div class="prow-fact"><dt>${fact.label}</dt><dd>${fact.value}</dd></div>
-            `).join('')}
-          </dl>
-          <div class="prow-links">
-            ${p.demo ? `<a class="u-link" href="${p.demo}" target="_blank" rel="noopener">${t('links.demo')}</a>` : ''}
-            ${p.github ? `<a class="u-link" href="${p.github}" target="_blank" rel="noopener">${t('links.github')}</a>` : ''}
-          </div>
-        </div>
-      </div>
-    </details>
-  `).join('');
+
+  document.querySelectorAll('[data-project-id]').forEach(container => {
+    const project = PROJECTS.find(item => item.id === container.dataset.projectId);
+    const caseStudy = CASE_STUDIES[container.dataset.projectId]?.[lang];
+    if (!project || !caseStudy) return;
+
+    container.querySelectorAll('[data-project-name]').forEach(el => { el.textContent = project.name; });
+    container.querySelectorAll('[data-project-summary]').forEach(el => { el.textContent = project.summary[lang]; });
+    container.querySelectorAll('[data-project-stack]').forEach(el => { el.textContent = project.tags.join(' · '); });
+    container.querySelectorAll('[data-project-image]').forEach(el => { el.alt = project.alt[lang]; });
+    container.querySelectorAll('[data-case-value]').forEach(el => {
+      const value = caseStudy[el.dataset.caseValue];
+      if (value) el.textContent = value;
+    });
+    container.querySelectorAll('[data-project-status]').forEach(el => {
+      el.textContent = project.liveCheck === false ? project.note[lang] : t('status.demo');
+    });
+  });
 }
 
 function renderStack() {
@@ -625,57 +714,16 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     el.innerHTML = t(el.dataset.i18nHtml);
   });
+  document.getElementById('langToggle').setAttribute('aria-label', t('lang.switch'));
   updateThemeControl();
   renderMarquee();
-  renderProjects();
+  applyProjectLanguage();
   renderA11y();
   renderStack();
   renderProcess();
   renderTestimonials();
   renderDemo();
   setupReveal();
-  checkAllStatuses();
-}
-
-/* ---- live status-check demo: fetch w tle, 3 stany kropki ----
-   dostępne (szybko) / wolne (>3s lub timeout) / niedostępne (błąd).
-   Nie blokuje renderu — kropka startuje jako "sprawdzanie…" i sama się
-   aktualizuje. Wynik cache'owany per URL, więc zmiana języka nie re-fetchuje. */
-
-const statusCache = {};
-
-function applyStatus(el, state) {
-  el.classList.remove('checking', 'up', 'slow', 'down');
-  el.classList.add(state);
-  el.querySelector('.status-text').textContent = t('status.' + state);
-}
-
-function checkStatus(el, url) {
-  applyStatus(el, 'checking');
-  const started = performance.now();
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), 4000);
-  fetch(url, { method: 'GET', mode: 'no-cors', cache: 'no-store', signal: ctrl.signal })
-    .then(() => {
-      clearTimeout(timer);
-      const state = (performance.now() - started) < 3000 ? 'up' : 'slow';
-      statusCache[url] = state;
-      applyStatus(el, state);
-    })
-    .catch(() => {
-      clearTimeout(timer);
-      const state = ctrl.signal.aborted ? 'slow' : 'down'; // timeout = wolne, błąd = niedostępne
-      statusCache[url] = state;
-      applyStatus(el, state);
-    });
-}
-
-function checkAllStatuses() {
-  document.querySelectorAll('.prow-status[data-check]').forEach(el => {
-    const url = el.dataset.check;
-    if (statusCache[url]) applyStatus(el, statusCache[url]);
-    else checkStatus(el, url);
-  });
 }
 
 /* ---- scroll reveal: element pojawia się przy wejściu w viewport;

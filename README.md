@@ -10,10 +10,13 @@ student informatyki, freelance dla klientów z Polski i nie tylko.
 Bez frameworków i bez builda — czysta statyka, wrzucasz katalog na Vercel i działa:
 
 ```
-index.html   — struktura strony (HTML)
+index.html   — struktura strony i polska treść case studies (HTML)
 styles.css   — cały wygląd i animacje (CSS)
-app.js       — dane (PROJECTS, STACK, I18N…) + logika renderowania
-assets/      — zrzuty projektów (webp), tekstura tła, og-image
+app.js       — tłumaczenia, dane do progressive enhancement i interakcje
+theme-init.js — wczesna inicjalizacja motywu bez inline JavaScript
+assets/      — zrzuty projektów (AVIF/WebP z PNG fallback)
+robots.txt / sitemap.xml — wskazówki indeksowania
+vercel.json  — nagłówki bezpieczeństwa
 ```
 
 W środku:
@@ -22,16 +25,17 @@ W środku:
   typografia Archivo (pełna + konturowa), sekcje numerowane jako FIG. 0X,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
 - jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
-- interaktywne demo flow rezerwacji w hero (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
-- projekty jako okno terminala (`projekty.sh`) — wiersz rozwija się w zrzut ekranu,
-  fakty i linki (`<details>`, więc działa też klawiaturą),
+- główny case Slotify przed modułem interaktywnym oraz krótkie case studies:
+  problem → zakres → architektura → najtrudniejsze → rezultat,
+- interaktywne demo flow rezerwacji niżej na stronie (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
+- case studies zapisane bezpośrednio w HTML; JavaScript tłumaczy i ulepsza stronę,
 - sekcja Opinie gotowa w kodzie (ukryta, aż dodasz pierwszy realny cytat),
-- live status-check demo w tle (fetch no-cors) — „dostępne / wolne" na żywo,
+- uczciwe, statyczne oznaczenia demo zamiast niedokładnego cross-origin live-checka,
 - spójny system animacji: staggered hero, scroll-reveal (IntersectionObserver),
   rysowane podkreślenia, pasek postępu, scroll-spy, przewijany pas usług w stopce,
 - kontakt ukierunkowany na useme (link do profilu, bezpieczna płatność) + bezpośredni mail,
-- WCAG AA: kontrasty, focus-visible, skip-link, `prefers-reduced-motion`,
-- Lighthouse: Performance 90–97 / Accessibility 100 / Best Practices 100 (CLS 0).
+- dostępność: kontrasty małych tekstów co najmniej 4.5:1, focus-visible,
+  skip-link, semantyczne `<details>` i `prefers-reduced-motion`.
 
 ## Uruchomienie lokalne
 
@@ -39,11 +43,10 @@ Wystarczy otworzyć `index.html` w przeglądarce.
 
 ## Jak rozbudowywać
 
-Cała treść siedzi w obiektach JS na górze `app.js` — HTML-a nie trzeba ruszać:
+Treść domyślna pozostaje w HTML, a wariant angielski w danych JS:
 
-- **Nowy projekt** → dopisz obiekt do tablicy `PROJECTS` (id, name, img —
-  zrzut ekranu 760px szer. w `assets/*.webp`, alt `{pl, en}`, desc `{pl, en}`,
-  tags, demo, github, status: `live`/`demo`/`mockup`).
+- **Nowy projekt** → dodaj polski case w `index.html`, projekt w `PROJECTS`
+  oraz tłumaczenia pięciu pól w `CASE_STUDIES`.
 - **Nowy krok procesu / grupa stacku** → analogicznie `PROCESS` / `STACK`.
 - **Nowy tekst interfejsu** → klucz w słowniku `I18N.pl` i `I18N.en`
   + `data-i18n="klucz"` na elemencie HTML.
