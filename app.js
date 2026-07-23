@@ -72,11 +72,11 @@ const PROJECTS = [
     facts: {
       pl: [
         { label: 'Mój zakres', value: 'Schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.' },
-        { label: 'Rezultat', value: 'Działająca aplikacja fullstack, zaprezentowana i obroniona na uczelni.' },
+        { label: 'Rezultat', value: 'Działająca aplikacja fullstack pokryta testami API i komponentów.' },
       ],
       en: [
         { label: 'My role', value: 'MongoDB schema, REST API and authorization — I built the entire backend.' },
-        { label: 'Outcome', value: 'A working full-stack application, presented and defended at university.' },
+        { label: 'Outcome', value: 'A working full-stack application covered by API and component tests.' },
       ],
     },
     tags: ['Angular 19', 'Express', 'MongoDB'],
@@ -158,14 +158,14 @@ const CASE_STUDIES = {
       scope: 'Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.',
       architecture: 'Angular 19, Express i MongoDB; access JWT 15 min oraz refresh token 7 dni w httpOnly cookie.',
       challenge: 'Bezpieczne odświeżanie sesji, uprawnienia owner/admin, czat, uploady i monitoring produkcyjny.',
-      result: 'Działająca aplikacja fullstack, 7 testów API i 11 testów komponentów Angular, zaprezentowana na uczelni.',
+      result: 'Działająca aplikacja fullstack pokryta 7 testami API i 11 testami komponentów Angular.',
     },
     en: {
       problem: 'Bring listings, search, chat, user accounts and administration into one application.',
       scope: 'A team project; I built the MongoDB schema, REST API, authorization and the complete backend.',
       architecture: 'Angular 19, Express and MongoDB; a 15-minute access JWT and 7-day refresh token in an httpOnly cookie.',
       challenge: 'Secure session refresh, owner/admin permissions, chat, uploads and production monitoring.',
-      result: 'A working full-stack application with 7 API tests and 11 Angular component tests, presented at university.',
+      result: 'A working full-stack application covered by 7 API tests and 11 Angular component tests.',
     },
   },
   quotly: {
@@ -224,6 +224,32 @@ const PROCESS = [
     },
   },
 ];
+
+/* orientacyjne progi cenowe — filtrują nietrafione zapytania i ośmielają
+   poważnych klientów; dokładna wycena zawsze po analizie */
+const PRICING = {
+  items: [
+    {
+      name: { pl: 'Landing / strona wizytówka', en: 'Landing / one-page site' },
+      price: { pl: 'od 1 500 zł', en: 'from 1,500 zł' },
+      desc: { pl: 'Responsywna, szybka, z formularzem kontaktowym i SEO.', en: 'Responsive, fast, with a contact form and SEO.' },
+    },
+    {
+      name: { pl: 'Integracja płatności', en: 'Payment integration' },
+      price: { pl: 'od 2 500 zł', en: 'from 2,500 zł' },
+      desc: { pl: 'Stripe / Stripe Connect: checkout, webhooki, rozliczenia.', en: 'Stripe / Stripe Connect: checkout, webhooks, settlements.' },
+    },
+    {
+      name: { pl: 'Sklep lub panel B2B', en: 'E-commerce or B2B panel' },
+      price: { pl: 'od 4 500 zł', en: 'from 4,500 zł' },
+      desc: { pl: 'Konta, role, baza danych, API — aplikacja end-to-end.', en: 'Accounts, roles, database, API — an end-to-end application.' },
+    },
+  ],
+  note: {
+    pl: 'Progi orientacyjne „od" — dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez useme (escrow).',
+    en: 'Indicative "from" thresholds — an exact quote follows a short, free analysis. Staged work and payment, also via useme (escrow).',
+  },
+};
 
 const A11Y = [
   {
@@ -308,12 +334,10 @@ const I18N = {
     'meta.nr': 'NR. 01 — PORTFOLIO',
     'meta.loc': 'TARNÓW / ZDALNIE',
     'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
-    'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
     'demo.sectionTitle': 'Interaktywne demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'Od wolnego terminu do potwierdzonej płatności.',
     'demo.sectionCopy': 'Krótka symulacja pokazuje logikę przepływu bez wysyłania danych i bez prawdziwego zakupu.',
-    'term.dir': 'projekty',
     'about.lead': 'Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.',
     'contact.head': 'Porozmawiajmy<span class="dot">.</span>',
     'nav.projects': 'Projekty',
@@ -342,8 +366,6 @@ const I18N = {
     'demo.exampleSplit': 'Przykładowe rozliczenie',
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
-    'projects.eyebrow': 'wybrane realizacje',
-    'projects.title': 'Projekty',
     'projects.featuredTitle': 'Główny case',
     'projects.featuredEyebrow': 'rezerwacje · płatności · trzy role',
     'projects.moreTitle': 'Pozostałe case studies',
@@ -355,31 +377,24 @@ const I18N = {
     'case.result': 'Rezultat',
     'a11y.eyebrow': 'standard, nie dodatek',
     'a11y.title': 'Dostępność',
-    'a11y.head': 'Interfejsy, z których korzysta każdy',
     'a11y.text': 'Buduję zgodnie z WCAG AA: pełna nawigacja klawiaturą, ARIA, kontrasty, poszanowanie prefers-reduced-motion. Ta strona też tak działa — sprawdź Tabem.',
     'process.eyebrow': 'jak pracuję',
     'process.title': 'Proces',
     'stack.eyebrow': 'narzędzia',
     'about.eyebrow': 'kim jestem',
     'about.title': 'O mnie',
-    'about.text': 'Student informatyki (3 rok) na uczelni w okolicach Tarnowa. Buduję aplikacje webowe od backendu po front — <strong>autoryzację, REST API, integracje płatności</strong>. Do każdego projektu podchodzę analitycznie: zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę — nie zgaduję.',
+    'about.text': 'Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end — <strong>autoryzacja, REST API, integracje płatności Stripe</strong> — na Next.js, Node.js, PostgreSQL i MongoDB. W praktyce oznacza to m.in. idempotentne webhooki, transakcyjne blokowanie terminów przeciw double-bookingowi i podział prowizji liczony po stronie serwera. Każdy projekt w portfolio ma działające demo, a większość — otwarty kod na GitHubie.',
     'about.loc.label': 'Lokalizacja',
     'about.av.label': 'Dostępność',
-    'about.av.value': 'Zdalnie, cała Polska',
+    'about.av.value': 'Zdalnie — Polska i zagranica',
     'about.lang.label': 'Języki',
     'about.lang.value': 'Polski, ukraiński, angielski',
     'testimonials.eyebrow': 'opinie klientów',
     'testimonials.title': 'Opinie',
-    'contact.eyebrow': 'współpraca',
-    'contact.title': 'Kontakt',
     'contact.lead': 'Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.',
     'contact.useme.k': 'preferowana ścieżka współpracy',
     'contact.useme.v': 'Zatrudnij mnie przez useme →',
     'contact.useme.sub': 'Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy. Zero ryzyka dla obu stron.',
-    'status.checking': 'sprawdzanie…',
-    'status.up': 'dostępne',
-    'status.slow': 'wolne',
-    'status.down': 'niedostępne',
     'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
@@ -390,12 +405,10 @@ const I18N = {
     'meta.nr': 'NO. 01 — PORTFOLIO',
     'meta.loc': 'TARNÓW / REMOTE',
     'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
-    'demo.fig': 'FIG. 02 — LIVE MODULE · booking.flow',
     'demo.sectionTitle': 'Interactive demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'From an available slot to a confirmed payment.',
     'demo.sectionCopy': 'A short simulation shows the flow logic without sending data or making a real purchase.',
-    'term.dir': 'projects',
     'about.lead': 'Before I write any code, I ask the questions that actually shape architecture and pricing.',
     'contact.head': 'Let’s talk<span class="dot">.</span>',
     'nav.projects': 'Projects',
@@ -424,8 +437,6 @@ const I18N = {
     'demo.exampleSplit': 'Example settlement',
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
-    'projects.eyebrow': 'selected work',
-    'projects.title': 'Projects',
     'projects.featuredTitle': 'Featured case',
     'projects.featuredEyebrow': 'bookings · payments · three roles',
     'projects.moreTitle': 'More case studies',
@@ -437,31 +448,24 @@ const I18N = {
     'case.result': 'Outcome',
     'a11y.eyebrow': 'a standard, not an add-on',
     'a11y.title': 'Accessibility',
-    'a11y.head': 'Interfaces everyone can use',
     'a11y.text': 'I build to WCAG AA: full keyboard navigation, ARIA, contrast, prefers-reduced-motion respected. This site works that way too — try Tab.',
     'process.eyebrow': 'how I work',
     'process.title': 'Process',
     'stack.eyebrow': 'tools',
     'about.eyebrow': 'who I am',
     'about.title': 'About',
-    'about.text': 'Computer Science student (3rd year), based near Tarnów, Poland. I build web applications end to end — <strong>authorization, REST APIs, payment integrations</strong>. I approach every project analytically: before writing code, I ask the questions that actually shape architecture and pricing — I don\'t guess.',
+    'about.text': 'Fullstack developer based near Tarnów, Poland. I build web applications end to end — <strong>authorization, REST APIs, Stripe payment integrations</strong> — with Next.js, Node.js, PostgreSQL and MongoDB. In practice that means idempotent webhooks, transactional slot locking against double-booking and server-side commission splits. Every project in this portfolio ships with a working demo, and most with open code on GitHub.',
     'about.loc.label': 'Location',
     'about.av.label': 'Availability',
-    'about.av.value': 'Remote, worldwide',
+    'about.av.value': 'Remote — Poland & international',
     'about.lang.label': 'Languages',
     'about.lang.value': 'Polish, Ukrainian, English',
     'testimonials.eyebrow': 'client feedback',
     'testimonials.title': 'Testimonials',
-    'contact.eyebrow': "let's talk",
-    'contact.title': 'Contact',
     'contact.lead': 'Got a project or a pricing question? I usually reply the same day.',
     'contact.useme.k': 'preferred way to work together',
     'contact.useme.v': 'Hire me via useme →',
     'contact.useme.sub': 'Secure, invoiced payment — funds are held in escrow until the work is accepted. Zero risk for both sides.',
-    'status.checking': 'checking…',
-    'status.up': 'online',
-    'status.slow': 'slow',
-    'status.down': 'offline',
     'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
@@ -477,6 +481,15 @@ html.classList.add('js');
 
 const t = (key) => I18N[currentLang()][key] || key;
 const currentLang = () => html.getAttribute('data-lang') || 'pl';
+
+/* localStorage może rzucić (tryb prywatny, zablokowane cookies) — nigdy nie
+   pozwalamy, by brak storage wyłączył całą stronę */
+function readStorage(key) {
+  try { return localStorage.getItem(key); } catch (_) { return null; }
+}
+function writeStorage(key, value) {
+  try { localStorage.setItem(key, value); } catch (_) {}
+}
 
 /* Polski wariant case studies znajduje się w HTML. JavaScript odpowiada tylko
    za przełączenie języka i drobne ulepszenia — bez usuwania treści z dokumentu. */
@@ -521,6 +534,17 @@ function renderProcess() {
       <p class="col-desc">${step.desc[lang]}</p>
     </div>
   `).join('');
+}
+
+function renderPricing() {
+  const lang = currentLang();
+  document.getElementById('pricingGrid').innerHTML = PRICING.items.map(item => `
+    <div class="price-card">
+      <div class="price-name">${item.name[lang]}</div>
+      <div class="price-value">${item.price[lang]}</div>
+      <p class="price-desc">${item.desc[lang]}</p>
+    </div>
+  `).join('') + `<p class="pricing-note">${PRICING.note[lang]}</p>`;
 }
 
 function renderTestimonials() {
@@ -704,7 +728,7 @@ function runBookingDemo() {
 function applyLang(lang) {
   html.setAttribute('data-lang', lang);
   html.setAttribute('lang', lang);
-  localStorage.setItem('site-lang', lang);
+  writeStorage('site-lang', lang);
   document.querySelectorAll('.lang-opt').forEach(el => {
     el.classList.toggle('active', el.dataset.opt === lang);
   });
@@ -721,6 +745,7 @@ function applyLang(lang) {
   renderA11y();
   renderStack();
   renderProcess();
+  renderPricing();
   renderTestimonials();
   renderDemo();
   setupReveal();
@@ -747,19 +772,13 @@ function setupReveal() {
   });
 }
 
-/* ---- motyw: systemowy domyślnie, ręczny wybór zapamiętywany ---- */
+/* ---- motyw: jasny domyślnie, ręczny wybór zapamiętywany ---- */
 const themeToggle = document.getElementById('themeToggle');
 const themeToggleLabel = document.getElementById('themeToggleLabel');
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-const systemThemeQuery = matchMedia('(prefers-color-scheme: light)');
-
-function storedTheme() {
-  try { return localStorage.getItem('site-theme'); }
-  catch (_) { return null; }
-}
 
 function currentTheme() {
-  return html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  return html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }
 
 function updateThemeControl() {
@@ -770,21 +789,15 @@ function updateThemeControl() {
 }
 
 function setTheme(theme, persist = false) {
-  const resolved = theme === 'light' ? 'light' : 'dark';
+  const resolved = theme === 'dark' ? 'dark' : 'light';
   html.setAttribute('data-theme', resolved);
-  themeColorMeta.setAttribute('content', resolved === 'light' ? '#f7f6f1' : '#141413');
-  if (persist) {
-    try { localStorage.setItem('site-theme', resolved); } catch (_) {}
-  }
+  themeColorMeta.setAttribute('content', resolved === 'light' ? '#faf9f6' : '#151815');
+  if (persist) writeStorage('site-theme', resolved);
   updateThemeControl();
 }
 
 themeToggle.addEventListener('click', () => {
   setTheme(currentTheme() === 'dark' ? 'light' : 'dark', true);
-});
-
-systemThemeQuery.addEventListener('change', event => {
-  if (!storedTheme()) setTheme(event.matches ? 'light' : 'dark');
 });
 
 document.getElementById('langToggle').addEventListener('click', () => {
@@ -810,7 +823,9 @@ navLinksPanel.querySelectorAll('a').forEach(link => {
 });
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
+  // reagujemy tylko, gdy menu jest faktycznie otwarte — inaczej Escape
+  // kradłby fokus na (ukrytym na desktopie) przycisku menu
+  if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
     setNavOpen(false);
     navToggle.focus();
   }
@@ -821,7 +836,7 @@ matchMedia('(min-width: 641px)').addEventListener('change', event => {
 });
 
 setTheme(currentTheme());
-applyLang(localStorage.getItem('site-lang') || 'pl');
+applyLang(readStorage('site-lang') || 'pl');
 
 /* ---- pasek postępu czytania ---- */
 const progressBar = document.getElementById('scrollProgress');

@@ -1,9 +1,9 @@
 # Portfolio — Dmytro Zatserkivnyi
 
 Moja strona-wizytówka: fullstack developer (Next.js, Node.js, PostgreSQL, Stripe Connect),
-student informatyki, freelance dla klientów z Polski i nie tylko.
+freelance dla klientów z Polski i nie tylko.
 
-**Live:** https://portfolio-six-olive-25.vercel.app
+**Live:** https://dmytro-dev.pl
 
 ## Struktura
 

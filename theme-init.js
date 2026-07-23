@@ -3,6 +3,6 @@
   root.classList.add('js');
   let savedTheme = null;
   try { savedTheme = localStorage.getItem('site-theme'); } catch (_) {}
-  const systemTheme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  root.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme;
+  // domyślnie jasny motyw; ciemny tylko gdy użytkownik sam go wybrał
+  root.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
 })();

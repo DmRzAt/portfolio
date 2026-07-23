@@ -4,31 +4,47 @@
 <meta charset="UTF-8">
 <script src="theme-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b0e0b">
+<meta name="theme-color" content="#faf9f6">
 <title>Dmytro Zatserkivnyi — Fullstack Developer</title>
 <meta name="description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end, praca zdalna.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dmytro Zatserkivnyi — Fullstack Developer">
 <meta property="og:description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end.">
-<meta property="og:url" content="https://portfolio-six-olive-25.vercel.app/">
-<meta property="og:image" content="https://portfolio-six-olive-25.vercel.app/og-image.png">
+<meta property="og:url" content="https://dmytro-dev.pl/">
+<meta property="og:image" content="https://dmytro-dev.pl/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Dmytro Zatserkivnyi — Fullstack Developer, Next.js, Node.js, PostgreSQL i Stripe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dmytro Zatserkivnyi — Fullstack Developer">
 <meta name="twitter:description" content="Aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.">
-<meta name="twitter:image" content="https://portfolio-six-olive-25.vercel.app/og-image.png">
+<meta name="twitter:image" content="https://dmytro-dev.pl/og-image.png">
 <meta name="twitter:image:alt" content="Dmytro Zatserkivnyi — Fullstack Developer">
-<link rel="canonical" href="https://portfolio-six-olive-25.vercel.app/">
+<link rel="canonical" href="https://dmytro-dev.pl/">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dmytro Zatserkivnyi",
+  "jobTitle": "Fullstack Developer",
+  "url": "https://dmytro-dev.pl/",
+  "email": "mailto:dmytro.dev.zats@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Tarnów", "addressCountry": "PL" },
+  "sameAs": [
+    "https://github.com/DmRzAt",
+    "https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/"
+  ],
+  "knowsAbout": ["Next.js", "Node.js", "PostgreSQL", "MongoDB", "Stripe Connect", "Angular", "REST API", "WCAG"]
+}
+</script>
 </head>
 <body>
 
@@ -57,8 +73,8 @@
         <a href="#contact" class="u-link" data-i18n="nav.contact">Kontakt</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Włącz jasny motyw" title="Włącz jasny motyw">
-          <span class="sr-only" id="themeToggleLabel">Włącz jasny motyw</span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Włącz ciemny motyw" title="Włącz ciemny motyw">
+          <span class="sr-only" id="themeToggleLabel">Włącz ciemny motyw</span>
           <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="3.5"></circle>
             <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
@@ -143,14 +159,14 @@
         <span class="fig-sub" data-i18n="projects.moreEyebrow">problem · decyzje · rezultat</span>
       </div>
       <div class="case-study-list reveal" id="projectsGrid">
-        <details class="case-card" data-project-id="velmora-home">
-          <summary class="case-summary">
+        <article class="case-card" data-project-id="velmora-home">
+          <header class="case-summary">
             <span class="case-index">02</span>
-            <span class="case-name" data-project-name>Velmora Home</span>
-            <span class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</span>
+            <h3 class="case-name" data-project-name>Velmora Home</h3>
+            <p class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</p>
             <span class="case-stack" data-project-stack>WordPress · WooCommerce · Elementor</span>
             <span class="case-status" data-project-status>demo</span>
-          </summary>
+          </header>
           <div class="case-body">
             <a class="case-media" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
               <picture>
@@ -170,16 +186,16 @@
               <div class="case-links"><a class="u-link" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a></div>
             </div>
           </div>
-        </details>
+        </article>
 
-        <details class="case-card" data-project-id="bazarek">
-          <summary class="case-summary">
+        <article class="case-card" data-project-id="bazarek">
+          <header class="case-summary">
             <span class="case-index">03</span>
-            <span class="case-name" data-project-name>Bazarek</span>
-            <span class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</span>
+            <h3 class="case-name" data-project-name>Bazarek</h3>
+            <p class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</p>
             <span class="case-stack" data-project-stack>Angular 19 · Express · MongoDB</span>
             <span class="case-status case-status-warn" data-project-status>cold start ~30 s</span>
-          </summary>
+          </header>
           <div class="case-body">
             <a class="case-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/bazarek.webp" alt="Bazarek — strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
             <div class="case-content">
@@ -188,7 +204,7 @@
                 <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.</dd></div>
                 <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Angular 19, Express i MongoDB; access JWT 15 min oraz refresh token 7 dni w httpOnly cookie.</dd></div>
                 <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Bezpieczne odświeżanie sesji, uprawnienia owner/admin, czat, uploady i monitoring produkcyjny.</dd></div>
-                <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działająca aplikacja fullstack, 7 testów API i 11 testów komponentów Angular, zaprezentowana na uczelni.</dd></div>
+                <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działająca aplikacja fullstack pokryta 7 testami API i 11 testami komponentów Angular.</dd></div>
               </dl>
               <div class="case-links">
                 <a class="u-link" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
@@ -196,16 +212,16 @@
               </div>
             </div>
           </div>
-        </details>
+        </article>
 
-        <details class="case-card" data-project-id="quotly">
-          <summary class="case-summary">
+        <article class="case-card" data-project-id="quotly">
+          <header class="case-summary">
             <span class="case-index">04</span>
-            <span class="case-name" data-project-name>Quotly</span>
-            <span class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</span>
+            <h3 class="case-name" data-project-name>Quotly</h3>
+            <p class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</p>
             <span class="case-stack" data-project-stack>Next.js · Node.js · Stripe Connect</span>
             <span class="case-status" data-project-status>demo</span>
-          </summary>
+          </header>
           <div class="case-body">
             <a class="case-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/quotly.webp" alt="Quotly — landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
             <div class="case-content">
@@ -222,7 +238,7 @@
               </div>
             </div>
           </div>
-        </details>
+        </article>
       </div>
     </section>
 
@@ -280,6 +296,25 @@
         <span class="fig-sub" data-i18n="process.eyebrow">jak pracuję</span>
       </div>
       <div class="cols cols-4 reveal" id="processGrid"></div>
+      <div class="pricing reveal" id="pricingGrid">
+        <!-- fallback bez JS — JS nadpisuje ten sam układ z tłumaczeniem -->
+        <div class="price-card">
+          <div class="price-name">Landing / strona wizytówka</div>
+          <div class="price-value">od 1 500 zł</div>
+          <p class="price-desc">Responsywna, szybka, z formularzem kontaktowym i SEO.</p>
+        </div>
+        <div class="price-card">
+          <div class="price-name">Integracja płatności</div>
+          <div class="price-value">od 2 500 zł</div>
+          <p class="price-desc">Stripe / Stripe Connect: checkout, webhooki, rozliczenia.</p>
+        </div>
+        <div class="price-card">
+          <div class="price-name">Sklep lub panel B2B</div>
+          <div class="price-value">od 4 500 zł</div>
+          <p class="price-desc">Konta, role, baza danych, API — aplikacja end-to-end.</p>
+        </div>
+        <p class="pricing-note">Progi orientacyjne „od" — dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez useme (escrow).</p>
+      </div>
     </section>
 
     <!-- STACK -->
@@ -303,8 +338,9 @@
         <div>
           <p class="about-lead" data-i18n="about.lead">Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.</p>
           <p class="about-body" data-i18n-html="about.text">
-            Student informatyki (3 rok) na uczelni w okolicach Tarnowa. Buduję aplikacje
-            webowe od backendu po front — <strong>autoryzację, REST API, integracje płatności</strong>.
+            Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end —
+            <strong>autoryzacja, REST API, integracje płatności Stripe</strong> —
+            na Next.js, Node.js, PostgreSQL i MongoDB.
           </p>
         </div>
         <div>
@@ -314,7 +350,7 @@
           </div>
           <div class="fact-row">
             <span class="fact-k" data-i18n="about.av.label">Dostępność</span>
-            <span class="fact-v" data-i18n="about.av.value">Zdalnie, cała Polska</span>
+            <span class="fact-v" data-i18n="about.av.value">Zdalnie — Polska i zagranica</span>
           </div>
           <div class="fact-row">
             <span class="fact-k" data-i18n="about.lang.label">Języki</span>
@@ -366,10 +402,19 @@
     <div class="marquee-track" id="marqueeTrack"></div>
   </div>
 
+  <footer class="site-footer">
+    <span>© 2026 Dmytro Zatserkivnyi</span>
+    <span class="site-footer-links">
+      <a href="mailto:dmytro.dev.zats@gmail.com" class="u-link">dmytro.dev.zats@gmail.com</a>
+      <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="u-link">GitHub</a>
+      <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="u-link">Useme</a>
+    </span>
+  </footer>
+
 </div>
 
 <noscript>
-  <div style="max-width:1180px;margin:0 auto;padding:24px;font-family:monospace">
+  <div style="max-width:1140px;margin:0 auto;padding:24px;font-family:system-ui,sans-serif">
     Case studies, linki i kontakt działają bez JavaScript. Interaktywne demo,
     przełącznik języka i przełącznik motywu wymagają JavaScript.
   </div>
