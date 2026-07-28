@@ -380,72 +380,73 @@ main > section { padding-top: 26px; }
 .fig-rule { flex: 1; height: 1px; background: none; }
 .fig-sub { font-family: var(--mono); font-size: 11px; color: var(--faint); white-space: nowrap; letter-spacing: 0.02em; }
 
-/* ---------- FEATURED CASE ---------- */
-.featured-shell {
+/* ---------- PROJEKTY — wszystkie karty mają równą rangę ---------- */
+.projects-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   margin: 22px var(--pad) 24px;
-  border: 1px solid var(--rule-soft);
-  border-radius: var(--r-lg);
+}
+.project-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
   overflow: hidden;
   background: var(--panel);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--r-lg);
   box-shadow: var(--shadow-card);
 }
-.featured-shot {
+.project-media {
   display: block;
-  min-height: 0;
-  align-self: stretch;
   overflow: hidden;
-  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
   background: var(--shot-bg);
 }
-.featured-shot img {
+.project-media picture { display: block; }
+.project-media img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 0;
-  /* contain: kolumna treści jest wyższa niż 16/10, cover by przycinał i "powiększał" zrzut */
-  object-fit: contain;
-  object-position: center;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
   transition: transform 0.45s var(--ease-out);
 }
-.featured-shot:hover img { transform: scale(1.02); }
-.featured-content { padding: 30px 32px; }
-.case-kicker {
-  margin-bottom: 10px;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.project-media:hover img { transform: scale(1.02); }
+.project-content {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  padding: 24px 26px 26px;
 }
-.featured-title {
-  font-family: var(--display);
-  font-size: clamp(32px, 4.6vw, 56px);
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: -0.03em;
-  color: var(--text);
-}
-.featured-summary {
-  max-width: 680px;
-  margin: 14px 0 22px;
-  color: var(--text-2);
-  font-family: var(--sans);
-  font-size: 16.5px;
-  line-height: 1.6;
+.project-summary {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  grid-template-areas:
+    'index name    status'
+    '.     summary summary'
+    '.     stack   stack';
+  align-items: baseline;
+  gap: 5px 14px;
+  margin-bottom: 22px;
 }
 .case-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
-.case-grid-featured { gap: 13px; }
+.project-card .case-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
 .case-fact {
   padding: 12px 0 0;
   border-top: 1px solid var(--rule-row);
 }
 .case-fact:last-child { grid-column: 1 / -1; }
+.project-card .case-fact:last-child { grid-column: auto; }
 .case-fact dt {
   margin-bottom: 4px;
   color: var(--accent);
@@ -455,32 +456,7 @@ main > section { padding-top: 26px; }
   text-transform: uppercase;
 }
 .case-fact dd { color: var(--text-2); font-size: 13.5px; line-height: 1.6; }
-.case-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 22px; }
-
-/* ---------- POZOSTAŁE CASE STUDIES — karty widoczne od razu ---------- */
-.case-study-list {
-  display: grid;
-  gap: 24px;
-  margin: 22px var(--pad) 24px;
-}
-.case-card {
-  background: var(--panel);
-  border: 1px solid var(--rule-soft);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-.case-summary {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr) max-content;
-  grid-template-areas:
-    'index name    status'
-    '.     summary summary'
-    '.     stack   stack';
-  align-items: baseline;
-  gap: 4px 16px;
-  padding: 26px 30px 0;
-}
+.case-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: auto; padding-top: 22px; }
 .case-index {
   grid-area: index;
   font-family: var(--mono);
@@ -512,30 +488,6 @@ main > section { padding-top: 26px; }
   white-space: nowrap;
 }
 .case-status-warn { color: var(--amber); background: transparent; }
-.case-body {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
-  gap: 26px;
-  padding: 20px 30px 28px;
-  align-items: start;
-}
-.case-media {
-  display: block;
-  overflow: hidden;
-  border: 1px solid var(--rule-soft);
-  border-radius: var(--r-md);
-  background: var(--shot-bg);
-}
-.case-media img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
-  transition: transform 0.45s var(--ease-out);
-}
-.case-media:hover img { transform: scale(1.02); }
-.case-content { min-width: 0; }
 
 /* ---------- SEKCJA DEMO ---------- */
 .demo-section-inner {
@@ -948,18 +900,14 @@ main > section { padding-top: 26px; }
   .cols-4, .cols-3 { grid-template-columns: repeat(2, 1fr); }
   .pricing { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .featured-shell { grid-template-columns: 1fr; }
-  .featured-shot { border-right: none; border-bottom: 1px solid var(--rule-soft); }
-  .featured-shot img { aspect-ratio: 16 / 10; height: auto; }
-  .case-body { grid-template-columns: 1fr; }
-  .case-media { max-width: 560px; }
+  .projects-grid { grid-template-columns: 1fr; }
   .demo-section-inner { grid-template-columns: 1fr; }
   .demo-section-copy { max-width: 620px; }
 }
 
 @media (max-width: 700px) {
   .booking-demo { grid-template-columns: 1fr; }
-  .case-summary {
+  .project-summary {
     grid-template-columns: max-content minmax(0, 1fr);
     grid-template-areas:
       'index name'
@@ -995,12 +943,10 @@ main > section { padding-top: 26px; }
   .hero-intro { align-items: flex-start; flex-direction: column; gap: 18px; }
   .fig-head { gap: 10px; flex-wrap: wrap; }
   .fig-sub { min-width: 0; white-space: normal; line-height: 1.4; }
-  .featured-content { padding: 22px 20px 24px; }
   .case-grid { grid-template-columns: 1fr; }
   .case-fact:last-child { grid-column: auto; }
-  .case-study-list { margin-left: 10px; margin-right: 10px; }
-  .case-summary { padding: 20px 18px 0; }
-  .case-body { padding: 16px 18px 22px; }
+  .projects-grid { margin-left: 10px; margin-right: 10px; }
+  .project-content { padding: 20px 18px 22px; }
   .demo-section-inner { padding-left: 18px; padding-right: 18px; }
   .contact-head { font-size: clamp(30px, 10vw, 38px); overflow-wrap: anywhere; }
 }

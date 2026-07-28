@@ -121,61 +121,53 @@
 
   <main id="main">
 
-    <!-- GŁÓWNY CASE — widoczny przed symulacją booking.flow -->
-    <section id="projects" class="featured-project" data-project-id="slotify">
+    <!-- PROJEKTY — wszystkie case studies mają równą rangę -->
+    <section id="projects">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="projects.featuredTitle">Główny case</h2>
+        <h2 class="fig-label" data-i18n="projects.title">Projekty</h2>
         <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.featuredEyebrow">rezerwacje · płatności · trzy role</span>
+        <span class="fig-sub" data-i18n="projects.eyebrow">5 wdrożeń · działające demo · konkretne decyzje</span>
       </div>
-      <article class="featured-shell reveal" aria-labelledby="slotify-title">
-        <a class="featured-shot" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Slotify">
-          <img src="assets/slotify.webp" alt="Slotify — strona główna z kalendarzem wolnych terminów" width="1280" height="800" fetchpriority="high" decoding="async" data-project-image>
-        </a>
-        <div class="featured-content">
-          <div class="case-kicker">CASE 01 · <span data-project-stack>Next.js · Prisma · Stripe</span></div>
-          <h3 class="featured-title" id="slotify-title"><span data-project-name>Slotify</span><span class="dot">.</span></h3>
-          <p class="featured-summary" data-project-summary>Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.</p>
-          <dl class="case-grid case-grid-featured">
-            <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Telefoniczne rezerwacje i równoległe próby zajęcia tego samego terminu prowadzą do double-bookingu.</dd></div>
-            <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Pełny przepływ marketplace: klient, partner i administrator; rezerwacje, płatności, onboarding oraz import danych.</dd></div>
-            <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Next.js, PostgreSQL/Neon, Prisma i Stripe Connect Express; autoryzacja sprawdzana ponownie w route handlerach.</dd></div>
-            <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Warunkowy UPDATE w transakcji i UNIQUE na Booking.slotId blokują równoległe zajęcie jednego terminu.</dd></div>
-            <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo z trzema rolami, testowymi płatnościami i pełnym przepływem od wyboru slotu do webhooka.</dd></div>
-          </dl>
-          <div class="case-links">
-            <a class="btn btn-primary" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
-            <a class="text-link u-link" href="https://github.com/DmRzAt/Slotify" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+      <div class="projects-grid reveal" id="projectsGrid">
+        <article class="project-card" data-project-id="kramo">
+          <a class="project-media" href="https://kramo-production.up.railway.app/" target="_blank" rel="noopener" aria-label="Otwórz demo Kramo">
+            <img src="assets/kramo.jpg" alt="Kramo — strona główna sklepu z polskim rzemiosłem" width="1265" height="712" fetchpriority="high" decoding="async" data-project-image>
+          </a>
+          <div class="project-content">
+            <header class="project-summary">
+              <span class="case-index">01</span>
+              <h3 class="case-name" data-project-name>Kramo</h3>
+              <span class="case-status" data-project-status>demo</span>
+              <p class="case-summary-copy" data-project-summary>Sklep internetowy z polskim rzemiosłem, wariantami produktów, ulubionymi i pełną ścieżką zakupową.</p>
+              <span class="case-stack" data-project-stack>WordPress · WooCommerce · Kramo child theme</span>
+            </header>
+            <dl class="case-grid">
+              <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Zbudować czytelny sklep dla produktów rzemieślniczych i uprościć wybór wariantów oraz zakup.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Katalog i kategorie, warianty produktów, ulubione, konto klienta, koszyk, płatności, dostawa i zwroty.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">WordPress i WooCommerce na motywie potomnym Kramo, z dedykowaną obsługą katalogu, ulubionych i koszyka.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Połączyć rozbudowany e-commerce ze spokojną prezentacją marki i czytelną nawigacją po ofercie.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo sklepu z produktami, wariantami, szybkim podglądem, ulubionymi i pełnym koszykiem.</dd></div>
+            </dl>
+            <div class="case-links"><a class="u-link" href="https://kramo-production.up.railway.app/" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a></div>
           </div>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <!-- POZOSTAŁE CASE STUDIES — treść jest w HTML, JS tylko tłumaczy i ulepsza -->
-    <section id="case-studies">
-      <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="projects.moreTitle">Pozostałe case studies</h2>
-        <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.moreEyebrow">problem · decyzje · rezultat</span>
-      </div>
-      <div class="case-study-list reveal" id="projectsGrid">
-        <article class="case-card" data-project-id="velmora-home">
-          <header class="case-summary">
-            <span class="case-index">02</span>
-            <h3 class="case-name" data-project-name>Velmora Home</h3>
-            <p class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</p>
-            <span class="case-stack" data-project-stack>WordPress · WooCommerce · Elementor</span>
-            <span class="case-status" data-project-status>demo</span>
-          </header>
-          <div class="case-body">
-            <a class="case-media" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <article class="project-card" data-project-id="velmora-home">
+          <a class="project-media" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" aria-label="Otwórz demo Velmora Home">
               <picture>
                 <source srcset="assets/velmora-home.avif" type="image/avif">
                 <source srcset="assets/velmora-home.webp" type="image/webp">
                 <img src="assets/velmora-home.png" alt="Velmora Home — strona główna sklepu z meblami i dekoracjami" width="1440" height="900" loading="lazy" decoding="async" data-project-image>
               </picture>
-            </a>
-            <div class="case-content">
+          </a>
+          <div class="project-content">
+            <header class="project-summary">
+              <span class="case-index">02</span>
+              <h3 class="case-name" data-project-name>Velmora Home</h3>
+              <span class="case-status" data-project-status>demo</span>
+              <p class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</p>
+              <span class="case-stack" data-project-stack>WordPress · WooCommerce · Elementor</span>
+            </header>
               <dl class="case-grid">
                 <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Połączyć szeroki katalog wnętrzarski z inspiracjami i prostą ścieżką zakupową.</dd></div>
                 <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Kategorie i warianty produktów, konto klienta, koszyk, promocje oraz treści inspiracyjne.</dd></div>
@@ -184,21 +176,45 @@
                 <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo sklepu z pełnym katalogiem, kontem klienta i procesem zakupowym.</dd></div>
               </dl>
               <div class="case-links"><a class="u-link" href="https://velmorahome-production.up.railway.app/" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a></div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project-id="slotify">
+          <a class="project-media" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Slotify">
+            <img src="assets/slotify.webp" alt="Slotify — strona główna z kalendarzem wolnych terminów" width="1280" height="800" loading="lazy" decoding="async" data-project-image>
+          </a>
+          <div class="project-content">
+            <header class="project-summary">
+              <span class="case-index">03</span>
+              <h3 class="case-name" data-project-name>Slotify</h3>
+              <span class="case-status" data-project-status>demo</span>
+              <p class="case-summary-copy" data-project-summary>Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.</p>
+              <span class="case-stack" data-project-stack>Next.js · Prisma · Stripe</span>
+            </header>
+            <dl class="case-grid">
+              <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Telefoniczne rezerwacje i równoległe próby zajęcia tego samego terminu prowadzą do double-bookingu.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Pełny przepływ marketplace: klient, partner i administrator; rezerwacje, płatności, onboarding oraz import danych.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">Next.js, PostgreSQL/Neon, Prisma i Stripe Connect Express; autoryzacja sprawdzana ponownie w route handlerach.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Warunkowy UPDATE w transakcji i UNIQUE na Booking.slotId blokują równoległe zajęcie jednego terminu.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Działające demo z trzema rolami, testowymi płatnościami i pełnym przepływem od wyboru slotu do webhooka.</dd></div>
+            </dl>
+            <div class="case-links">
+              <a class="u-link" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
+              <a class="u-link" href="https://github.com/DmRzAt/Slotify" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
             </div>
           </div>
         </article>
 
-        <article class="case-card" data-project-id="bazarek">
-          <header class="case-summary">
-            <span class="case-index">03</span>
-            <h3 class="case-name" data-project-name>Bazarek</h3>
-            <p class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</p>
-            <span class="case-stack" data-project-stack>Angular 19 · Express · MongoDB</span>
-            <span class="case-status case-status-warn" data-project-status>cold start ~30 s</span>
-          </header>
-          <div class="case-body">
-            <a class="case-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/bazarek.webp" alt="Bazarek — strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
-            <div class="case-content">
+        <article class="project-card" data-project-id="bazarek">
+          <a class="project-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" aria-label="Otwórz demo Bazarek"><img src="assets/bazarek.webp" alt="Bazarek — strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
+          <div class="project-content">
+            <header class="project-summary">
+              <span class="case-index">04</span>
+              <h3 class="case-name" data-project-name>Bazarek</h3>
+              <span class="case-status case-status-warn" data-project-status>cold start ~30 s</span>
+              <p class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</p>
+              <span class="case-stack" data-project-stack>Angular 19 · Express · MongoDB</span>
+            </header>
               <dl class="case-grid">
                 <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Połączyć ogłoszenia, wyszukiwanie, czat, konta użytkowników i administrację w jednej aplikacji.</dd></div>
                 <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.</dd></div>
@@ -210,21 +226,19 @@
                 <a class="u-link" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
                 <a class="u-link" href="https://github.com/DmRzAt/bazarek" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
               </div>
-            </div>
           </div>
         </article>
 
-        <article class="case-card" data-project-id="quotly">
-          <header class="case-summary">
-            <span class="case-index">04</span>
-            <h3 class="case-name" data-project-name>Quotly</h3>
-            <p class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</p>
-            <span class="case-stack" data-project-stack>Next.js · Node.js · Stripe Connect</span>
-            <span class="case-status" data-project-status>demo</span>
-          </header>
-          <div class="case-body">
-            <a class="case-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/quotly.webp" alt="Quotly — landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
-            <div class="case-content">
+        <article class="project-card" data-project-id="quotly">
+          <a class="project-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Quotly"><img src="assets/quotly.webp" alt="Quotly — landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
+          <div class="project-content">
+            <header class="project-summary">
+              <span class="case-index">05</span>
+              <h3 class="case-name" data-project-name>Quotly</h3>
+              <span class="case-status" data-project-status>demo</span>
+              <p class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</p>
+              <span class="case-stack" data-project-stack>Next.js · Node.js · Stripe Connect</span>
+            </header>
               <dl class="case-grid">
                 <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Powiązać dostęp do funkcji SaaS z miesięcznym limitem oraz wypłatami dla sprzedawców.</dd></div>
                 <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Subskrypcje, quota, Stripe Connect Express, marketplace oraz testowe przepływy buyer/seller.</dd></div>
@@ -236,7 +250,6 @@
                 <a class="u-link" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">→ Demo</a>
                 <a class="u-link" href="https://github.com/DmRzAt/quotly" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
               </div>
-            </div>
           </div>
         </article>
       </div>

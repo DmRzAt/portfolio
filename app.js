@@ -5,6 +5,32 @@
 
 const PROJECTS = [
   {
+    id: 'kramo',
+    name: 'Kramo',
+    img: 'assets/kramo.jpg',
+    alt: {
+      pl: 'Kramo — strona główna sklepu z polskim rzemiosłem',
+      en: 'Kramo — Polish craft store home page',
+    },
+    summary: {
+      pl: 'Sklep internetowy z polskim rzemiosłem, wariantami produktów, ulubionymi i pełną ścieżką zakupową.',
+      en: 'An online store for Polish craft goods with product variants, wishlists and a complete shopping flow.',
+    },
+    facts: {
+      pl: [
+        { label: 'Co w środku', value: 'Katalog i kategorie, warianty produktów, ulubione, konto klienta, koszyk, płatności, dostawa i zwroty.' },
+        { label: 'Technologia', value: 'WordPress i WooCommerce na dedykowanym motywie potomnym Kramo.' },
+      ],
+      en: [
+        { label: 'Inside', value: 'Catalogue and categories, product variants, wishlists, customer accounts, cart, payments, delivery and returns.' },
+        { label: 'Technology', value: 'WordPress and WooCommerce on a dedicated Kramo child theme.' },
+      ],
+    },
+    tags: ['WordPress', 'WooCommerce', 'Kramo child theme'],
+    demo: 'https://kramo-production.up.railway.app/',
+    status: 'live',
+  },
+  {
     id: 'velmora-home',
     name: 'Velmora Home',
     img: 'assets/velmora-home.png',
@@ -120,6 +146,22 @@ const PROJECTS = [
    najważniejsze informacje są dostępne bez JavaScript. Ten obiekt służy do
    przełączenia języka i nie tworzy struktury dokumentu. */
 const CASE_STUDIES = {
+  kramo: {
+    pl: {
+      problem: 'Zbudować czytelny sklep dla produktów rzemieślniczych i uprościć wybór wariantów oraz zakup.',
+      scope: 'Katalog i kategorie, warianty produktów, ulubione, konto klienta, koszyk, płatności, dostawa i zwroty.',
+      architecture: 'WordPress i WooCommerce na motywie potomnym Kramo, z dedykowaną obsługą katalogu, ulubionych i koszyka.',
+      challenge: 'Połączyć rozbudowany e-commerce ze spokojną prezentacją marki i czytelną nawigacją po ofercie.',
+      result: 'Działające demo sklepu z produktami, wariantami, szybkim podglądem, ulubionymi i pełnym koszykiem.',
+    },
+    en: {
+      problem: 'Build a clear craft-goods store and simplify both product-variant selection and checkout.',
+      scope: 'Catalogue and categories, product variants, wishlists, customer accounts, cart, payments, delivery and returns.',
+      architecture: 'WordPress and WooCommerce on a Kramo child theme, with dedicated catalogue, wishlist and cart behaviour.',
+      challenge: 'Combine a full e-commerce feature set with calm brand presentation and clear offer navigation.',
+      result: 'A working store demo with products, variants, quick view, wishlists and a complete cart.',
+    },
+  },
   'velmora-home': {
     pl: {
       problem: 'Połączyć szeroki katalog wnętrzarski z inspiracjami i prostą ścieżką zakupową.',
@@ -366,10 +408,8 @@ const I18N = {
     'demo.exampleSplit': 'Przykładowe rozliczenie',
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
-    'projects.featuredTitle': 'Główny case',
-    'projects.featuredEyebrow': 'rezerwacje · płatności · trzy role',
-    'projects.moreTitle': 'Pozostałe case studies',
-    'projects.moreEyebrow': 'problem · decyzje · rezultat',
+    'projects.title': 'Projekty',
+    'projects.eyebrow': '5 wdrożeń · działające demo · konkretne decyzje',
     'case.problem': 'Problem',
     'case.scope': 'Zakres',
     'case.architecture': 'Architektura',
@@ -437,10 +477,8 @@ const I18N = {
     'demo.exampleSplit': 'Example settlement',
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
-    'projects.featuredTitle': 'Featured case',
-    'projects.featuredEyebrow': 'bookings · payments · three roles',
-    'projects.moreTitle': 'More case studies',
-    'projects.moreEyebrow': 'problem · decisions · outcome',
+    'projects.title': 'Projects',
+    'projects.eyebrow': '5 deployments · working demos · concrete decisions',
     'case.problem': 'Problem',
     'case.scope': 'Scope',
     'case.architecture': 'Architecture',

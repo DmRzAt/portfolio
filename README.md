@@ -25,7 +25,7 @@ W środku:
   typografia Archivo (pełna + konturowa), sekcje numerowane jako FIG. 0X,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
 - jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
-- główny case Slotify przed modułem interaktywnym oraz krótkie case studies:
+- jedna wspólna siatka projektów bez wyróżniania jednego case’u; każdy pokazuje:
   problem → zakres → architektura → najtrudniejsze → rezultat,
 - interaktywne demo flow rezerwacji niżej na stronie (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
 - case studies zapisane bezpośrednio w HTML; JavaScript tłumaczy i ulepsza stronę,
@@ -64,6 +64,7 @@ wtedy migracja na Astro/Next; nie wcześniej.
 
 | Projekt | Demo | Kod |
 |---|---|---|
+| Kramo | https://kramo-production.up.railway.app/ | — |
 | Velmora Home | https://velmorahome-production.up.railway.app/ | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
