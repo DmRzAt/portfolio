@@ -84,6 +84,33 @@ const PROJECTS = [
     status: 'live',
   },
   {
+    id: 'quotly',
+    name: 'Quotly',
+    img: 'assets/quotly.webp',
+    alt: {
+      pl: 'Quotly — landing z generatorem palet i płatnościami Stripe',
+      en: 'Quotly — landing with palette generator and Stripe billing',
+    },
+    summary: {
+      pl: 'Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.',
+      en: 'A partner dashboard handling onboarding and settlements through Stripe Connect.',
+    },
+    facts: {
+      pl: [
+        { label: 'Mój zakres', value: 'Onboarding Express, automatyczny podział prowizji i webhooki śledzące weryfikację.' },
+        { label: 'Rezultat', value: 'Jeden spójny przepływ od weryfikacji konta do podziału płatności.' },
+      ],
+      en: [
+        { label: 'My role', value: 'Express onboarding, automatic commission splitting and verification webhooks.' },
+        { label: 'Outcome', value: 'One consistent flow from account verification to payment splitting.' },
+      ],
+    },
+    tags: ['Next.js', 'Node.js', 'Stripe Connect'],
+    demo: 'https://quotly-flax.vercel.app',
+    github: 'https://github.com/DmRzAt/quotly',
+    status: 'live',
+  },
+  {
     id: 'bazarek',
     name: 'Bazarek',
     img: 'assets/bazarek.webp',
@@ -112,33 +139,6 @@ const PROJECTS = [
     // zrobić z przeglądarki bez błędu w konsoli; zamiast tego uczciwa notka o cold-starcie
     liveCheck: false,
     note: { pl: 'Render — budzi się ~30 s', en: 'Render — cold start ~30 s' },
-  },
-  {
-    id: 'quotly',
-    name: 'Quotly',
-    img: 'assets/quotly.webp',
-    alt: {
-      pl: 'Quotly — landing z generatorem palet i płatnościami Stripe',
-      en: 'Quotly — landing with palette generator and Stripe billing',
-    },
-    summary: {
-      pl: 'Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.',
-      en: 'A partner dashboard handling onboarding and settlements through Stripe Connect.',
-    },
-    facts: {
-      pl: [
-        { label: 'Mój zakres', value: 'Onboarding Express, automatyczny podział prowizji i webhooki śledzące weryfikację.' },
-        { label: 'Rezultat', value: 'Jeden spójny przepływ od weryfikacji konta do podziału płatności.' },
-      ],
-      en: [
-        { label: 'My role', value: 'Express onboarding, automatic commission splitting and verification webhooks.' },
-        { label: 'Outcome', value: 'One consistent flow from account verification to payment splitting.' },
-      ],
-    },
-    tags: ['Next.js', 'Node.js', 'Stripe Connect'],
-    demo: 'https://quotly-flax.vercel.app',
-    github: 'https://github.com/DmRzAt/quotly',
-    status: 'live',
   },
 ];
 
