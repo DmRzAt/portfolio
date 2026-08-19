@@ -21,8 +21,8 @@ vercel.json  — nagłówki bezpieczeństwa
 
 W środku:
 
-- styl „dokumentu technicznego": masthead z grubą linią, pasek meta, gigantyczna
-  typografia Archivo (pełna + konturowa), sekcje numerowane jako FIG. 0X,
+- styl „dokumentu technicznego”: masthead z grubą linią, pasek meta, polska
+  typografia Lato (pełna + konturowa), sekcje numerowane jako FIG. 0X,
 - przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
 - jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
 - jedna wspólna siatka projektów bez wyróżniania jednego case’u; każdy pokazuje:

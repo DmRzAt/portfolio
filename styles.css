@@ -1,25 +1,13 @@
 /* =====================================================================
    DMYTRO.DEV — miękki styl "inżyniera-freelancera":
-   ciepłe tło, białe karty z cieniem i zaokrągleniami, Inter dla tekstu,
+   ciepłe tło, białe karty z cieniem i zaokrągleniami, polski Lato dla tekstu,
    mono tylko jako techniczny akcent (stack, etykiety, demo).
    ===================================================================== */
 
-/* fallbacki dopasowane metrycznie — swap fontów nie przesuwa layoutu (CLS 0) */
+/* systemowy fallback używany do czasu wczytania webfontu */
 @font-face {
-  font-family: 'Archivo Fallback';
+  font-family: 'Lato Fallback';
   src: local('Arial');
-  size-adjust: 101%;
-  ascent-override: 92%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: 'Inter Fallback';
-  src: local('Arial');
-  size-adjust: 107%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
 }
 @font-face {
   font-family: 'JetBrains Mono Fallback';
@@ -90,8 +78,8 @@
 }
 
 :root {
-  --display: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
-  --sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --display: 'Lato', 'Lato Fallback', system-ui, sans-serif;
+  --sans: 'Lato', 'Lato Fallback', system-ui, sans-serif;
   --mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace;
   --pad: 34px;
   --r-lg: 20px;
