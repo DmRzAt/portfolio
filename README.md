@@ -64,7 +64,7 @@ wtedy migracja na Astro/Next; nie wcześniej.
 
 | Projekt | Demo | Kod |
 |---|---|---|
-| Kramo | https://kramo-production.up.railway.app/ | — |
+| Kramo | https://p01--kramo-wp--bpk4d66g4n48.code.run/ | — |
 | Velmora Home | https://velmorahome.infinityfree.io/?i=1 | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |

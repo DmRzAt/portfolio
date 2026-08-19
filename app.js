@@ -27,7 +27,7 @@ const PROJECTS = [
       ],
     },
     tags: ['WordPress', 'WooCommerce', 'Kramo child theme'],
-    demo: 'https://kramo-production.up.railway.app/',
+    demo: 'https://p01--kramo-wp--bpk4d66g4n48.code.run/',
     status: 'live',
   },
   {
