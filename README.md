@@ -65,7 +65,7 @@ wtedy migracja na Astro/Next; nie wcześniej.
 | Projekt | Demo | Kod |
 |---|---|---|
 | Kramo | https://kramo-production.up.railway.app/ | — |
-| Velmora Home | https://velmorahome-production.up.railway.app/ | — |
+| Velmora Home | https://velmorahome.infinityfree.io/?i=1 | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
 | Quotly | https://quotly-flax.vercel.app | https://github.com/DmRzAt/quotly |

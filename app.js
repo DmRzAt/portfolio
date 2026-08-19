@@ -53,7 +53,7 @@ const PROJECTS = [
       ],
     },
     tags: ['WordPress', 'WooCommerce', 'Elementor'],
-    demo: 'https://velmorahome-production.up.railway.app/',
+    demo: 'https://velmorahome.infinityfree.io/?i=1',
     status: 'live',
   },
   {
