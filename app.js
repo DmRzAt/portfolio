@@ -5,6 +5,16 @@
 
 const PROJECTS = [
   {
+    id: 'oms-panel',
+    name: { pl: 'Panel operatora systemu zamówień', en: 'Order management operator panel' },
+    summary: {
+      pl: 'Panel dla operatorów systemu obsługi zamówień sklepu internetowego — zamówienia, statusy i przesyłki w jednym miejscu.',
+      en: "An operator panel for an online store's order management system — orders, statuses and shipments in one place.",
+    },
+    tags: ['ASP.NET Core', 'Razor Pages', 'Bootstrap', 'REST API'],
+    status: 'client',
+  },
+  {
     id: 'kramo',
     name: 'Kramo',
     img: 'assets/kramo.jpg',
@@ -146,6 +156,22 @@ const PROJECTS = [
    najważniejsze informacje są dostępne bez JavaScript. Ten obiekt służy do
    przełączenia języka i nie tworzy struktury dokumentu. */
 const CASE_STUDIES = {
+  'oms-panel': {
+    pl: {
+      problem: 'Operatorzy potrzebowali jednego panelu do codziennej obsługi zamówień: zmian statusów synchronizowanych ze sklepem i nadawania przesyłek u kurierów.',
+      scope: 'Lista i szczegóły zamówień z filtrami, zmiana statusów, moduł przesyłek (nadanie, etykieta, śledzenie, anulowanie), ustawienia kurierów i przypisanie kraju do kuriera.',
+      architecture: 'ASP.NET Core Razor Pages i Bootstrap. Panel nie ma dostępu do bazy — wszystkie dane idą przez REST API zespołu backendu, na wersjonowanym kontrakcie.',
+      challenge: 'Etykiety przesyłek przekazywane przez panel strumieniowo z kontrolą typu pliku, błędy walidacji API pokazywane przy konkretnym polu formularza i godziny liczone w strefie Europe/Warsaw niezależnie od strefy kontenera.',
+      result: 'Moduły odebrane przez klienta i wdrożone na środowisko współdzielone; kolejne etapy zlecone przez tego samego klienta.',
+    },
+    en: {
+      problem: 'Operators needed a single panel for daily order handling: status changes synced with the store and shipping through courier accounts.',
+      scope: 'Order list and details with filters, status changes, a shipments module (creation, label, tracking, cancellation), courier settings and country-to-courier mapping.',
+      architecture: "ASP.NET Core Razor Pages and Bootstrap. The panel has no database access — all data goes through the backend team's REST API under a versioned contract.",
+      challenge: "Shipping labels streamed through the panel with file-type checks, API validation errors shown next to the exact form field, and times computed in Europe/Warsaw regardless of the container's time zone.",
+      result: 'Modules accepted by the client and deployed to the shared environment; further stages commissioned by the same client.',
+    },
+  },
   kramo: {
     pl: {
       problem: 'Zbudować czytelny sklep dla produktów rzemieślniczych i uprościć wybór wariantów oraz zakup.',
@@ -230,8 +256,8 @@ const CASE_STUDIES = {
 
 
 const STACK = [
-  { label: { pl: 'Frontend', en: 'Frontend' }, items: ['Next.js / React', 'Angular', 'TypeScript'] },
-  { label: { pl: 'Backend', en: 'Backend' }, items: ['Node.js / Express', 'FastAPI (Python)'] },
+  { label: { pl: 'Frontend', en: 'Frontend' }, items: ['Next.js / React', 'Angular', 'TypeScript', 'Razor Pages / Bootstrap'] },
+  { label: { pl: 'Backend', en: 'Backend' }, items: ['ASP.NET Core (C#)', 'Node.js / Express', 'FastAPI (Python)'] },
   { label: { pl: 'Baza danych', en: 'Database' }, items: ['PostgreSQL', 'MongoDB'] },
   { label: { pl: 'Płatności / inne', en: 'Payments / other' }, items: ['Stripe Connect', 'Docker', 'Git'] },
 ];
@@ -371,11 +397,13 @@ const MARQUEE = {
 
 const I18N = {
   pl: {
+    'seo.title': 'Dmytro Zatserkivnyi — Full-Stack Developer: panele, API, e-commerce',
+    'seo.description': 'Full-stack developer — panele administracyjne, integracje API i e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Praca zdalna.',
     'ui.skip': 'Przejdź do treści',
     'mast.sub': 'FULLSTACK · WEB · B2B · PŁATNOŚCI',
     'meta.nr': 'NR. 01 — PORTFOLIO',
     'meta.loc': 'TARNÓW / ZDALNIE',
-    'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'hl.note': 'ASP.NET CORE · NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
     'demo.sectionTitle': 'Interaktywne demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'Od wolnego terminu do potwierdzonej płatności.',
@@ -392,7 +420,7 @@ const I18N = {
     'theme.toLight': 'Włącz jasny motyw',
     'theme.toDark': 'Włącz ciemny motyw',
     'hero.eyebrow': 'dostępny do współpracy',
-    'hero.sub': 'Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.',
+    'hero.sub': 'Buduję panele administracyjne, integracje API i sklepy — narzędzia do codziennej pracy.',
     'hero.cta1': 'Zobacz projekty',
     'hero.cta2': 'Napisz do mnie',
     'demo.title': 'booking.flow.ts — interaktywne demo',
@@ -409,7 +437,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
     'projects.title': 'Projekty',
-    'projects.eyebrow': '5 wdrożeń · działające demo · konkretne decyzje',
+    'projects.eyebrow': '6 projektów · 5 z działającym demo · konkretne decyzje',
     'case.problem': 'Problem',
     'case.scope': 'Zakres',
     'case.architecture': 'Architektura',
@@ -423,7 +451,7 @@ const I18N = {
     'stack.eyebrow': 'narzędzia',
     'about.eyebrow': 'kim jestem',
     'about.title': 'O mnie',
-    'about.text': 'Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end — <strong>autoryzacja, REST API, integracje płatności Stripe</strong> — na Next.js, Node.js, PostgreSQL i MongoDB. W praktyce oznacza to m.in. idempotentne webhooki, transakcyjne blokowanie terminów przeciw double-bookingowi i podział prowizji liczony po stronie serwera. Każdy projekt w portfolio ma działające demo, a większość — otwarty kod na GitHubie.',
+    'about.text': 'Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end — <strong>autoryzacja, REST API, integracje płatności Stripe</strong> — na ASP.NET Core, Next.js, Node.js, PostgreSQL i MongoDB. Dla klienta B2B rozwijam panel operatora systemu zamówień w ASP.NET Core. W praktyce oznacza to m.in. idempotentne webhooki, transakcyjne blokowanie terminów przeciw double-bookingowi i podział prowizji liczony po stronie serwera. Pięć projektów w portfolio ma publiczne demo, a trzy — otwarty kod na GitHubie. Panel klienta opisuję bez publicznego demo i repozytorium.',
     'about.loc.label': 'Lokalizacja',
     'about.av.label': 'Dostępność',
     'about.av.value': 'Zdalnie — Polska i zagranica',
@@ -435,16 +463,20 @@ const I18N = {
     'contact.useme.k': 'preferowana ścieżka współpracy',
     'contact.useme.v': 'Zatrudnij mnie przez useme →',
     'contact.useme.sub': 'Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy. Zero ryzyka dla obu stron.',
+    'status.client': 'system klienta · bez publicznego demo',
+    'project.omsPanel.media': 'ASP.NET CORE · PANEL OPERATORA',
     'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
   },
   en: {
+    'seo.title': 'Dmytro Zatserkivnyi — Full-Stack Developer: panels, APIs, e-commerce',
+    'seo.description': 'Full-stack developer — admin panels, API integrations and e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Remote work.',
     'ui.skip': 'Skip to content',
     'mast.sub': 'FULLSTACK · WEB · B2B · PAYMENTS',
     'meta.nr': 'NO. 01 — PORTFOLIO',
     'meta.loc': 'TARNÓW / REMOTE',
-    'hl.note': '↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'hl.note': 'ASP.NET CORE · NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
     'demo.sectionTitle': 'Interactive demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'From an available slot to a confirmed payment.',
@@ -461,7 +493,7 @@ const I18N = {
     'theme.toLight': 'Switch to light theme',
     'theme.toDark': 'Switch to dark theme',
     'hero.eyebrow': 'available for work',
-    'hero.sub': 'I build web applications and B2B dashboards with payments — from analysis to deployment.',
+    'hero.sub': 'I build admin panels, API integrations and online stores — tools for everyday work.',
     'hero.cta1': 'See projects',
     'hero.cta2': 'Get in touch',
     'demo.title': 'booking.flow.ts — interactive demo',
@@ -478,7 +510,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
     'projects.title': 'Projects',
-    'projects.eyebrow': '5 deployments · working demos · concrete decisions',
+    'projects.eyebrow': '6 projects · 5 with working demos · concrete decisions',
     'case.problem': 'Problem',
     'case.scope': 'Scope',
     'case.architecture': 'Architecture',
@@ -492,7 +524,7 @@ const I18N = {
     'stack.eyebrow': 'tools',
     'about.eyebrow': 'who I am',
     'about.title': 'About',
-    'about.text': 'Fullstack developer based near Tarnów, Poland. I build web applications end to end — <strong>authorization, REST APIs, Stripe payment integrations</strong> — with Next.js, Node.js, PostgreSQL and MongoDB. In practice that means idempotent webhooks, transactional slot locking against double-booking and server-side commission splits. Every project in this portfolio ships with a working demo, and most with open code on GitHub.',
+    'about.text': 'Fullstack developer based near Tarnów, Poland. I build web applications end to end — <strong>authorization, REST APIs, Stripe payment integrations</strong> — with ASP.NET Core, Next.js, Node.js, PostgreSQL and MongoDB. For a B2B client I develop an order management operator panel in ASP.NET Core. In practice that means idempotent webhooks, transactional slot locking against double-booking and server-side commission splits. Five projects in this portfolio have public demos, and three have open code on GitHub. The client panel is described without a public demo or repository.',
     'about.loc.label': 'Location',
     'about.av.label': 'Availability',
     'about.av.value': 'Remote — Poland & international',
@@ -504,6 +536,8 @@ const I18N = {
     'contact.useme.k': 'preferred way to work together',
     'contact.useme.v': 'Hire me via useme →',
     'contact.useme.sub': 'Secure, invoiced payment — funds are held in escrow until the work is accepted. Zero risk for both sides.',
+    'status.client': 'client system · no public demo',
+    'project.omsPanel.media': 'ASP.NET CORE · OPERATOR PANEL',
     'status.demo': 'demo',
     'links.demo': '→ Demo',
     'links.github': '→ GitHub',
@@ -516,6 +550,14 @@ const I18N = {
 
 const html = document.documentElement;
 html.classList.add('js');
+
+// Vercel Web Analytics: pomijamy pliki lokalne i podgląd HTTP.
+if (location.protocol === 'https:') {
+  const analytics = document.createElement('script');
+  analytics.src = '/_vercel/insights/script.js';
+  analytics.defer = true;
+  document.head.append(analytics);
+}
 
 const t = (key) => I18N[currentLang()][key] || key;
 const currentLang = () => html.getAttribute('data-lang') || 'pl';
@@ -539,7 +581,9 @@ function applyProjectLanguage() {
     const caseStudy = CASE_STUDIES[container.dataset.projectId]?.[lang];
     if (!project || !caseStudy) return;
 
-    container.querySelectorAll('[data-project-name]').forEach(el => { el.textContent = project.name; });
+    container.querySelectorAll('[data-project-name]').forEach(el => {
+      el.textContent = typeof project.name === 'string' ? project.name : project.name[lang];
+    });
     container.querySelectorAll('[data-project-summary]').forEach(el => { el.textContent = project.summary[lang]; });
     container.querySelectorAll('[data-project-stack]').forEach(el => { el.textContent = project.tags.join(' · '); });
     container.querySelectorAll('[data-project-image]').forEach(el => { el.alt = project.alt[lang]; });
@@ -548,7 +592,9 @@ function applyProjectLanguage() {
       if (value) el.textContent = value;
     });
     container.querySelectorAll('[data-project-status]').forEach(el => {
-      el.textContent = project.liveCheck === false ? project.note[lang] : t('status.demo');
+      el.textContent = project.status === 'client'
+        ? t('status.client')
+        : project.liveCheck === false ? project.note[lang] : t('status.demo');
     });
   });
 }
@@ -775,6 +821,9 @@ function applyLang(lang) {
   });
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     el.innerHTML = t(el.dataset.i18nHtml);
+  });
+  document.querySelectorAll('[data-i18n-content]').forEach(el => {
+    el.setAttribute('content', t(el.dataset.i18nContent));
   });
   document.getElementById('langToggle').setAttribute('aria-label', t('lang.switch'));
   updateThemeControl();

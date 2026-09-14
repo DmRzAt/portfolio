@@ -5,12 +5,12 @@
 <script src="theme-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#faf9f6">
-<title>Dmytro Zatserkivnyi — Fullstack Developer</title>
-<meta name="description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end, praca zdalna.">
+<title data-i18n="seo.title">Dmytro Zatserkivnyi — Full-Stack Developer: panele, API, e-commerce</title>
+<meta name="description" data-i18n-content="seo.description" content="Full-stack developer — panele administracyjne, integracje API i e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Praca zdalna.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dmytro Zatserkivnyi — Fullstack Developer">
-<meta property="og:description" content="Fullstack developer — Next.js, Node.js, PostgreSQL, integracje płatności (Stripe Connect). Aplikacje webowe end-to-end.">
+<meta property="og:description" data-i18n-content="seo.description" content="Full-stack developer — panele administracyjne, integracje API i e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Praca zdalna.">
 <meta property="og:url" content="https://dmytro-dev.pl/">
 <meta property="og:image" content="https://dmytro-dev.pl/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -101,17 +101,17 @@
   <!-- GIGANTYCZNY NAGŁÓWEK -->
   <div class="headline">
     <h1>
-      <span class="sr-only">Dmytro Zatserkivnyi — </span>
-      <span class="hl-line hl-solid anim" style="--d:0ms">FULL<span class="dot">·</span>STACK</span>
-      <span class="hl-line hl-outline anim" style="--d:80ms">DEVELOPER</span>
+      <span class="sr-only">Dmytro Zatserkivnyi — full-stack developer</span>
+      <span class="hl-line hl-solid anim" aria-hidden="true" style="--d:0ms">FULL<span class="dot">·</span>STACK</span>
+      <span class="hl-line hl-outline anim" aria-hidden="true" style="--d:80ms">DEVELOPER</span>
     </h1>
-    <div class="hl-note anim" style="--d:160ms" data-i18n="hl.note">↳ NEXT.JS · NODE.JS · POSTGRESQL · STRIPE</div>
+    <div class="hl-note anim" style="--d:160ms" data-i18n="hl.note">ASP.NET CORE · NEXT.JS · NODE.JS · POSTGRESQL · STRIPE</div>
   </div>
 
   <!-- KRÓTKI LEAD; dowód pracy zaczyna się bezpośrednio poniżej -->
   <div class="hero-intro">
     <p class="lead-text anim" style="--d:220ms" data-i18n-html="hero.sub">
-      Buduję aplikacje webowe i panele B2B z płatnościami — od analizy do wdrożenia.
+      Buduję panele administracyjne, integracje API i sklepy — narzędzia do codziennej pracy.
     </p>
     <div class="cta-row anim" style="--d:280ms">
       <a href="#contact" class="btn btn-primary" data-i18n="hero.cta2">Napisz do mnie</a>
@@ -126,16 +126,38 @@
       <div class="fig-head reveal">
         <h2 class="fig-label" data-i18n="projects.title">Projekty</h2>
         <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.eyebrow">5 wdrożeń · działające demo · konkretne decyzje</span>
+        <span class="fig-sub" data-i18n="projects.eyebrow">6 projektów · 5 z działającym demo · konkretne decyzje</span>
       </div>
-      <div class="projects-grid reveal" id="projectsGrid">
-        <article class="project-card" data-project-id="kramo">
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card reveal" data-project-id="oms-panel">
+          <div class="project-media project-media-placeholder">
+            <span data-i18n="project.omsPanel.media">ASP.NET CORE · PANEL OPERATORA</span>
+          </div>
+          <div class="project-content">
+            <header class="project-summary project-summary-client">
+              <span class="case-index">01</span>
+              <h3 class="case-name" data-project-name>Panel operatora systemu zamówień</h3>
+              <span class="case-status" data-project-status>system klienta · bez publicznego demo</span>
+              <p class="case-summary-copy" data-project-summary>Panel dla operatorów systemu obsługi zamówień sklepu internetowego — zamówienia, statusy i przesyłki w jednym miejscu.</p>
+              <span class="case-stack" data-project-stack>ASP.NET Core · Razor Pages · Bootstrap · REST API</span>
+            </header>
+            <dl class="case-grid">
+              <div class="case-fact"><dt data-i18n="case.problem">Problem</dt><dd data-case-value="problem">Operatorzy potrzebowali jednego panelu do codziennej obsługi zamówień: zmian statusów synchronizowanych ze sklepem i nadawania przesyłek u kurierów.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.scope">Zakres</dt><dd data-case-value="scope">Lista i szczegóły zamówień z filtrami, zmiana statusów, moduł przesyłek (nadanie, etykieta, śledzenie, anulowanie), ustawienia kurierów i przypisanie kraju do kuriera.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.architecture">Architektura</dt><dd data-case-value="architecture">ASP.NET Core Razor Pages i Bootstrap. Panel nie ma dostępu do bazy — wszystkie dane idą przez REST API zespołu backendu, na wersjonowanym kontrakcie.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.challenge">Najtrudniejsze</dt><dd data-case-value="challenge">Etykiety przesyłek przekazywane przez panel strumieniowo z kontrolą typu pliku, błędy walidacji API pokazywane przy konkretnym polu formularza i godziny liczone w strefie Europe/Warsaw niezależnie od strefy kontenera.</dd></div>
+              <div class="case-fact"><dt data-i18n="case.result">Rezultat</dt><dd data-case-value="result">Moduły odebrane przez klienta i wdrożone na środowisko współdzielone; kolejne etapy zlecone przez tego samego klienta.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-project-id="kramo">
           <a class="project-media" href="https://p01--kramo-wp--bpk4d66g4n48.code.run/" target="_blank" rel="noopener" aria-label="Otwórz demo Kramo">
             <img src="assets/kramo.jpg" alt="Kramo — strona główna sklepu z polskim rzemiosłem" width="1265" height="712" fetchpriority="high" decoding="async" data-project-image>
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">01</span>
+              <span class="case-index">02</span>
               <h3 class="case-name" data-project-name>Kramo</h3>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Sklep internetowy z polskim rzemiosłem, wariantami produktów, ulubionymi i pełną ścieżką zakupową.</p>
@@ -152,7 +174,7 @@
           </div>
         </article>
 
-        <article class="project-card" data-project-id="velmora-home">
+        <article class="project-card reveal" data-project-id="velmora-home">
           <a class="project-media" href="https://velmorahome.infinityfree.io/?i=1" target="_blank" rel="noopener" aria-label="Otwórz demo Velmora Home">
               <picture>
                 <source srcset="assets/velmora-home.avif" type="image/avif">
@@ -162,7 +184,7 @@
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">02</span>
+              <span class="case-index">03</span>
               <h3 class="case-name" data-project-name>Velmora Home</h3>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.</p>
@@ -179,13 +201,13 @@
           </div>
         </article>
 
-        <article class="project-card" data-project-id="slotify">
+        <article class="project-card reveal" data-project-id="slotify">
           <a class="project-media" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Slotify">
             <img src="assets/slotify.webp" alt="Slotify — strona główna z kalendarzem wolnych terminów" width="1280" height="800" loading="lazy" decoding="async" data-project-image>
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">03</span>
+              <span class="case-index">04</span>
               <h3 class="case-name" data-project-name>Slotify</h3>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.</p>
@@ -205,11 +227,11 @@
           </div>
         </article>
 
-        <article class="project-card" data-project-id="quotly">
+        <article class="project-card reveal" data-project-id="quotly">
           <a class="project-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Quotly"><img src="assets/quotly.webp" alt="Quotly — landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">04</span>
+              <span class="case-index">05</span>
               <h3 class="case-name" data-project-name>Quotly</h3>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</p>
@@ -229,11 +251,11 @@
           </div>
         </article>
 
-        <article class="project-card" data-project-id="bazarek">
+        <article class="project-card reveal" data-project-id="bazarek">
           <a class="project-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" aria-label="Otwórz demo Bazarek"><img src="assets/bazarek.webp" alt="Bazarek — strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">05</span>
+              <span class="case-index">06</span>
               <h3 class="case-name" data-project-name>Bazarek</h3>
               <span class="case-status case-status-warn" data-project-status>cold start ~30 s</span>
               <p class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</p>
@@ -337,7 +359,12 @@
         <span class="fig-rule"></span>
         <span class="fig-sub" data-i18n="stack.eyebrow">narzędzia</span>
       </div>
-      <div class="cols cols-4 reveal" id="stackGrid"></div>
+      <div class="cols cols-4 reveal" id="stackGrid">
+        <div class="col-stack"><div class="col-cat">Frontend</div><div class="col-items">Next.js / React · Angular · TypeScript · Razor Pages / Bootstrap</div></div>
+        <div class="col-stack"><div class="col-cat">Backend</div><div class="col-items">ASP.NET Core (C#) · Node.js / Express · FastAPI (Python)</div></div>
+        <div class="col-stack"><div class="col-cat">Baza danych</div><div class="col-items">PostgreSQL · MongoDB</div></div>
+        <div class="col-stack"><div class="col-cat">Płatności / inne</div><div class="col-items">Stripe Connect · Docker · Git</div></div>
+      </div>
     </section>
 
     <!-- O MNIE -->
@@ -353,7 +380,9 @@
           <p class="about-body" data-i18n-html="about.text">
             Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end —
             <strong>autoryzacja, REST API, integracje płatności Stripe</strong> —
-            na Next.js, Node.js, PostgreSQL i MongoDB.
+            na ASP.NET Core, Next.js, Node.js, PostgreSQL i MongoDB. Dla klienta B2B rozwijam panel operatora systemu zamówień w ASP.NET Core.
+            W praktyce oznacza to m.in. idempotentne webhooki, transakcyjne blokowanie terminów przeciw double-bookingowi i podział prowizji liczony po stronie serwera.
+            Pięć projektów w portfolio ma publiczne demo, a trzy — otwarty kod na GitHubie. Panel klienta opisuję bez publicznego demo i repozytorium.
           </p>
         </div>
         <div>
@@ -434,7 +463,5 @@
 </noscript>
 
 <script src="app.js" defer></script>
-<!-- Vercel Web Analytics — działa tylko na deployu Vercel; lokalnie cicho 404 -->
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

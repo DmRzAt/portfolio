@@ -1,7 +1,9 @@
 # Portfolio — Dmytro Zatserkivnyi
 
-Moja strona-wizytówka: fullstack developer (Next.js, Node.js, PostgreSQL, Stripe Connect),
-freelance dla klientów z Polski i nie tylko.
+Moja strona-wizytówka: full-stack developer — panele administracyjne, integracje API
+i e-commerce (ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect).
+Praca zdalna dla klientów z Polski i nie tylko. Portfolio obejmuje panel klienta
+bez publicznego demo i repozytorium oraz pięć projektów z publicznymi demo.
 
 **Live:** https://dmytro-dev.pl
 
@@ -64,6 +66,7 @@ wtedy migracja na Astro/Next; nie wcześniej.
 
 | Projekt | Demo | Kod |
 |---|---|---|
+| Panel operatora systemu zamówień | — | — |
 | Kramo | https://p01--kramo-wp--bpk4d66g4n48.code.run/ | — |
 | Velmora Home | https://velmorahome.infinityfree.io/?i=1 | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
