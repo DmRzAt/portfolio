@@ -12,4 +12,3 @@ test('explicit language URLs choose their own language', () => {
   for (const path of ['/en', '/en/', '/en/index.html']) assert.equal(context.getLanguage(path), 'en');
   for (const path of ['/', '/index.html', '/energy/']) assert.equal(context.getLanguage(path), 'pl');
 });
-
