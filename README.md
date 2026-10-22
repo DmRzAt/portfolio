@@ -1,63 +1,78 @@
-# Portfolio — Dmytro Zatserkivnyi
+# Portfolio - Dmytro Zatserkivnyi
 
-Moja strona-wizytówka: full-stack developer — panele administracyjne, integracje API
-i e-commerce (ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect).
-Praca zdalna dla klientów z Polski i nie tylko. Portfolio obejmuje panel klienta
-bez publicznego demo i repozytorium oraz pięć projektów z publicznymi demo.
+Portfolio dla klientów Useme: WordPress, WooCommerce, Elementor, panele B2B
+i integracje API. Siedem opisów projektów, w tym pięć z publicznym demo
+i dwie anonimowe realizacje dla klientów. Zakres panelu zamówień to frontend
+Razor Pages; integracje backendu były pracą zespołu backendu.
 
 **Live:** https://dmytro-dev.pl
 
 ## Struktura
 
-Bez frameworków i bez builda — czysta statyka, wrzucasz katalog na Vercel i działa:
+Bez frameworków i zależności aplikacji. Gotowe pliki statyczne są w repozytorium:
 
 ```
-index.html   — struktura strony i polska treść case studies (HTML)
-styles.css   — cały wygląd i animacje (CSS)
-app.js       — tłumaczenia, dane do progressive enhancement i interakcje
-theme-init.js — wczesna inicjalizacja motywu bez inline JavaScript
-assets/      — zrzuty projektów (AVIF/WebP z PNG fallback)
-robots.txt / sitemap.xml — wskazówki indeksowania
-vercel.json  — nagłówki bezpieczeństwa
+index.html              - struktura i statyczna polska treść
+en/index.html           - wygenerowana statyczna angielska treść
+app.js                  - dane PL/EN, demo i interakcje
+styles.css              - wygląd, motywy i animacje
+scripts/build-pages.mjs - synchronizacja HTML z danymi i generowanie EN
+tests/*.test.mjs        - testy Node bez instalowania pakietów
+theme-init.js           - wczesna inicjalizacja motywu
+assets/                 - miniatury oraz lokalne fonty i ich licencje
+robots.txt / sitemap.xml - indeksowanie obu języków
+vercel.json             - nagłówki bezpieczeństwa
 ```
 
 W środku:
 
-- styl „dokumentu technicznego”: masthead z grubą linią, pasek meta, polska
-  typografia Lato (pełna + konturowa), sekcje numerowane jako FIG. 0X,
-- przełącznik języka PL/EN (słownik `I18N`, zapamiętywany w `localStorage`),
-- jasny/ciemny motyw: start zgodny z ustawieniem systemu, ręczny wybór zapamiętywany,
-- jedna wspólna siatka projektów bez wyróżniania jednego case’u; każdy pokazuje:
-  problem → zakres → architektura → najtrudniejsze → rezultat,
-- interaktywne demo flow rezerwacji niżej na stronie (slot → booking → płatność → webhook), jawnie oznaczone jako symulacja bez wysyłania danych,
-- case studies zapisane bezpośrednio w HTML; JavaScript tłumaczy i ulepsza stronę,
-- sekcja Opinie gotowa w kodzie (ukryta, aż dodasz pierwszy realny cytat),
-- uczciwe, statyczne oznaczenia demo zamiast niedokładnego cross-origin live-checka,
-- spójny system animacji: staggered hero, scroll-reveal (IntersectionObserver),
-  rysowane podkreślenia, pasek postępu, scroll-spy, przewijany pas usług w stopce,
-- kontakt ukierunkowany na useme (link do profilu, bezpieczna płatność) + bezpośredni mail,
-- dostępność: kontrasty małych tekstów co najmniej 4.5:1, focus-visible,
-  skip-link, semantyczne `<details>` i `prefers-reduced-motion`.
+- Lato, zielony akcent i jasny/ciemny motyw; domyślnie jasny, wybór zapamiętywany,
+- język wynika z URL: `/` po polsku, `/en/` po angielsku; przełącznik działa bez JS,
+- karty: mierzalny fakt, dwa punkty, widoczny rezultat, szczegóły w `<details>` i demo,
+- Kramo jako pierwszy projekt z demo WordPress; panel B2B jako drugi,
+- Etap 0 od 300 zł z odliczeniem po podpisaniu umowy na realizację w ciągu 30 dni od odbioru przeglądu,
+- struktura „Opis dzieła”, FAQ z odnośnikami do zasad Useme oraz trzy kroki do umowy,
+- booking jako jawna symulacja usług przykładowych, bez zakupu i wysyłania danych,
+- sekcja Opinie pozostaje ukryta, dopóki `TESTIMONIALS` jest puste,
+- fonty lokalne z `font-display: swap`, bez zapytań do Google Fonts,
+- Person/ProfessionalService, osobne metadane i wzajemne hreflang dla obu języków,
+- skip-link, focus-visible, obsługa klawiatury i prefers-reduced-motion.
 
 ## Uruchomienie lokalne
 
-Wystarczy otworzyć `index.html` w przeglądarce.
+Uruchom serwer z katalogu repozytorium (ścieżki zasobów zaczynają się od `/`):
+
+```sh
+python -m http.server 4173 --bind 127.0.0.1
+```
+
+Otwórz [PL](http://127.0.0.1:4173/) lub [EN](http://127.0.0.1:4173/en/).
 
 ## Jak rozbudowywać
 
-Treść domyślna pozostaje w HTML, a wariant angielski w danych JS:
+Układ edytuj w `index.html`, teksty i dane w `app.js`. Nie edytuj ręcznie
+`en/index.html`. Po zmianach danych lub układu uruchom:
 
-- **Nowy projekt** → dodaj polski case w `index.html`, projekt w `PROJECTS`
-  oraz tłumaczenia pięciu pól w `CASE_STUDIES`.
+```sh
+node scripts/build-pages.mjs
+node scripts/build-pages.mjs --check
+node --test tests/*.test.mjs
+node --check app.js
+```
+
+Generator synchronizuje polski HTML i zapisuje angielski. Hosting serwuje gotowe
+pliki, bez wymaganego builda. Jawny URL języka ma pierwszeństwo przed zapisaną preferencją.
+
+- **Nowy projekt** → dodaj strukturę karty w `index.html`, projekt w `PROJECTS`,
+  pięć pól w `CASE_STUDIES` i nagłówek z dwoma faktami w `PROJECT_EVIDENCE` (PL/EN).
 - **Nowy krok procesu / grupa stacku** → analogicznie `PROCESS` / `STACK`.
 - **Nowy tekst interfejsu** → klucz w słowniku `I18N.pl` i `I18N.en`
   + `data-i18n="klucz"` na elemencie HTML.
 - **Pasek usług (marquee)** → tablica `MARQUEE` w `app.js`.
 - **Opinia klienta** → dodaj obiekt do `TESTIMONIALS` (`name`, `role{pl,en}`,
   `text{pl,en}`) — sekcja „Opinie" sama się odkryje.
-- **Trzeci język (np. UA)** → nowy obiekt `I18N.ua` + pola `ua` w danych
-  + opcja w przełączniku.
-- **Nowa sekcja** → funkcja `renderCośtam()` wołana w `applyLang()`.
+- **Nowa sekcja** → statyczna struktura w HTML i klucze PL/EN w `I18N`.
+- **Nowy język** → osobny URL, rozszerzenie generatora, metadanych i sitemap.
 
 Jeśli kiedyś dojdzie blog/CMS i single-file przestanie wystarczać — dopiero
 wtedy migracja na Astro/Next; nie wcześniej.
@@ -66,12 +81,15 @@ wtedy migracja na Astro/Next; nie wcześniej.
 
 | Projekt | Demo | Kod |
 |---|---|---|
-| Panel operatora systemu zamówień | — | — |
 | Kramo | https://p01--kramo-wp--bpk4d66g4n48.code.run/ | — |
+| Panel operatora systemu zamówień (frontend) | — | — |
 | Velmora Home | https://velmorahome.infinityfree.io/?i=1 | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
-| Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
 | Quotly | https://quotly-flax.vercel.app | https://github.com/DmRzAt/quotly |
+| Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
+| Synchronizacja systemu hotelowego z BigQuery | — | — |
+
+Weryfikacja i źródła: [raport z 22.10.2026](docs/verification-2026-10-22.md).
 
 ## Kontakt
 

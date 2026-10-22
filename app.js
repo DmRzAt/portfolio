@@ -8,8 +8,8 @@ const PROJECTS = [
     id: 'oms-panel',
     name: { pl: 'Panel operatora systemu zamówień', en: 'Order management operator panel' },
     summary: {
-      pl: 'Panel dla operatorów systemu obsługi zamówień sklepu internetowego — zamówienia, statusy i przesyłki w jednym miejscu.',
-      en: "An operator panel for an online store's order management system — orders, statuses and shipments in one place.",
+      pl: 'Frontend panelu B2B: zamówienia, przesyłki, automatyzacje i faktury. Mój zakres: Razor Pages i Bootstrap; REST API dostarczał zespół backendu.',
+      en: 'A B2B panel frontend for orders, shipments, automation and invoices. My role: Razor Pages and Bootstrap; the backend team provided the REST API.',
     },
     tags: ['ASP.NET Core', 'Razor Pages', 'Bootstrap', 'REST API'],
     status: 'client',
@@ -19,8 +19,8 @@ const PROJECTS = [
     name: 'Kramo',
     img: 'assets/kramo.jpg',
     alt: {
-      pl: 'Kramo — strona główna sklepu z polskim rzemiosłem',
-      en: 'Kramo — Polish craft store home page',
+      pl: 'Kramo - strona główna sklepu z polskim rzemiosłem',
+      en: 'Kramo - Polish craft store home page',
     },
     summary: {
       pl: 'Sklep internetowy z polskim rzemiosłem, wariantami produktów, ulubionymi i pełną ścieżką zakupową.',
@@ -36,7 +36,7 @@ const PROJECTS = [
         { label: 'Technology', value: 'WordPress and WooCommerce on a dedicated Kramo child theme.' },
       ],
     },
-    tags: ['WordPress', 'WooCommerce', 'Kramo child theme'],
+    tags: ['WordPress', 'WooCommerce', 'Child theme'],
     demo: 'https://p01--kramo-wp--bpk4d66g4n48.code.run/',
     status: 'live',
   },
@@ -45,12 +45,12 @@ const PROJECTS = [
     name: 'Velmora Home',
     img: 'assets/velmora-home.png',
     alt: {
-      pl: 'Velmora Home — strona główna sklepu z meblami i dekoracjami',
-      en: 'Velmora Home — furniture and home decor store home page',
+      pl: 'Velmora Home - strona główna sklepu z meblami i dekoracjami',
+      en: 'Velmora Home - furniture and home decor store home page',
     },
     summary: {
-      pl: 'Demonstracyjny sklep wnętrzarski z katalogiem mebli, oświetlenia, dekoracji i tekstyliów.',
-      en: 'A demo interior design store with furniture, lighting, decor and textile catalogues.',
+      pl: 'Meble, oświetlenie, dekoracje i tekstylia. Sklep demonstracyjny na WooCommerce z Elementorem i własnym motywem.',
+      en: 'Furniture, lighting, decor and textiles. A WooCommerce demo store with Elementor and a custom theme.',
     },
     facts: {
       pl: [
@@ -71,21 +71,21 @@ const PROJECTS = [
     name: 'Slotify',
     img: 'assets/slotify.webp',
     alt: {
-      pl: 'Slotify — strona główna z kalendarzem wolnych terminów',
-      en: 'Slotify — home page with an availability calendar',
+      pl: 'Slotify - strona główna z kalendarzem wolnych terminów',
+      en: 'Slotify - home page with an availability calendar',
     },
     summary: {
-      pl: 'Rezerwacje usług lokalnych — konkretny termin zamiast telefonów i podwójnych rezerwacji.',
-      en: 'Local services booking — a concrete time slot instead of phone calls and double bookings.',
+      pl: 'Rezerwacje usług lokalnych - konkretny termin zamiast telefonów i podwójnych rezerwacji.',
+      en: 'Local services booking - a concrete time slot instead of phone calls and double bookings.',
     },
     facts: {
       pl: [
         { label: 'Co w środku', value: 'Kalendarz wolnych slotów, rezerwacja terminu i płatność online (Stripe).' },
-        { label: 'Do kliknięcia', value: 'Tryb demo z trzema rolami — klient, partner i admin — bez zakładania konta.' },
+        { label: 'Do kliknięcia', value: 'Tryb demo z trzema rolami - klient, partner i admin - bez zakładania konta.' },
       ],
       en: [
         { label: 'Inside', value: 'Availability calendar, slot booking and online payment (Stripe).' },
-        { label: 'Try it', value: 'Demo mode with three roles — client, partner and admin — no sign-up needed.' },
+        { label: 'Try it', value: 'Demo mode with three roles - client, partner and admin - no sign-up needed.' },
       ],
     },
     tags: ['Next.js', 'Prisma', 'Stripe'],
@@ -98,8 +98,8 @@ const PROJECTS = [
     name: 'Quotly',
     img: 'assets/quotly.webp',
     alt: {
-      pl: 'Quotly — landing z generatorem palet i płatnościami Stripe',
-      en: 'Quotly — landing with palette generator and Stripe billing',
+      pl: 'Quotly - landing z generatorem palet i płatnościami Stripe',
+      en: 'Quotly - landing with palette generator and Stripe billing',
     },
     summary: {
       pl: 'Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.',
@@ -125,8 +125,8 @@ const PROJECTS = [
     name: 'Bazarek',
     img: 'assets/bazarek.webp',
     alt: {
-      pl: 'Bazarek — strona główna platformy ogłoszeniowej',
-      en: 'Bazarek — marketplace platform home page',
+      pl: 'Bazarek - strona główna platformy ogłoszeniowej',
+      en: 'Bazarek - marketplace platform home page',
     },
     summary: {
       pl: 'Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.',
@@ -134,11 +134,11 @@ const PROJECTS = [
     },
     facts: {
       pl: [
-        { label: 'Mój zakres', value: 'Schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.' },
+        { label: 'Mój zakres', value: 'Schemat MongoDB, REST API i autoryzacja - backend wykonałem w całości.' },
         { label: 'Rezultat', value: 'Działająca aplikacja fullstack pokryta testami API i komponentów.' },
       ],
       en: [
-        { label: 'My role', value: 'MongoDB schema, REST API and authorization — I built the entire backend.' },
+        { label: 'My role', value: 'MongoDB schema, REST API and authorization - I built the entire backend.' },
         { label: 'Outcome', value: 'A working full-stack application covered by API and component tests.' },
       ],
     },
@@ -148,7 +148,17 @@ const PROJECTS = [
     // Render (darmowy tier) blokuje cross-origin (CORP) → live-checka nie da się
     // zrobić z przeglądarki bez błędu w konsoli; zamiast tego uczciwa notka o cold-starcie
     liveCheck: false,
-    note: { pl: 'Render — budzi się ~30 s', en: 'Render — cold start ~30 s' },
+    note: { pl: 'demo · pierwszy start może potrwać', en: 'demo · initial startup may take a while' },
+  },
+  {
+    id: 'hotel-bigquery',
+    name: { pl: 'Synchronizacja systemu hotelowego z BigQuery', en: 'Hotel system sync with BigQuery' },
+    summary: {
+      pl: 'Synchronizacja API systemu hotelowego z hurtownią danych. Kilka obiektów, historia zmian i wykrywanie anulowań, bez danych osobowych gości.',
+      en: 'Syncing a hotel system API with a data warehouse. Multiple properties, change history and cancellation detection, without guests’ personal data.',
+    },
+    tags: ['Python', 'BigQuery', 'Cloud Run', 'Cloud Scheduler', 'Secret Manager'],
+    status: 'client',
   },
 ];
 
@@ -159,31 +169,31 @@ const CASE_STUDIES = {
   'oms-panel': {
     pl: {
       problem: 'Operatorzy potrzebowali jednego panelu do codziennej obsługi zamówień: zmian statusów synchronizowanych ze sklepem i nadawania przesyłek u kurierów.',
-      scope: 'Lista i szczegóły zamówień z filtrami, zmiana statusów, moduł przesyłek (nadanie, etykieta, śledzenie, anulowanie), ustawienia kurierów i przypisanie kraju do kuriera.',
-      architecture: 'ASP.NET Core Razor Pages i Bootstrap. Panel nie ma dostępu do bazy — wszystkie dane idą przez REST API zespołu backendu, na wersjonowanym kontrakcie.',
+      scope: 'Frontend: 11 stron panelu oraz rozbudowa listy i karty zamówienia. Przesyłki, reguły WHEN/IF/THEN z testem na zamówieniu i logiem z ponowieniem, faktury i korekty, ustawienia statusów i kurierów.',
+      architecture: 'ASP.NET Core Razor Pages i Bootstrap. Panel nie ma dostępu do bazy - wszystkie dane idą przez REST API zespołu backendu, na wersjonowanym kontrakcie.',
       challenge: 'Etykiety przesyłek przekazywane przez panel strumieniowo z kontrolą typu pliku, błędy walidacji API pokazywane przy konkretnym polu formularza i godziny liczone w strefie Europe/Warsaw niezależnie od strefy kontenera.',
-      result: 'Moduły odebrane przez klienta i wdrożone na środowisko współdzielone; kolejne etapy zlecone przez tego samego klienta.',
+      result: '5 kolejnych umów z tym samym klientem. Panel sprawdzony na ok. 7 000 rzeczywistych zamówień w środowisku testowym; 96 moich commitów w main. Mój wkład obejmował frontend, nie integracje backendu.',
     },
     en: {
       problem: 'Operators needed a single panel for daily order handling: status changes synced with the store and shipping through courier accounts.',
-      scope: 'Order list and details with filters, status changes, a shipments module (creation, label, tracking, cancellation), courier settings and country-to-courier mapping.',
-      architecture: "ASP.NET Core Razor Pages and Bootstrap. The panel has no database access — all data goes through the backend team's REST API under a versioned contract.",
+      scope: 'Frontend: 11 panel pages plus extensions to the order list and detail view. Shipments, WHEN/IF/THEN rules with order-level testing and retry logs, invoices and corrections, status and courier settings.',
+      architecture: "ASP.NET Core Razor Pages and Bootstrap. The panel has no database access - all data goes through the backend team's REST API under a versioned contract.",
       challenge: "Shipping labels streamed through the panel with file-type checks, API validation errors shown next to the exact form field, and times computed in Europe/Warsaw regardless of the container's time zone.",
-      result: 'Modules accepted by the client and deployed to the shared environment; further stages commissioned by the same client.',
+      result: '5 consecutive contracts with the same client. Panel checked against about 7,000 real orders in a test environment; 96 of my commits in main. My contribution was the frontend, not the backend integrations.',
     },
   },
   kramo: {
     pl: {
       problem: 'Zbudować czytelny sklep dla produktów rzemieślniczych i uprościć wybór wariantów oraz zakup.',
-      scope: 'Katalog i kategorie, warianty produktów, ulubione, konto klienta, koszyk, płatności, dostawa i zwroty.',
-      architecture: 'WordPress i WooCommerce na motywie potomnym Kramo, z dedykowaną obsługą katalogu, ulubionych i koszyka.',
+      scope: 'Katalog, warianty, ulubione, konto, koszyk, płatności, dostawa i zwroty. Lokalna strona usługowa dla Katowic z JSON-LD @graph: LocalBusiness, FAQPage, BreadcrumbList i City.',
+      architecture: 'WordPress i WooCommerce na motywie potomnym, bez page buildera. Własna obsługa katalogu, ulubionych i koszyka.',
       challenge: 'Połączyć rozbudowany e-commerce ze spokojną prezentacją marki i czytelną nawigacją po ofercie.',
       result: 'Działające demo sklepu z produktami, wariantami, szybkim podglądem, ulubionymi i pełnym koszykiem.',
     },
     en: {
       problem: 'Build a clear craft-goods store and simplify both product-variant selection and checkout.',
-      scope: 'Catalogue and categories, product variants, wishlists, customer accounts, cart, payments, delivery and returns.',
-      architecture: 'WordPress and WooCommerce on a Kramo child theme, with dedicated catalogue, wishlist and cart behaviour.',
+      scope: 'Catalogue, variants, wishlists, accounts, cart, payments, delivery and returns. A local service page for Katowice with a JSON-LD @graph: LocalBusiness, FAQPage, BreadcrumbList and City.',
+      architecture: 'WordPress and WooCommerce on a child theme, without a page builder. Custom catalogue, wishlist and cart behaviour.',
       challenge: 'Combine a full e-commerce feature set with calm brand presentation and clear offer navigation.',
       result: 'A working store demo with products, variants, quick view, wishlists and a complete cart.',
     },
@@ -223,7 +233,7 @@ const CASE_STUDIES = {
   bazarek: {
     pl: {
       problem: 'Połączyć ogłoszenia, wyszukiwanie, czat, konta użytkowników i administrację w jednej aplikacji.',
-      scope: 'Projekt zespołowy; schemat MongoDB, REST API i autoryzacja — backend wykonałem w całości.',
+      scope: 'Projekt zespołowy; schemat MongoDB, REST API i autoryzacja - backend wykonałem w całości.',
       architecture: 'Angular 19, Express i MongoDB; access JWT 15 min oraz refresh token 7 dni w httpOnly cookie.',
       challenge: 'Bezpieczne odświeżanie sesji, uprawnienia owner/admin, czat, uploady i monitoring produkcyjny.',
       result: 'Działająca aplikacja fullstack pokryta 7 testami API i 11 testami komponentów Angular.',
@@ -255,7 +265,56 @@ const CASE_STUDIES = {
 };
 
 
+CASE_STUDIES['hotel-bigquery'] = {
+  pl: {
+    problem: 'Połączyć API systemu hotelowego z BigQuery dla kilku obiektów, zachowując historię zmian i wykrywając anulowania.',
+    scope: 'Inkrementalne pobieranie rezerwacji, historia wersji, słowniki i obsługa kilku obiektów. Bez danych osobowych gości.',
+    architecture: 'Python na Cloud Run, uruchamiany przez Cloud Scheduler. Sekrety w Secret Manager; konto serwisowe z minimalnymi uprawnieniami.',
+    challenge: 'Wykrywanie anulowań z bezpiecznikiem, aby nie traktować niepełnego odczytu API jako usunięcia rezerwacji.',
+    result: 'Pełny przebieg na ok. 4 400 rezerwacjach. 154 moje testy automatyczne oraz 10 testów integracyjnych na rzeczywistym BigQuery.',
+  },
+  en: {
+    problem: 'Bring a hotel system API into BigQuery for multiple properties while preserving change history and detecting cancellations.',
+    scope: 'Incremental booking imports, version history, lookup data and multiple properties. No guests’ personal data.',
+    architecture: 'Python on Cloud Run, triggered by Cloud Scheduler. Secrets in Secret Manager; a service account with least-privilege access.',
+    challenge: 'Cancellation detection with a safeguard so an incomplete API response is not treated as deleted bookings.',
+    result: 'A full run on about 4,400 bookings. 154 automated tests and 10 integration tests against real BigQuery, written by me.',
+  },
+};
+
+const PROJECT_EVIDENCE = {
+  kramo: {
+    pl: { headline: '1 sklep, pełna ścieżka zakupu', facts: ['WordPress + WooCommerce, motyw potomny bez page buildera.', 'Lokalna strona usługowa z 4 typami danych w JSON-LD.'] },
+    en: { headline: '1 store, a complete shopping flow', facts: ['WordPress + WooCommerce, a child theme without a page builder.', 'A local service page with 4 JSON-LD entity types.'] },
+  },
+  'oms-panel': {
+    pl: { headline: '5 umów z jednym klientem', facts: ['11 stron panelu i rozbudowa listy oraz karty zamówienia.', 'Ok. 7 000 zamówień w testach; mój zakres: frontend Razor Pages.'] },
+    en: { headline: '5 contracts with one client', facts: ['11 panel pages plus order list and detail extensions.', 'About 7,000 orders in testing; my role: Razor Pages frontend.'] },
+  },
+  'velmora-home': {
+    pl: { headline: '4 kategorie: od mebli po tekstylia', facts: ['Meble, oświetlenie, dekoracje i tekstylia.', 'WooCommerce + Elementor + własny motyw.'] },
+    en: { headline: '4 categories, from furniture to textiles', facts: ['Furniture, lighting, decor and textiles.', 'WooCommerce + Elementor + a custom theme.'] },
+  },
+  slotify: {
+    pl: { headline: '3 role, od terminu do płatności', facts: ['Klient, partner i administrator w publicznym demo.', 'UNIQUE + transakcja chronią przed podwójną rezerwacją.'] },
+    en: { headline: '3 roles, from slot to payment', facts: ['Client, partner and admin in the public demo.', 'UNIQUE + a transaction guard against double booking.'] },
+  },
+  quotly: {
+    pl: { headline: 'Podział 90/10 liczony w centach', facts: ['Stripe Connect: onboarding, sprzedaż i podział płatności.', 'Idempotentne webhooki i limit użycia liczony z rekordów.'] },
+    en: { headline: '90/10 split calculated in cents', facts: ['Stripe Connect: onboarding, sales and payment splitting.', 'Idempotent webhooks and a usage quota derived from records.'] },
+  },
+  bazarek: {
+    pl: { headline: '7 testów API, 11 testów komponentów', facts: ['Projekt zespołowy; cały backend Express wykonałem sam.', 'MongoDB, REST API i autoryzacja; frontend w Angularze.'] },
+    en: { headline: '7 API tests, 11 component tests', facts: ['A team project; I built the entire Express backend.', 'MongoDB, REST API and authorization; Angular frontend.'] },
+  },
+  'hotel-bigquery': {
+    pl: { headline: 'Ok. 4 400 rezerwacji, 154 testy', facts: ['10 dodatkowych testów integracyjnych na rzeczywistym BigQuery.', 'Inkrementalna synchronizacja i historia wersji dla kilku obiektów.'] },
+    en: { headline: 'About 4,400 bookings, 154 tests', facts: ['10 additional integration tests against real BigQuery.', 'Incremental sync and version history for multiple properties.'] },
+  },
+};
+
 const STACK = [
+  { label: { pl: 'CMS / e-commerce', en: 'CMS / e-commerce' }, items: ['WordPress', 'WooCommerce', 'Elementor'] },
   { label: { pl: 'Frontend', en: 'Frontend' }, items: ['Next.js / React', 'Angular', 'TypeScript', 'Razor Pages / Bootstrap'] },
   { label: { pl: 'Backend', en: 'Backend' }, items: ['ASP.NET Core (C#)', 'Node.js / Express', 'FastAPI (Python)'] },
   { label: { pl: 'Baza danych', en: 'Database' }, items: ['PostgreSQL', 'MongoDB'] },
@@ -266,8 +325,8 @@ const PROCESS = [
   {
     title: { pl: 'Analiza', en: 'Analysis' },
     desc: {
-      pl: 'Zanim padnie wycena — pytania: cel biznesowy, edge case\'y, integracje. To one kształtują architekturę.',
-      en: 'Before any quote — questions: business goal, edge cases, integrations. These shape the architecture.',
+      pl: 'Zanim padnie wycena - pytania: cel biznesowy, edge case\'y, integracje. To one kształtują architekturę.',
+      en: 'Before any quote - questions: business goal, edge cases, integrations. These shape the architecture.',
     },
   },
   {
@@ -309,13 +368,13 @@ const PRICING = {
     },
     {
       name: { pl: 'Sklep lub panel B2B', en: 'E-commerce or B2B panel' },
-      price: { pl: 'od 4 500 zł', en: 'from 4,500 zł' },
-      desc: { pl: 'Konta, role, baza danych, API — aplikacja end-to-end.', en: 'Accounts, roles, database, API — an end-to-end application.' },
+      price: { pl: 'od 3 000 zł', en: 'from 3,000 zł' },
+      desc: { pl: 'Konta, role, baza danych, API - aplikacja end-to-end.', en: 'Accounts, roles, database, API - an end-to-end application.' },
     },
   ],
   note: {
-    pl: 'Progi orientacyjne „od" — dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez useme (escrow).',
-    en: 'Indicative "from" thresholds — an exact quote follows a short, free analysis. Staged work and payment, also via useme (escrow).',
+    pl: 'Progi orientacyjne „od" - dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez Useme (escrow).',
+    en: 'Indicative "from" thresholds - an exact quote follows a short, free analysis. Staged work and payment, also via Useme (escrow).',
   },
 };
 
@@ -324,16 +383,16 @@ const A11Y = [
     tag: 'keyboard',
     title: { pl: 'Nawigacja klawiaturą', en: 'Keyboard navigation' },
     desc: {
-      pl: 'Cała strona obsługiwana Tabem — widoczne focus-ringi i skip-link do treści.',
-      en: 'The whole site is operable with Tab — visible focus rings and a skip link.',
+      pl: 'Cała strona obsługiwana Tabem - widoczne focus-ringi i skip-link do treści.',
+      en: 'The whole site is operable with Tab - visible focus rings and a skip link.',
     },
   },
   {
     tag: 'contrast',
     title: { pl: 'Kontrast WCAG AA', en: 'WCAG AA contrast' },
     desc: {
-      pl: 'Każdy tekst spełnia min. 4.5:1 — sprawdzone narzędziem, nie „na oko".',
-      en: 'Every text meets at least 4.5:1 — checked with tooling, not by eye.',
+      pl: 'Każdy tekst spełnia min. 4.5:1 - sprawdzone narzędziem, nie „na oko".',
+      en: 'Every text meets at least 4.5:1 - checked with tooling, not by eye.',
     },
   },
   {
@@ -359,9 +418,9 @@ const A11Y = [
 const TESTIMONIALS = [];
 
 const BOOKING_SERVICES = [
-  { id: 'consultation', price: 120, label: { pl: 'Konsultacja · 30 min', en: 'Consultation · 30 min' } },
-  { id: 'wcag-audit', price: 240, label: { pl: 'Audyt WCAG', en: 'WCAG audit' } },
-  { id: 'api-review', price: 180, label: { pl: 'Przegląd API', en: 'API review' } },
+  { id: 'haircut', price: 120, label: { pl: 'Strzyżenie', en: 'Haircut' } },
+  { id: 'massage', price: 240, label: { pl: 'Masaż', en: 'Massage' } },
+  { id: 'manicure', price: 180, label: { pl: 'Manicure', en: 'Manicure' } },
 ];
 
 const BOOKING_TIMES = ['10:00', '12:30', '16:00'];
@@ -377,19 +436,19 @@ const BOOKING_STEPS = [
 const MARQUEE = {
   pl: [
     'Aplikacje webowe end-to-end',
-    'Integracje płatności — Stripe',
+    'Integracje płatności - Stripe',
     'REST API + autoryzacja',
     'Panele i dashboardy B2B',
-    'Bazy danych — SQL i NoSQL',
+    'Bazy danych - SQL i NoSQL',
     'Dostępność WCAG AA',
     'Wycena i praca na etapy',
   ],
   en: [
     'End-to-end web apps',
-    'Payment integrations — Stripe',
+    'Payment integrations - Stripe',
     'REST APIs + auth',
     'B2B panels & dashboards',
-    'Databases — SQL & NoSQL',
+    'Databases - SQL & NoSQL',
     'WCAG AA accessibility',
     'Staged pricing & delivery',
   ],
@@ -397,13 +456,13 @@ const MARQUEE = {
 
 const I18N = {
   pl: {
-    'seo.title': 'Dmytro Zatserkivnyi — Full-Stack Developer: panele, API, e-commerce',
-    'seo.description': 'Full-stack developer — panele administracyjne, integracje API i e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Praca zdalna.',
+    'seo.title': 'WordPress, WooCommerce i panele B2B | Dmytro Zatserkivnyi',
+    'seo.description': 'Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 7 projektów i demo. 60 zł/h. Współpraca przez Useme.',
     'ui.skip': 'Przejdź do treści',
     'mast.sub': 'FULLSTACK · WEB · B2B · PŁATNOŚCI',
-    'meta.nr': 'NR. 01 — PORTFOLIO',
+    'meta.nr': 'NR. 01 - PORTFOLIO',
     'meta.loc': 'TARNÓW / ZDALNIE',
-    'hl.note': 'ASP.NET CORE · NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'hl.note': 'WordPress / WooCommerce · ASP.NET Core · Next.js',
     'demo.sectionTitle': 'Interaktywne demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'Od wolnego terminu do potwierdzonej płatności.',
@@ -420,16 +479,16 @@ const I18N = {
     'theme.toLight': 'Włącz jasny motyw',
     'theme.toDark': 'Włącz ciemny motyw',
     'hero.eyebrow': 'dostępny do współpracy',
-    'hero.sub': 'Buduję panele administracyjne, integracje API i sklepy — narzędzia do codziennej pracy.',
+    'hero.sub': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B oraz integracje API. Rozmawiasz bezpośrednio z osobą, która pisze kod.',
     'hero.cta1': 'Zobacz projekty',
-    'hero.cta2': 'Napisz do mnie',
-    'demo.title': 'booking.flow.ts — interaktywne demo',
-    'demo.serviceLabel': 'Usługa',
+    'hero.cta2': 'Zatrudnij mnie przez Useme',
+    'demo.title': 'booking.flow.ts - interaktywne demo',
+    'demo.serviceLabel': 'Przykładowe usługi',
     'demo.timeLabel': 'Dostępny termin',
     'demo.book': 'Zarezerwuj demo',
     'demo.repeat': 'Powtórz demo',
     'demo.processing': 'Przetwarzanie…',
-    'demo.note': 'Symulacja interfejsu — niczego nie kupujesz, żadne dane nie są wysyłane.',
+    'demo.note': 'Symulacja interfejsu - niczego nie kupujesz, żadne dane nie są wysyłane.',
     'demo.slots': '3 terminy · symulacja',
     'demo.paid': 'opłacono · 0 danych wysłanych',
     'demo.waiting': 'czeka',
@@ -437,7 +496,10 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
     'projects.title': 'Projekty',
-    'projects.eyebrow': '6 projektów · 5 z działającym demo · konkretne decyzje',
+    'projects.eyebrow': '7 projektów · 5 publicznych demo',
+    'case.details': 'Szczegóły',
+    'hero.reply': 'Odpisuję zwykle tego samego dnia.',
+    'links.local': 'Strona lokalna: Katowice',
     'case.problem': 'Problem',
     'case.scope': 'Zakres',
     'case.architecture': 'Architektura',
@@ -445,38 +507,38 @@ const I18N = {
     'case.result': 'Rezultat',
     'a11y.eyebrow': 'standard, nie dodatek',
     'a11y.title': 'Dostępność',
-    'a11y.text': 'Buduję zgodnie z WCAG AA: pełna nawigacja klawiaturą, ARIA, kontrasty, poszanowanie prefers-reduced-motion. Ta strona też tak działa — sprawdź Tabem.',
+    'a11y.text': 'Buduję zgodnie z WCAG AA: pełna nawigacja klawiaturą, ARIA, kontrasty, poszanowanie prefers-reduced-motion. Ta strona też tak działa - sprawdź Tabem.',
     'process.eyebrow': 'jak pracuję',
     'process.title': 'Proces',
     'stack.eyebrow': 'narzędzia',
     'about.eyebrow': 'kim jestem',
     'about.title': 'O mnie',
-    'about.text': 'Fullstack developer z okolic Tarnowa. Buduję aplikacje webowe end-to-end — <strong>autoryzacja, REST API, integracje płatności Stripe</strong> — na ASP.NET Core, Next.js, Node.js, PostgreSQL i MongoDB. Dla klienta B2B rozwijam panel operatora systemu zamówień w ASP.NET Core. W praktyce oznacza to m.in. idempotentne webhooki, transakcyjne blokowanie terminów przeciw double-bookingowi i podział prowizji liczony po stronie serwera. Pięć projektów w portfolio ma publiczne demo, a trzy — otwarty kod na GitHubie. Panel klienta opisuję bez publicznego demo i repozytorium.',
+    'about.text': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. W panelu zamówień dla klienta odpowiadałem za frontend Razor Pages, współpracując z zespołem backendu. Drugi opisany system klienta to synchronizacja API hotelowego z BigQuery w Pythonie. W portfolio jest 7 projektów: 5 z publicznym demo i 2 anonimowe realizacje dla klientów. Kod 3 projektów jest dostępny na GitHubie.',
     'about.loc.label': 'Lokalizacja',
     'about.av.label': 'Dostępność',
-    'about.av.value': 'Zdalnie — Polska i zagranica',
+    'about.av.value': 'Zdalnie - Polska i zagranica',
     'about.lang.label': 'Języki',
     'about.lang.value': 'Polski, ukraiński, angielski',
     'testimonials.eyebrow': 'opinie klientów',
     'testimonials.title': 'Opinie',
     'contact.lead': 'Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.',
     'contact.useme.k': 'preferowana ścieżka współpracy',
-    'contact.useme.v': 'Zatrudnij mnie przez useme →',
-    'contact.useme.sub': 'Bezpieczna płatność z fakturą — środki są zabezpieczone do czasu odbioru pracy. Zero ryzyka dla obu stron.',
+    'contact.useme.v': 'Zatrudnij mnie przez Useme →',
+    'contact.useme.sub': 'Faktura VAT przez Useme. W trybie „Podpisz umowę” środki czekają na odbiór pracy zgodnie z zasadami platformy.',
     'status.client': 'system klienta · bez publicznego demo',
     'project.omsPanel.media': 'ASP.NET CORE · PANEL OPERATORA',
     'status.demo': 'demo',
-    'links.demo': '→ Demo',
+    'links.demo': 'Otwórz demo',
     'links.github': '→ GitHub',
   },
   en: {
-    'seo.title': 'Dmytro Zatserkivnyi — Full-Stack Developer: panels, APIs, e-commerce',
-    'seo.description': 'Full-stack developer — admin panels, API integrations and e-commerce. ASP.NET Core, Next.js, Node.js, PostgreSQL, Stripe Connect. Remote work.',
+    'seo.title': 'WordPress, WooCommerce & B2B panels | Dmytro Zatserkivnyi',
+    'seo.description': 'WordPress sites, WooCommerce and Elementor stores, B2B panels and API integrations. Explore 7 projects and demos. 60 PLN/hour. Hire through Useme.',
     'ui.skip': 'Skip to content',
     'mast.sub': 'FULLSTACK · WEB · B2B · PAYMENTS',
-    'meta.nr': 'NO. 01 — PORTFOLIO',
+    'meta.nr': 'NO. 01 - PORTFOLIO',
     'meta.loc': 'TARNÓW / REMOTE',
-    'hl.note': 'ASP.NET CORE · NEXT.JS · NODE.JS · POSTGRESQL · STRIPE',
+    'hl.note': 'WordPress / WooCommerce · ASP.NET Core · Next.js',
     'demo.sectionTitle': 'Interactive demo',
     'demo.sectionEyebrow': 'slot → booking → payment → webhook',
     'demo.sectionHead': 'From an available slot to a confirmed payment.',
@@ -493,16 +555,16 @@ const I18N = {
     'theme.toLight': 'Switch to light theme',
     'theme.toDark': 'Switch to dark theme',
     'hero.eyebrow': 'available for work',
-    'hero.sub': 'I build admin panels, API integrations and online stores — tools for everyday work.',
+    'hero.sub': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. You speak directly with the person writing the code.',
     'hero.cta1': 'See projects',
-    'hero.cta2': 'Get in touch',
-    'demo.title': 'booking.flow.ts — interactive demo',
-    'demo.serviceLabel': 'Service',
+    'hero.cta2': 'Hire me via Useme',
+    'demo.title': 'booking.flow.ts - interactive demo',
+    'demo.serviceLabel': 'Example services',
     'demo.timeLabel': 'Available time',
     'demo.book': 'Book demo slot',
     'demo.repeat': 'Run demo again',
     'demo.processing': 'Processing…',
-    'demo.note': 'Interface simulation — you are not buying anything and no data is sent.',
+    'demo.note': 'Interface simulation - you are not buying anything and no data is sent.',
     'demo.slots': '3 slots · simulation',
     'demo.paid': 'paid · 0 data sent',
     'demo.waiting': 'waiting',
@@ -510,7 +572,10 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
     'projects.title': 'Projects',
-    'projects.eyebrow': '6 projects · 5 with working demos · concrete decisions',
+    'projects.eyebrow': '7 projects · 5 public demos',
+    'case.details': 'Details',
+    'hero.reply': 'I usually reply the same day.',
+    'links.local': 'Local page: Katowice',
     'case.problem': 'Problem',
     'case.scope': 'Scope',
     'case.architecture': 'Architecture',
@@ -518,28 +583,28 @@ const I18N = {
     'case.result': 'Outcome',
     'a11y.eyebrow': 'a standard, not an add-on',
     'a11y.title': 'Accessibility',
-    'a11y.text': 'I build to WCAG AA: full keyboard navigation, ARIA, contrast, prefers-reduced-motion respected. This site works that way too — try Tab.',
+    'a11y.text': 'I build to WCAG AA: full keyboard navigation, ARIA, contrast, prefers-reduced-motion respected. This site works that way too - try Tab.',
     'process.eyebrow': 'how I work',
     'process.title': 'Process',
     'stack.eyebrow': 'tools',
     'about.eyebrow': 'who I am',
     'about.title': 'About',
-    'about.text': 'Fullstack developer based near Tarnów, Poland. I build web applications end to end — <strong>authorization, REST APIs, Stripe payment integrations</strong> — with ASP.NET Core, Next.js, Node.js, PostgreSQL and MongoDB. For a B2B client I develop an order management operator panel in ASP.NET Core. In practice that means idempotent webhooks, transactional slot locking against double-booking and server-side commission splits. Five projects in this portfolio have public demos, and three have open code on GitHub. The client panel is described without a public demo or repository.',
+    'about.text': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. For a client’s order panel I built the Razor Pages frontend, working with a backend team. The second client system is a Python integration syncing a hotel API with BigQuery. This portfolio has 7 projects: 5 with public demos and 2 anonymous client projects. Code for 3 projects is available on GitHub.',
     'about.loc.label': 'Location',
     'about.av.label': 'Availability',
-    'about.av.value': 'Remote — Poland & international',
+    'about.av.value': 'Remote - Poland & international',
     'about.lang.label': 'Languages',
     'about.lang.value': 'Polish, Ukrainian, English',
     'testimonials.eyebrow': 'client feedback',
     'testimonials.title': 'Testimonials',
     'contact.lead': 'Got a project or a pricing question? I usually reply the same day.',
     'contact.useme.k': 'preferred way to work together',
-    'contact.useme.v': 'Hire me via useme →',
-    'contact.useme.sub': 'Secure, invoiced payment — funds are held in escrow until the work is accepted. Zero risk for both sides.',
+    'contact.useme.v': 'Hire me via Useme →',
+    'contact.useme.sub': 'VAT invoice through Useme. With “Sign a contract”, funds are held pending acceptance under the platform’s rules.',
     'status.client': 'client system · no public demo',
     'project.omsPanel.media': 'ASP.NET CORE · OPERATOR PANEL',
     'status.demo': 'demo',
-    'links.demo': '→ Demo',
+    'links.demo': 'Open demo',
     'links.github': '→ GitHub',
   },
 };
@@ -547,6 +612,111 @@ const I18N = {
 /* =====================================================================
    RENDER — każda sekcja z osobnej funkcji; nowa sekcja = nowa funkcja
    ===================================================================== */
+
+Object.assign(I18N.pl, {
+  'stage.title': 'Zacznij od przeglądu strony',
+  'stage.name': 'Przegląd strony / Etap 0',
+  'stage.price': 'od 300 zł',
+  'stage.copy': 'Otrzymasz raport z listą poprawek i wyceną realizacji. Najpierw ustalamy, co sprawdzam.',
+  'stage.credit': 'Kwotę przeglądu odliczam od realizacji, jeśli umowa na poprawki lub wdrożenie zostanie podpisana w ciągu 30 dni od odbioru przeglądu.',
+  'stage.cta': 'Zapytaj o przegląd przez Useme',
+  'handover.title': 'Jak wygląda odbiór pracy',
+  'handover.sub': 'wiesz, co odbierasz',
+  'handover.copy': 'Do każdego odbioru dołączam „Opis dzieła” w PDF: co zrobiłem, jak to sprawdziłem i co jest poza zakresem.',
+  'handover.example': 'Przykładowa struktura dokumentu',
+  'handover.exampleNote': 'Wzór struktury, bez danych i zrzutów systemów klientów.',
+  'handover.scope': 'Co zostało wykonane',
+  'handover.scopeCopy': 'Lista funkcji i zmian przypisana do uzgodnionego etapu.',
+  'handover.tests': 'Jak zostało sprawdzone',
+  'handover.testsCopy': 'Scenariusze, środowisko i wyniki weryfikacji.',
+  'handover.limits': 'Co jest poza zakresem',
+  'handover.limitsCopy': 'Ograniczenia, otwarte kwestie i elementy do osobnej wyceny.',
+  'next.title': 'Następny krok',
+  'next.message': 'Wyślij opis lub link',
+  'next.messageCopy': 'Napisz przez Useme, co chcesz zmienić, jaki masz termin i co już działa.',
+  'next.scope': 'Ustalamy zakres i cenę',
+  'next.scopeCopy': 'Dostajesz opis etapu, kryteria odbioru i wycenę. Uzgadniamy też termin oraz rundy poprawek.',
+  'next.contract': 'Zawieramy umowę w Useme',
+  'next.contractCopy': 'Potwierdzamy warunki i korzystamy z „Podpisz umowę”, aby zabezpieczyć płatność przed rozpoczęciem pracy.',
+  'faq.title': 'Pytania przed współpracą',
+  'faq.paymentQ': 'Jak działa płatność i faktura VAT?',
+  'faq.paymentA': 'Współpracę rozliczamy przez Useme. W trybie „Podpisz umowę” wpłacasz środki do Useme przed startem, a platforma wypłaca je po odbiorze zgodnie ze swoim regulaminem. Useme wystawia fakturę VAT.',
+  'faq.timeQ': 'Kiedy projekt będzie gotowy?',
+  'faq.timeA': 'Termin ustalam po poznaniu zakresu, materiałów i potrzebnych dostępów. Przy większym projekcie umawiamy osobne terminy dla etapów.',
+  'faq.revisionsQ': 'Ile poprawek obejmuje cena?',
+  'faq.revisionsA': 'Liczbę rund i kryteria odbioru zapisujemy przed startem. Nowe funkcje poza zakresem wymagają osobnej wyceny.',
+  'faq.accessQ': 'Czy muszę wysłać hasło do swojego konta?',
+  'faq.accessA': 'Dostęp ustalamy przez zaproszenie lub osobne konto z potrzebnymi uprawnieniami. Nie wysyłaj hasła do swojego głównego konta w wiadomości.',
+  'faq.rightsQ': 'Co z prawami do kodu i licencjami?',
+  'faq.rightsA': 'Warunki przeniesienia praw lub licencji ustalamy w umowie i rozliczeniu Useme. Motywy, wtyczki i biblioteki innych autorów zachowują własne licencje.',
+  'faq.afterQ': 'Co otrzymam po zakończeniu?',
+  'faq.afterA': 'Uzgodniony rezultat i „Opis dzieła” w PDF. Sposób przekazania plików, dostępów oraz zakres dalszego wsparcia zapisujemy w opisie zlecenia.',
+  'faq.sources': 'Zasady Useme:',
+  'faq.paymentLink': 'płatności i faktury',
+  'faq.rightsLink': 'prawa autorskie i licencje',
+  'pricing.rate': 'Stawka godzinowa: 60 zł/h. Ceny „od” są orientacyjne; zakres i ostateczną kwotę ustalamy przed startem.',
+  'hero.email': 'Wolisz e-mail?',
+  'demo.open': 'Wypróbuj demonstrację rezerwacji',
+  'a11y.more': 'Jak sprawdzić dostępność tej strony',
+  'process.more': 'Zobacz sposób pracy',
+  'nav.label': 'Główna nawigacja',
+  'about.location': 'Tarnów, Polska',
+  'noscript.note': 'Projekty, szczegóły, języki i kontakt działają bez JavaScript. Interaktywne demo i przełącznik motywu wymagają JavaScript.',
+});
+Object.assign(I18N.en, {
+  'stage.title': 'Start with a site review',
+  'stage.name': 'Site review / Stage 0',
+  'stage.price': 'from 300 zł',
+  'stage.copy': 'You receive a report listing fixes and an implementation quote. We agree what to review first.',
+  'stage.credit': 'I deduct the review cost from implementation if the contract for fixes or implementation is signed within 30 days of accepting the review.',
+  'stage.cta': 'Ask about a review via Useme',
+  'handover.title': 'How work is handed over',
+  'handover.sub': 'a clear basis for acceptance',
+  'handover.copy': 'Every handover includes an “Opis dzieła” PDF: what I built, how I verified it and what is outside the scope.',
+  'handover.example': 'Example document structure',
+  'handover.exampleNote': 'A structural example, without client data or system screenshots.',
+  'handover.scope': 'What was delivered',
+  'handover.scopeCopy': 'Features and changes mapped to the agreed stage.',
+  'handover.tests': 'How it was verified',
+  'handover.testsCopy': 'Scenarios, environment and verification results.',
+  'handover.limits': 'What is outside the scope',
+  'handover.limitsCopy': 'Limitations, open questions and items requiring a separate quote.',
+  'next.title': 'The next step',
+  'next.message': 'Send a brief or a link',
+  'next.messageCopy': 'Message me on Useme with what you need changed, your deadline and what already works.',
+  'next.scope': 'Agree the scope and price',
+  'next.scopeCopy': 'You receive a stage description, acceptance criteria and a quote. We also agree a deadline and revision rounds.',
+  'next.contract': 'Sign a contract in Useme',
+  'next.contractCopy': 'We confirm the terms and use “Sign a contract” to secure payment before work begins.',
+  'faq.title': 'Before we work together',
+  'faq.paymentQ': 'How do payment and VAT invoicing work?',
+  'faq.paymentA': 'We settle through Useme. With “Sign a contract”, you deposit funds with Useme before work starts; the platform releases them after acceptance under its terms. Useme issues the VAT invoice.',
+  'faq.timeQ': 'When will the project be ready?',
+  'faq.timeA': 'I agree the deadline after reviewing the scope, materials and access needed. Larger projects have separate deadlines for each stage.',
+  'faq.revisionsQ': 'How many revisions are included?',
+  'faq.revisionsA': 'We record the revision rounds and acceptance criteria before starting. New features outside that scope need a separate quote.',
+  'faq.accessQ': 'Do I need to send you my password?',
+  'faq.accessA': 'We arrange access through an invitation or a separate account with the necessary permissions. Do not send your main account password in a message.',
+  'faq.rightsQ': 'What about code ownership and licences?',
+  'faq.rightsA': 'We agree copyright transfer or licensing terms in the contract and Useme settlement. Third-party themes, plugins and libraries retain their own licences.',
+  'faq.afterQ': 'What do I receive at the end?',
+  'faq.afterA': 'The agreed deliverable and an “Opis dzieła” PDF. File and access handover, along with any ongoing support, are defined in the project scope.',
+  'faq.sources': 'Useme rules:',
+  'faq.paymentLink': 'payments and invoices',
+  'faq.rightsLink': 'copyright and licences',
+  'pricing.rate': 'Hourly rate: 60 zł/h. Starting prices are indicative; we agree the scope and final amount before work begins.',
+  'hero.email': 'Prefer email?',
+  'demo.open': 'Try the booking demonstration',
+  'a11y.more': 'How to check this site’s accessibility',
+  'process.more': 'See how I work',
+  'nav.label': 'Main navigation',
+  'about.location': 'Tarnów, Poland',
+  'noscript.note': 'Projects, details, language links and contact work without JavaScript. The interactive demo and theme control require JavaScript.',
+});
+
+function languageForPath(pathname) {
+  return /^\/en(?:\/|$)/.test(pathname) ? 'en' : 'pl';
+}
 
 const html = document.documentElement;
 html.classList.add('js');
@@ -585,6 +755,9 @@ function applyProjectLanguage() {
       el.textContent = typeof project.name === 'string' ? project.name : project.name[lang];
     });
     container.querySelectorAll('[data-project-summary]').forEach(el => { el.textContent = project.summary[lang]; });
+    const evidence = PROJECT_EVIDENCE[project.id][lang];
+    container.querySelector('[data-project-headline]').textContent = evidence.headline;
+    container.querySelectorAll('[data-project-fact]').forEach((el, index) => { el.textContent = evidence.facts[index]; });
     container.querySelectorAll('[data-project-stack]').forEach(el => { el.textContent = project.tags.join(' · '); });
     container.querySelectorAll('[data-project-image]').forEach(el => { el.alt = project.alt[lang]; });
     container.querySelectorAll('[data-case-value]').forEach(el => {
@@ -628,7 +801,7 @@ function renderPricing() {
       <div class="price-value">${item.price[lang]}</div>
       <p class="price-desc">${item.desc[lang]}</p>
     </div>
-  `).join('') + `<p class="pricing-note">${PRICING.note[lang]}</p>`;
+  `).join('') + `<p class="pricing-note">${PRICING.note[lang]}<br>${t('pricing.rate')}</p>`;
 }
 
 function renderTestimonials() {
@@ -666,7 +839,7 @@ function renderMarquee() {
 
 /* ---- interaktywny booking flow: wyłącznie symulacja UI, bez requestów sieciowych ---- */
 
-const bookingDemoState = { service: 'consultation', time: '10:00' };
+const bookingDemoState = { service: 'haircut', time: '10:00' };
 let bookingDemoTimers = [];
 
 function clearBookingDemoTimers() {
@@ -745,12 +918,14 @@ function renderDemo() {
     button.addEventListener('click', () => {
       bookingDemoState.service = button.dataset.service;
       renderDemo();
+      serviceOptions.querySelector(`[data-service="${bookingDemoState.service}"]`).focus();
     });
   });
   timeOptions.querySelectorAll('[data-time]').forEach(button => {
     button.addEventListener('click', () => {
       bookingDemoState.time = button.dataset.time;
       renderDemo();
+      timeOptions.querySelector(`[data-time="${bookingDemoState.time}"]`).focus();
     });
   });
 
@@ -810,29 +985,35 @@ function runBookingDemo() {
 /* ---- i18n: [data-i18n] tekst, [data-i18n-html] markup ze słownika ---- */
 
 function applyLang(lang) {
+  const needsTranslation = html.getAttribute('lang') !== lang;
   html.setAttribute('data-lang', lang);
   html.setAttribute('lang', lang);
   writeStorage('site-lang', lang);
   document.querySelectorAll('.lang-opt').forEach(el => {
     el.classList.toggle('active', el.dataset.opt === lang);
   });
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    el.textContent = t(el.dataset.i18n);
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    el.innerHTML = t(el.dataset.i18nHtml);
-  });
-  document.querySelectorAll('[data-i18n-content]').forEach(el => {
-    el.setAttribute('content', t(el.dataset.i18nContent));
-  });
+  if (needsTranslation) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.textContent = t(el.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      el.innerHTML = t(el.dataset.i18nHtml);
+    });
+    document.querySelectorAll('[data-i18n-content]').forEach(el => {
+      el.setAttribute('content', t(el.dataset.i18nContent));
+    });
+    applyProjectLanguage();
+    renderA11y();
+    renderStack();
+    renderProcess();
+    renderPricing();
+  }
   document.getElementById('langToggle').setAttribute('aria-label', t('lang.switch'));
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel));
+  });
   updateThemeControl();
   renderMarquee();
-  applyProjectLanguage();
-  renderA11y();
-  renderStack();
-  renderProcess();
-  renderPricing();
   renderTestimonials();
   renderDemo();
   setupReveal();
@@ -887,9 +1068,6 @@ themeToggle.addEventListener('click', () => {
   setTheme(currentTheme() === 'dark' ? 'light' : 'dark', true);
 });
 
-document.getElementById('langToggle').addEventListener('click', () => {
-  applyLang(currentLang() === 'pl' ? 'en' : 'pl');
-});
 
 /* ---- kompaktowa nawigacja mobilna ---- */
 const navToggle = document.getElementById('navToggle');
@@ -923,7 +1101,7 @@ matchMedia('(min-width: 641px)').addEventListener('change', event => {
 });
 
 setTheme(currentTheme());
-applyLang(readStorage('site-lang') || 'pl');
+applyLang(languageForPath(location.pathname));
 
 /* ---- pasek postępu czytania ---- */
 const progressBar = document.getElementById('scrollProgress');
