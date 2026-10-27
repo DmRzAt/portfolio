@@ -5,16 +5,6 @@
 
 const PROJECTS = [
   {
-    id: 'oms-panel',
-    name: { pl: 'Panel operatora systemu zamówień', en: 'Order management operator panel' },
-    summary: {
-      pl: 'Frontend panelu B2B: zamówienia, przesyłki, automatyzacje i faktury. Mój zakres: Razor Pages i Bootstrap; REST API dostarczał zespół backendu.',
-      en: 'A B2B panel frontend for orders, shipments, automation and invoices. My role: Razor Pages and Bootstrap; the backend team provided the REST API.',
-    },
-    tags: ['ASP.NET Core', 'Razor Pages', 'Bootstrap', 'REST API'],
-    status: 'client',
-  },
-  {
     id: 'kramo',
     name: 'Kramo',
     img: 'assets/kramo.jpg',
@@ -166,22 +156,6 @@ const PROJECTS = [
    najważniejsze informacje są dostępne bez JavaScript. Ten obiekt służy do
    przełączenia języka i nie tworzy struktury dokumentu. */
 const CASE_STUDIES = {
-  'oms-panel': {
-    pl: {
-      problem: 'Operatorzy potrzebowali jednego panelu do codziennej obsługi zamówień: zmian statusów synchronizowanych ze sklepem i nadawania przesyłek u kurierów.',
-      scope: 'Frontend: 11 stron panelu oraz rozbudowa listy i karty zamówienia. Przesyłki, reguły WHEN/IF/THEN z testem na zamówieniu i logiem z ponowieniem, faktury i korekty, ustawienia statusów i kurierów.',
-      architecture: 'ASP.NET Core Razor Pages i Bootstrap. Panel nie ma dostępu do bazy - wszystkie dane idą przez REST API zespołu backendu, na wersjonowanym kontrakcie.',
-      challenge: 'Etykiety przesyłek przekazywane przez panel strumieniowo z kontrolą typu pliku, błędy walidacji API pokazywane przy konkretnym polu formularza i godziny liczone w strefie Europe/Warsaw niezależnie od strefy kontenera.',
-      result: '5 kolejnych umów z tym samym klientem. Panel sprawdzony na ok. 7 000 rzeczywistych zamówień w środowisku testowym; 96 moich commitów w main. Mój wkład obejmował frontend, nie integracje backendu.',
-    },
-    en: {
-      problem: 'Operators needed a single panel for daily order handling: status changes synced with the store and shipping through courier accounts.',
-      scope: 'Frontend: 11 panel pages plus extensions to the order list and detail view. Shipments, WHEN/IF/THEN rules with order-level testing and retry logs, invoices and corrections, status and courier settings.',
-      architecture: "ASP.NET Core Razor Pages and Bootstrap. The panel has no database access - all data goes through the backend team's REST API under a versioned contract.",
-      challenge: "Shipping labels streamed through the panel with file-type checks, API validation errors shown next to the exact form field, and times computed in Europe/Warsaw regardless of the container's time zone.",
-      result: '5 consecutive contracts with the same client. Panel checked against about 7,000 real orders in a test environment; 96 of my commits in main. My contribution was the frontend, not the backend integrations.',
-    },
-  },
   kramo: {
     pl: {
       problem: 'Zbudować czytelny sklep dla produktów rzemieślniczych i uprościć wybór wariantów oraz zakup.',
@@ -286,10 +260,6 @@ const PROJECT_EVIDENCE = {
   kramo: {
     pl: { headline: '1 sklep, pełna ścieżka zakupu', facts: ['WordPress + WooCommerce, motyw potomny bez page buildera.', 'Lokalna strona usługowa z 4 typami danych w JSON-LD.'] },
     en: { headline: '1 store, a complete shopping flow', facts: ['WordPress + WooCommerce, a child theme without a page builder.', 'A local service page with 4 JSON-LD entity types.'] },
-  },
-  'oms-panel': {
-    pl: { headline: '5 umów z jednym klientem', facts: ['11 stron panelu i rozbudowa listy oraz karty zamówienia.', 'Ok. 7 000 zamówień w testach; mój zakres: frontend Razor Pages.'] },
-    en: { headline: '5 contracts with one client', facts: ['11 panel pages plus order list and detail extensions.', 'About 7,000 orders in testing; my role: Razor Pages frontend.'] },
   },
   'velmora-home': {
     pl: { headline: '4 kategorie: od mebli po tekstylia', facts: ['Meble, oświetlenie, dekoracje i tekstylia.', 'WooCommerce + Elementor + własny motyw.'] },
@@ -457,7 +427,7 @@ const MARQUEE = {
 const I18N = {
   pl: {
     'seo.title': 'WordPress, WooCommerce i panele B2B | Dmytro Zatserkivnyi',
-    'seo.description': 'Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 7 projektów i demo. 60 zł/h. Współpraca przez Useme.',
+    'seo.description': 'Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 6 projektów i demo. 60 zł/h. Współpraca przez Useme.',
     'ui.skip': 'Przejdź do treści',
     'mast.sub': 'FULLSTACK · WEB · B2B · PŁATNOŚCI',
     'meta.nr': 'NR. 01 - PORTFOLIO',
@@ -496,7 +466,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
     'projects.title': 'Projekty',
-    'projects.eyebrow': '7 projektów · 5 publicznych demo',
+    'projects.eyebrow': '6 projektów · 5 publicznych demo',
     'case.details': 'Szczegóły',
     'hero.reply': 'Odpisuję zwykle tego samego dnia.',
     'links.local': 'Strona lokalna: Katowice',
@@ -513,7 +483,7 @@ const I18N = {
     'stack.eyebrow': 'narzędzia',
     'about.eyebrow': 'kim jestem',
     'about.title': 'O mnie',
-    'about.text': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. W panelu zamówień dla klienta odpowiadałem za frontend Razor Pages, współpracując z zespołem backendu. Drugi opisany system klienta to synchronizacja API hotelowego z BigQuery w Pythonie. W portfolio jest 7 projektów: 5 z publicznym demo i 2 anonimowe realizacje dla klientów. Kod 3 projektów jest dostępny na GitHubie.',
+    'about.text': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. Opisany system klienta to synchronizacja API hotelowego z BigQuery w Pythonie. W portfolio jest 6 projektów: 5 z publicznym demo i 1 anonimowa realizacja dla klienta. Kod 3 projektów jest dostępny na GitHubie.',
     'about.loc.label': 'Lokalizacja',
     'about.av.label': 'Dostępność',
     'about.av.value': 'Zdalnie - Polska i zagranica',
@@ -526,14 +496,13 @@ const I18N = {
     'contact.useme.v': 'Zatrudnij mnie przez Useme →',
     'contact.useme.sub': 'Faktura VAT przez Useme. W trybie „Podpisz umowę” środki czekają na odbiór pracy zgodnie z zasadami platformy.',
     'status.client': 'system klienta · bez publicznego demo',
-    'project.omsPanel.media': 'ASP.NET CORE · PANEL OPERATORA',
     'status.demo': 'demo',
     'links.demo': 'Otwórz demo',
     'links.github': '→ GitHub',
   },
   en: {
     'seo.title': 'WordPress, WooCommerce & B2B panels | Dmytro Zatserkivnyi',
-    'seo.description': 'WordPress sites, WooCommerce and Elementor stores, B2B panels and API integrations. Explore 7 projects and demos. 60 PLN/hour. Hire through Useme.',
+    'seo.description': 'WordPress sites, WooCommerce and Elementor stores, B2B panels and API integrations. Explore 6 projects and demos. 60 PLN/hour. Hire through Useme.',
     'ui.skip': 'Skip to content',
     'mast.sub': 'FULLSTACK · WEB · B2B · PAYMENTS',
     'meta.nr': 'NO. 01 - PORTFOLIO',
@@ -572,7 +541,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
     'projects.title': 'Projects',
-    'projects.eyebrow': '7 projects · 5 public demos',
+    'projects.eyebrow': '6 projects · 5 public demos',
     'case.details': 'Details',
     'hero.reply': 'I usually reply the same day.',
     'links.local': 'Local page: Katowice',
@@ -589,7 +558,7 @@ const I18N = {
     'stack.eyebrow': 'tools',
     'about.eyebrow': 'who I am',
     'about.title': 'About',
-    'about.text': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. For a client’s order panel I built the Razor Pages frontend, working with a backend team. The second client system is a Python integration syncing a hotel API with BigQuery. This portfolio has 7 projects: 5 with public demos and 2 anonymous client projects. Code for 3 projects is available on GitHub.',
+    'about.text': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. The client system is a Python integration syncing a hotel API with BigQuery. This portfolio has 6 projects: 5 with public demos and 1 anonymous client project. Code for 3 projects is available on GitHub.',
     'about.loc.label': 'Location',
     'about.av.label': 'Availability',
     'about.av.value': 'Remote - Poland & international',
@@ -602,7 +571,6 @@ const I18N = {
     'contact.useme.v': 'Hire me via Useme →',
     'contact.useme.sub': 'VAT invoice through Useme. With “Sign a contract”, funds are held pending acceptance under the platform’s rules.',
     'status.client': 'client system · no public demo',
-    'project.omsPanel.media': 'ASP.NET CORE · OPERATOR PANEL',
     'status.demo': 'demo',
     'links.demo': 'Open demo',
     'links.github': '→ GitHub',

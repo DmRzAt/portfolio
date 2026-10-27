@@ -1,9 +1,8 @@
 # Portfolio - Dmytro Zatserkivnyi
 
 Portfolio dla klientów Useme: WordPress, WooCommerce, Elementor, panele B2B
-i integracje API. Siedem opisów projektów, w tym pięć z publicznym demo
-i dwie anonimowe realizacje dla klientów. Zakres panelu zamówień to frontend
-Razor Pages; integracje backendu były pracą zespołu backendu.
+i integracje API. Sześć opisów projektów, w tym pięć z publicznym demo
+i jedna anonimowa realizacja dla klienta.
 
 **Live:** https://dmytro-dev.pl
 
@@ -29,7 +28,7 @@ W środku:
 - Lato, zielony akcent i jasny/ciemny motyw; domyślnie jasny, wybór zapamiętywany,
 - język wynika z URL: `/` po polsku, `/en/` po angielsku; przełącznik działa bez JS,
 - karty: mierzalny fakt, dwa punkty, widoczny rezultat, szczegóły w `<details>` i demo,
-- Kramo jako pierwszy projekt z demo WordPress; panel B2B jako drugi,
+- Kramo jako pierwszy projekt z demo WordPress,
 - Etap 0 od 300 zł z odliczeniem po podpisaniu umowy na realizację w ciągu 30 dni od odbioru przeglądu,
 - struktura „Opis dzieła”, FAQ z odnośnikami do zasad Useme oraz trzy kroki do umowy,
 - booking jako jawna symulacja usług przykładowych, bez zakupu i wysyłania danych,
@@ -82,7 +81,6 @@ wtedy migracja na Astro/Next; nie wcześniej.
 | Projekt | Demo | Kod |
 |---|---|---|
 | Kramo | https://p01--kramo-wp--bpk4d66g4n48.code.run/ | — |
-| Panel operatora systemu zamówień (frontend) | — | — |
 | Velmora Home | https://velmorahome.infinityfree.io/?i=1 | — |
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Quotly | https://quotly-flax.vercel.app | https://github.com/DmRzAt/quotly |
