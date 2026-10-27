@@ -45,7 +45,7 @@ function schema(language) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Person', '@id': person, name: 'Dmytro Zatserkivnyi', jobTitle: 'Full-stack developer', url: 'https://dmytro-dev.pl/', email: 'mailto:dmytro.dev.zats@gmail.com', knowsLanguage: ['pl', 'en', 'uk'], sameAs: ['https://github.com/DmRzAt', 'https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/'], knowsAbout: ['WordPress', 'WooCommerce', 'Elementor', 'ASP.NET Core Razor Pages', 'Python', 'BigQuery', 'Next.js', 'Stripe Connect'] },
+      { '@type': 'Person', '@id': person, name: 'Dmytro Zatserkivnyi', jobTitle: 'Full-stack developer', url: 'https://dmytro-dev.pl/', email: 'mailto:dmytro.dev.zats@gmail.com', knowsLanguage: ['pl', 'en', 'uk'], sameAs: ['https://github.com/DmRzAt', 'https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/'], knowsAbout: ['WordPress', 'WooCommerce', 'Elementor', 'ASP.NET Core Razor Pages', 'Python', 'Next.js', 'Stripe Connect'] },
       { '@type': 'ProfessionalService', '@id': service, name: 'Dmytro Zatserkivnyi', url, description: I18N[language]['seo.description'], image: 'https://dmytro-dev.pl/og-image.png', email: 'dmytro.dev.zats@gmail.com', address: { '@type': 'PostalAddress', addressLocality: 'Tarnów', addressCountry: 'PL' }, founder: { '@id': person }, priceRange: '60 PLN/h', contactPoint: { '@type': 'ContactPoint', email: 'dmytro.dev.zats@gmail.com', availableLanguage: ['pl', 'en', 'uk'] } },
       { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: I18N[language]['seo.title'], description: I18N[language]['seo.description'], inLanguage: language, about: { '@id': person }, mainEntity: { '@id': service } },
     ],

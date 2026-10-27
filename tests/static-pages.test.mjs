@@ -31,7 +31,7 @@ for (const [lang, file] of [['pl', 'index.html'], ['en', 'en/index.html']]) {
   });
   test(`${lang}: card evidence is public while native details remain collapsed`, () => {
     const cards = [...html.matchAll(/<article\b[^>]*data-project-id="([^"]+)"[\s\S]*?<\/article>/g)];
-    assert.equal(cards.length, 6);
+    assert.equal(cards.length, 5);
     assert.equal(cards[0][1], 'kramo');
     for (const [card, id] of cards) {
       assert.equal([...card.matchAll(/data-project-fact/g)].length, 2, id);

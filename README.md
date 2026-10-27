@@ -1,8 +1,7 @@
 # Portfolio - Dmytro Zatserkivnyi
 
 Portfolio dla klientów Useme: WordPress, WooCommerce, Elementor, panele B2B
-i integracje API. Sześć opisów projektów, w tym pięć z publicznym demo
-i jedna anonimowa realizacja dla klienta.
+i integracje API. Pięć opisów projektów z publicznym demo.
 
 **Live:** https://dmytro-dev.pl
 
@@ -85,7 +84,6 @@ wtedy migracja na Astro/Next; nie wcześniej.
 | Slotify | https://slotify-rho.vercel.app | https://github.com/DmRzAt/Slotify |
 | Quotly | https://quotly-flax.vercel.app | https://github.com/DmRzAt/quotly |
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
-| Synchronizacja systemu hotelowego z BigQuery | — | — |
 
 Weryfikacja i źródła: [raport z 22.10.2026](docs/verification-2026-10-22.md).
 

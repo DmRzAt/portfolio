@@ -140,16 +140,6 @@ const PROJECTS = [
     liveCheck: false,
     note: { pl: 'demo · pierwszy start może potrwać', en: 'demo · initial startup may take a while' },
   },
-  {
-    id: 'hotel-bigquery',
-    name: { pl: 'Synchronizacja systemu hotelowego z BigQuery', en: 'Hotel system sync with BigQuery' },
-    summary: {
-      pl: 'Synchronizacja API systemu hotelowego z hurtownią danych. Kilka obiektów, historia zmian i wykrywanie anulowań, bez danych osobowych gości.',
-      en: 'Syncing a hotel system API with a data warehouse. Multiple properties, change history and cancellation detection, without guests’ personal data.',
-    },
-    tags: ['Python', 'BigQuery', 'Cloud Run', 'Cloud Scheduler', 'Secret Manager'],
-    status: 'client',
-  },
 ];
 
 /* Treść case studies ma swój polski wariant bezpośrednio w HTML, dzięki czemu
@@ -239,23 +229,6 @@ const CASE_STUDIES = {
 };
 
 
-CASE_STUDIES['hotel-bigquery'] = {
-  pl: {
-    problem: 'Połączyć API systemu hotelowego z BigQuery dla kilku obiektów, zachowując historię zmian i wykrywając anulowania.',
-    scope: 'Inkrementalne pobieranie rezerwacji, historia wersji, słowniki i obsługa kilku obiektów. Bez danych osobowych gości.',
-    architecture: 'Python na Cloud Run, uruchamiany przez Cloud Scheduler. Sekrety w Secret Manager; konto serwisowe z minimalnymi uprawnieniami.',
-    challenge: 'Wykrywanie anulowań z bezpiecznikiem, aby nie traktować niepełnego odczytu API jako usunięcia rezerwacji.',
-    result: 'Pełny przebieg na ok. 4 400 rezerwacjach. 154 moje testy automatyczne oraz 10 testów integracyjnych na rzeczywistym BigQuery.',
-  },
-  en: {
-    problem: 'Bring a hotel system API into BigQuery for multiple properties while preserving change history and detecting cancellations.',
-    scope: 'Incremental booking imports, version history, lookup data and multiple properties. No guests’ personal data.',
-    architecture: 'Python on Cloud Run, triggered by Cloud Scheduler. Secrets in Secret Manager; a service account with least-privilege access.',
-    challenge: 'Cancellation detection with a safeguard so an incomplete API response is not treated as deleted bookings.',
-    result: 'A full run on about 4,400 bookings. 154 automated tests and 10 integration tests against real BigQuery, written by me.',
-  },
-};
-
 const PROJECT_EVIDENCE = {
   kramo: {
     pl: { headline: '1 sklep, pełna ścieżka zakupu', facts: ['WordPress + WooCommerce, motyw potomny bez page buildera.', 'Lokalna strona usługowa z 4 typami danych w JSON-LD.'] },
@@ -276,10 +249,6 @@ const PROJECT_EVIDENCE = {
   bazarek: {
     pl: { headline: '7 testów API, 11 testów komponentów', facts: ['Projekt zespołowy; cały backend Express wykonałem sam.', 'MongoDB, REST API i autoryzacja; frontend w Angularze.'] },
     en: { headline: '7 API tests, 11 component tests', facts: ['A team project; I built the entire Express backend.', 'MongoDB, REST API and authorization; Angular frontend.'] },
-  },
-  'hotel-bigquery': {
-    pl: { headline: 'Ok. 4 400 rezerwacji, 154 testy', facts: ['10 dodatkowych testów integracyjnych na rzeczywistym BigQuery.', 'Inkrementalna synchronizacja i historia wersji dla kilku obiektów.'] },
-    en: { headline: 'About 4,400 bookings, 154 tests', facts: ['10 additional integration tests against real BigQuery.', 'Incremental sync and version history for multiple properties.'] },
   },
 };
 
@@ -427,7 +396,7 @@ const MARQUEE = {
 const I18N = {
   pl: {
     'seo.title': 'WordPress, WooCommerce i panele B2B | Dmytro Zatserkivnyi',
-    'seo.description': 'Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 6 projektów i demo. 60 zł/h. Współpraca przez Useme.',
+    'seo.description': 'Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 5 projektów i demo. 60 zł/h. Współpraca przez Useme.',
     'ui.skip': 'Przejdź do treści',
     'mast.sub': 'FULLSTACK · WEB · B2B · PŁATNOŚCI',
     'meta.nr': 'NR. 01 - PORTFOLIO',
@@ -466,7 +435,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platforma',
     'projects.title': 'Projekty',
-    'projects.eyebrow': '6 projektów · 5 publicznych demo',
+    'projects.eyebrow': '5 projektów · 5 publicznych demo',
     'case.details': 'Szczegóły',
     'hero.reply': 'Odpisuję zwykle tego samego dnia.',
     'links.local': 'Strona lokalna: Katowice',
@@ -483,7 +452,7 @@ const I18N = {
     'stack.eyebrow': 'narzędzia',
     'about.eyebrow': 'kim jestem',
     'about.title': 'O mnie',
-    'about.text': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. Opisany system klienta to synchronizacja API hotelowego z BigQuery w Pythonie. W portfolio jest 6 projektów: 5 z publicznym demo i 1 anonimowa realizacja dla klienta. Kod 3 projektów jest dostępny na GitHubie.',
+    'about.text': 'Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. W portfolio jest 5 projektów z publicznym demo. Kod 3 projektów jest dostępny na GitHubie.',
     'about.loc.label': 'Lokalizacja',
     'about.av.label': 'Dostępność',
     'about.av.value': 'Zdalnie - Polska i zagranica',
@@ -502,7 +471,7 @@ const I18N = {
   },
   en: {
     'seo.title': 'WordPress, WooCommerce & B2B panels | Dmytro Zatserkivnyi',
-    'seo.description': 'WordPress sites, WooCommerce and Elementor stores, B2B panels and API integrations. Explore 6 projects and demos. 60 PLN/hour. Hire through Useme.',
+    'seo.description': 'WordPress sites, WooCommerce and Elementor stores, B2B panels and API integrations. Explore 5 projects and demos. 60 PLN/hour. Hire through Useme.',
     'ui.skip': 'Skip to content',
     'mast.sub': 'FULLSTACK · WEB · B2B · PAYMENTS',
     'meta.nr': 'NO. 01 - PORTFOLIO',
@@ -541,7 +510,7 @@ const I18N = {
     'demo.partner': 'Partner',
     'demo.platform': 'Platform',
     'projects.title': 'Projects',
-    'projects.eyebrow': '6 projects · 5 public demos',
+    'projects.eyebrow': '5 projects · 5 public demos',
     'case.details': 'Details',
     'hero.reply': 'I usually reply the same day.',
     'links.local': 'Local page: Katowice',
@@ -558,7 +527,7 @@ const I18N = {
     'stack.eyebrow': 'tools',
     'about.eyebrow': 'who I am',
     'about.title': 'About',
-    'about.text': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. The client system is a Python integration syncing a hotel API with BigQuery. This portfolio has 6 projects: 5 with public demos and 1 anonymous client project. Code for 3 projects is available on GitHub.',
+    'about.text': 'I build WordPress / WooCommerce sites and stores, B2B panels and API integrations. This portfolio has 5 projects with public demos. Code for 3 projects is available on GitHub.',
     'about.loc.label': 'Location',
     'about.av.label': 'Availability',
     'about.av.value': 'Remote - Poland & international',
