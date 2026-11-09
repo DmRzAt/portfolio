@@ -13,6 +13,8 @@ Bez frameworków i zależności aplikacji. Gotowe pliki statyczne są w repozyto
 index.html              - struktura i statyczna polska treść
 en/index.html           - wygenerowana statyczna angielska treść
 app.js                  - dane PL/EN, demo i interakcje
+portfolio-ui.js         - przełącznik realizacji i lokalny szkic zapytania
+portfolio-ui.css        - prezentacja demo, brief i animacje
 styles.css              - wygląd, motywy i animacje
 scripts/build-pages.mjs - synchronizacja HTML z danymi i generowanie EN
 tests/*.test.mjs        - testy Node bez instalowania pakietów
@@ -26,8 +28,10 @@ W środku:
 
 - Lato, kobaltowy akcent i chłodne jasne tło; jasny/ciemny motyw, wybór zapamiętywany,
 - język wynika z URL: `/` po polsku, `/en/` po angielsku; przełącznik działa bez JS,
-- pierwszy ekran z podglądami Kramo i Slotify, trzy rodzaje usług i bezpośrednia ścieżka do Useme,
-- wyróżnione Kramo, pozostałe projekty w siatce; nazwa, fakty, widoczny rezultat, szczegóły i demo,
+- pierwszy ekran z przełącznikiem demo Kramo / Slotify / Quotly; zmiana wyłącznie po wyborze użytkownika,
+- osobne kompozycje realizacji; nazwa, fakty, widoczny rezultat, szczegóły i działające demo,
+- krótki brief przygotowuje szkic e-maila; bez automatycznego wysyłania, zapisu i żądań sieciowych,
+- animowane wejście hero, przejścia wybranych projektów i reakcje na najechanie; respektują reduced motion,
 - Kramo jako pierwszy projekt z demo WordPress,
 - Etap 0 od 300 zł z odliczeniem po podpisaniu umowy na realizację w ciągu 30 dni od odbioru przeglądu,
 - widoczny proces i wycena; FAQ z odnośnikami do zasad Useme,

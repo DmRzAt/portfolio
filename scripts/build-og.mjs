@@ -15,12 +15,12 @@ const sharp = require(moduleFlag >= 0 ? process.argv[moduleFlag + 1] : 'sharp');
 const runs = [
   { text: 'Dmytro Zatserkivnyi', x: 72, y: 90, size: 25, weight: 700, fill: '#19212F' },
   { text: 'Web developer / freelancer', x: 72, y: 121, size: 18, weight: 400, fill: '#586477' },
-  { text: 'Dobry pomysł', x: 72, y: 245, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
-  { text: 'zasługuje na', x: 72, y: 330, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
-  { text: 'dobrą stronę.', x: 72, y: 415, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
+  { text: 'Strony i sklepy.', x: 72, y: 245, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
+  { text: 'Bezpośrednio', x: 72, y: 330, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
+  { text: 'ze mną.', x: 72, y: 415, size: 76, weight: 900, fill: '#19212F', tracking: -1.8 },
   { text: 'WordPress, sklepy i aplikacje webowe', x: 75, y: 473, size: 23, weight: 400, fill: '#586477' },
   { text: 'dmytro-dev.pl', x: 75, y: 567, size: 23, weight: 700, fill: '#254BE8' },
-  { text: 'www.', x: 891, y: 227, size: 42, weight: 900, fill: '#254BE8', tracking: -1 },
+  { text: 'dz.', x: 891, y: 227, size: 42, weight: 900, fill: '#254BE8', tracking: -1 },
 ];
 const python = String.raw`
 import json, sys
@@ -52,7 +52,7 @@ const result = spawnSync(process.env.PYTHON || 'python', ['-c', python], {
 });
 if (result.error || result.status !== 0) throw result.error || new Error(result.stderr);
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-<title id="title">Dobry pomysł zasługuje na dobrą stronę.</title>
+<title id="title">Strony i sklepy. Bezpośrednio ze mną.</title>
 <desc id="desc">Dmytro Zatserkivnyi. WordPress, sklepy i aplikacje webowe. dmytro-dev.pl</desc>
 <rect width="1200" height="630" fill="#F6F8FC"/>
 <rect x="838" y="48" width="314" height="534" rx="32" fill="#254BE8"/>

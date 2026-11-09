@@ -24,6 +24,12 @@
 <meta name="twitter:image" content="https://dmytro-dev.pl/og-image.png">
 <meta name="twitter:image:alt" content="Dmytro Zatserkivnyi · WordPress · WooCommerce · B2B · API">
 <link rel="canonical" href="https://dmytro-dev.pl/">
+
+
+
+
+
+
 <link rel="alternate" hreflang="pl" href="https://dmytro-dev.pl/">
 <link rel="alternate" hreflang="en" href="https://dmytro-dev.pl/en/">
 <link rel="alternate" hreflang="x-default" href="https://dmytro-dev.pl/">
@@ -32,7 +38,8 @@
 <link rel="preload" href="/assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lato-900-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/styles.css?v=20261109c">
+<link rel="stylesheet" href="/styles.css?v=20261109-motion">
+<link rel="stylesheet" href="/portfolio-ui.css?v=20261109-2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -151,23 +158,30 @@
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="hero-kicker"><span class="availability-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Dmytro Zatserkivnyi · freelance developer</span></p>
-        <h1 class="hero-title" data-i18n-html="hero.title"><span>Dobry pomysł</span> <span>zasługuje na</span> <span>dobrą stronę.</span></h1>
-        <p class="hero-description" data-i18n="hero.sub">Tworzę strony WordPress, sklepy WooCommerce i aplikacje webowe. Od pierwszej rozmowy po wdrożenie pracujesz bezpośrednio ze mną.</p>
-        <div class="cta-row"><a class="btn btn-primary" href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener"><span data-i18n="hero.cta2">Porozmawiajmy o projekcie</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#projects"><span data-i18n="hero.cta1">Zobacz realizacje</span><span aria-hidden="true">↓</span></a></div>
-        <ul class="hero-proof"><li data-i18n="hero.proof1">PL / EN / UA</li><li data-i18n="hero.proof2">Rozliczenie przez Useme</li><li data-i18n="hero.proof3">Bezpośredni kontakt</li></ul>
+        <h1 class="hero-title" data-i18n-html="hero.title"><span>Strony i sklepy.</span> <span>Bezpośrednio</span> <span>ze mną.</span></h1>
+        <p class="hero-description" data-i18n="hero.sub">Jestem Dmytro. Tworzę strony WordPress, sklepy WooCommerce i aplikacje webowe. Ustalamy zakres, pokazuję działającą wersję i dopracowujemy ją etapami.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#brief"><span data-i18n="hero.cta2">Opisz swój projekt</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#projects"><span data-i18n="hero.cta1">Sprawdź realizacje</span><span aria-hidden="true">↓</span></a></div>
+        <ul class="hero-proof"><li data-i18n="hero.proof1">PL / EN / UA</li><li data-i18n="hero.proof2">5 publicznych demo</li><li data-i18n="hero.proof3">Kod 3 projektów na GitHubie</li></ul>
       </div>
-      <a class="hero-visual" href="#projects" aria-label="Zobacz projekty Kramo i Slotify" data-i18n-aria-label="hero.previewLabel">
-        <div class="preview-window"><div class="preview-topbar"><i></i><i></i><i></i><span>Kramo / WooCommerce</span></div><img src="/assets/kramo.jpg" alt="" width="1265" height="712" fetchpriority="high" decoding="async"></div>
-        <div class="preview-secondary"><div class="preview-topbar"><i></i><i></i><i></i><span>Slotify / Next.js</span></div><img src="/assets/slotify.webp" alt="" width="1280" height="800" decoding="async"></div>
-        <p class="preview-caption"><span aria-hidden="true">↗</span><span data-i18n="hero.preview">Od sklepu po aplikację. Zajrzyj do realizacji.</span></p>
-      </a>
+      <div class="hero-showcase" data-showcase>
+        <div class="showcase-heading"><span data-i18n="showcase.label">Moja praca. Do sprawdzenia.</span><span class="showcase-mode" data-i18n="showcase.mode">Publiczne demo</span></div>
+        <div class="showcase-browser"><div class="showcase-browserbar" aria-hidden="true"><span><i></i><i></i><i></i></span><span><span data-i18n="showcase.browser">Podgląd projektu</span></span><span>↗</span></div>
+          <div class="showcase-screen">
+            <figure class="showcase-panel" id="showcase-kramo" data-showcase-panel="kramo" data-name="Kramo"><a class="showcase-image" href="https://p01--kramo-wp--bpk4d66g4n48.code.run/" target="_blank" rel="noopener" aria-label="Kramo — demo"><img src="/assets/kramo.jpg" width="1265" height="712" alt="Kramo — WooCommerce" fetchpriority="high" decoding="async"></a><figcaption><div><strong>Kramo</strong><p data-i18n="showcase.kramo">Od produktu do koszyka. WordPress i WooCommerce.</p></div><a href="https://p01--kramo-wp--bpk4d66g4n48.code.run/" target="_blank" rel="noopener" class="showcase-demo"><span data-i18n="showcase.open">Otwórz działające demo</span><span aria-hidden="true">↗</span></a></figcaption></figure>
+            <figure class="showcase-panel" id="showcase-slotify" data-showcase-panel="slotify" data-name="Slotify" hidden><a class="showcase-image" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" aria-label="Slotify — demo"><img src="/assets/slotify.webp" width="1280" height="800" alt="Slotify — rezerwacje / bookings" decoding="async"></a><figcaption><div><strong>Slotify</strong><p data-i18n="showcase.slotify">Trzy role do sprawdzenia bez zakładania konta.</p></div><a href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" class="showcase-demo"><span data-i18n="showcase.open">Otwórz działające demo</span><span aria-hidden="true">↗</span></a></figcaption></figure>
+            <figure class="showcase-panel" id="showcase-quotly" data-showcase-panel="quotly" data-name="Quotly" hidden><a class="showcase-image" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" aria-label="Quotly — demo"><img src="/assets/quotly.webp" width="1280" height="800" alt="Quotly — Stripe Connect" decoding="async"></a><figcaption><div><strong>Quotly</strong><p data-i18n="showcase.quotly">Onboarding i rozliczenia Stripe Connect w trybie testowym.</p></div><a href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" class="showcase-demo"><span data-i18n="showcase.open">Otwórz działające demo</span><span aria-hidden="true">↗</span></a></figcaption></figure>
+          </div>
+        </div>
+        <div class="showcase-choices" role="group" aria-label="Wybierz rodzaj projektu" data-i18n-aria-label="showcase.choose" hidden><button type="button" data-showcase-select="kramo" aria-pressed="true" aria-controls="showcase-kramo"><span data-i18n="showcase.store">Sklep</span><small>Kramo</small></button><button type="button" data-showcase-select="slotify" aria-pressed="false" aria-controls="showcase-slotify"><span data-i18n="showcase.booking">Rezerwacje</span><small>Slotify</small></button><button type="button" data-showcase-select="quotly" aria-pressed="false" aria-controls="showcase-quotly"><span data-i18n="showcase.payments">Płatności</span><small>Quotly</small></button></div>
+        <span class="sr-only" role="status" data-showcase-status></span>
+      </div>
     </section>
     <section class="services" id="services">
-      <div class="services-heading"><h2 data-i18n="services.title">Czego potrzebuje Twój biznes?</h2><p data-i18n="services.copy">Nowa strona, sklep czy kolejny krok w rozwoju aplikacji — porozmawiajmy o tym, co chcesz zbudować.</p></div>
+      <div class="services-heading"><h2 data-i18n="services.title">Czego potrzebuje Twój biznes?</h2><p data-i18n="services.copy">Wybierz to, czego potrzebujesz. Technologię i zakres dopasujemy do zadania.</p></div>
       <div class="service-list">
-        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v6M10 18h8m-8 4h13"/></svg></span><h3 data-i18n="services.web.title">Strony internetowe</h3><p data-i18n="services.web.copy">Strony firmowe i landing pages na WordPressie. Czytelne treści, wygodna edycja i dopracowana wersja mobilna.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
-        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 10-2 17h22l-2-17H7Z"/><path d="M11 12V8a5 5 0 0 1 10 0v4M12 19c0 5 8 5 8 0"/></svg></span><h3 data-i18n="services.shop.title">Sklepy internetowe</h3><p data-i18n="services.shop.copy">WooCommerce od katalogu po koszyk. Warianty produktów, konto klienta, dostawa i płatności online.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
-        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="10" height="10" rx="2"/><rect x="19" y="18" width="10" height="10" rx="2"/><path d="M13 9h7a4 4 0 0 1 4 4v5M19 23h-7a4 4 0 0 1-4-4v-5"/></svg></span><h3 data-i18n="services.app.title">Aplikacje i integracje</h3><p data-i18n="services.app.copy">Panele B2B, rezerwacje i integracje API. Łączę interfejs, dane i płatności w jeden przepływ.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v6M10 18h8m-8 4h13"/></svg></span><h3 data-i18n="services.web.title">Strony internetowe</h3><p data-i18n="services.web.copy">Strony firmowe i landing pages na WordPressie. Czytelne treści, wygodna edycja i dopracowana wersja mobilna.</p><a href="#brief"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 10-2 17h22l-2-17H7Z"/><path d="M11 12V8a5 5 0 0 1 10 0v4M12 19c0 5 8 5 8 0"/></svg></span><h3 data-i18n="services.shop.title">Sklepy internetowe</h3><p data-i18n="services.shop.copy">WooCommerce od katalogu po koszyk. Warianty produktów, konto klienta, dostawa i płatności online.</p><a href="#brief"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="10" height="10" rx="2"/><rect x="19" y="18" width="10" height="10" rx="2"/><path d="M13 9h7a4 4 0 0 1 4 4v5M19 23h-7a4 4 0 0 1-4-4v-5"/></svg></span><h3 data-i18n="services.app.title">Aplikacje i integracje</h3><p data-i18n="services.app.copy">Panele B2B, rezerwacje i integracje API. Łączę interfejs, dane i płatności w jeden przepływ.</p><a href="#brief"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
       </div>
     </section>
 
@@ -175,9 +189,9 @@
     <!-- REALIZACJE — publiczne demo i własny zakres pracy -->
     <section id="projects">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="projects.title">Pomysły zamienione w działające projekty.</h2>
+        <h2 class="fig-label" data-i18n="projects.title">Najlepiej sprawdzić w praktyce.</h2>
         <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.eyebrow">5 projektów. Każdy możesz sprawdzić.</span>
+        <span class="fig-sub" data-i18n="projects.eyebrow">Mój zakres, działające demo i kod.</span>
       </div>
       <div class="projects-grid" id="projectsGrid">
 <article class="project-card reveal" data-project-id="kramo">
@@ -482,9 +496,19 @@
       </div>
     </section>
 
+    <section class="brief-section" id="brief">
+      <div class="brief-intro"><h2 data-i18n="brief.title">Co chcesz zbudować?</h2><p data-i18n="brief.copy">Zacznij od pomysłu, nie od specyfikacji. Wybierz rodzaj projektu i napisz kilka zdań — ustalimy następny krok.</p><a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="brief-useme"><span data-i18n="brief.useme">Wolisz Useme? Napisz tutaj</span><span aria-hidden="true">↗</span></a><a class="brief-direct" href="mailto:dmytro.dev.zats@gmail.com">dmytro.dev.zats@gmail.com</a></div>
+      <form class="brief-form" data-brief-form hidden>
+        <fieldset><legend data-i18n="brief.type">Rodzaj projektu</legend><div class="brief-types"><label><input type="radio" name="projectType" value="website" checked><span data-i18n="brief.website">Strona internetowa</span></label><label><input type="radio" name="projectType" value="store"><span data-i18n="brief.store">Sklep internetowy</span></label><label><input type="radio" name="projectType" value="app"><span data-i18n="brief.app">Aplikacja / integracja</span></label></div></fieldset>
+        <label class="brief-label" for="briefWebsite" data-i18n="brief.url">Obecna strona (opcjonalnie)</label><input id="briefWebsite" name="website" type="text" inputmode="url" maxlength="500" autocomplete="url">
+        <label class="brief-label" for="briefDescription" data-i18n="brief.description">Co ma powstać? (opcjonalnie)</label><textarea id="briefDescription" name="description" rows="3" maxlength="2000" aria-describedby="briefHint"></textarea><p class="brief-hint" id="briefHint" data-i18n="brief.hint">Cel, najważniejsze funkcje i planowany termin.</p>
+        <a href="mailto:dmytro.dev.zats@gmail.com" class="btn btn-primary" data-brief-email><span data-i18n="brief.email">Otwórz wiadomość e-mail</span><span aria-hidden="true">↗</span></a><p class="brief-note" data-i18n="brief.note">Otworzy program pocztowy ze szkicem wiadomości. Wyślesz ją samodzielnie.</p>
+      </form>
+    </section>
+
     <section id="contact" class="contact">
       <div class="fig-label" data-i18n="nav.contact">Kontakt</div>
-      <h2 class="contact-head" data-i18n-html="contact.head">Zróbmy coś dobrego.</h2>
+      <h2 class="contact-head" data-i18n-html="contact.head">Porozmawiajmy konkretnie.</h2>
       <div class="contact-row">
         <div>
           <p class="contact-sub" data-i18n="contact.lead">Opowiedz mi o swoim pomyśle. Wyślij krótki opis, link do obecnej strony i planowany termin.</p>
@@ -528,6 +552,7 @@
   </div>
 </noscript>
 
-<script src="/app.js?v=20261109" defer></script>
+<script src="/app.js?v=20261109-motion" defer></script>
+<script type="module" src="/portfolio-ui.js?v=20261109"></script>
 </body>
 </html>
