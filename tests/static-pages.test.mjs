@@ -44,7 +44,7 @@ for (const [lang, file] of [['pl', 'index.html'], ['en', 'en/index.html']]) {
   test(`${lang}: local assets and fragment links resolve`, () => {
     for (const [, value] of html.matchAll(/(?:src|href|srcset)="([^"]+)"/g)) {
       if (value.startsWith('#')) assert.ok(html.includes(`id="${value.slice(1)}"`), value);
-      else if (value.startsWith('/')) assert.ok(fs.existsSync(path.join(root, value)), value);
+      else if (value.startsWith('/')) assert.ok(fs.existsSync(path.join(root, value.split(/[?#]/)[0])), value);
     }
     assert.doesNotMatch(html, /fonts\.(?:googleapis|gstatic)\.com/);
   });

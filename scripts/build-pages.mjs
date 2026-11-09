@@ -67,15 +67,13 @@ function build(language) {
     let fact = 0;
     card = card.replace(/(<li data-project-fact>)[\s\S]*?(<\/li>)/g, (_, open, close) => open + escape(evidence.facts[fact++]) + close);
     card = card.replace(/(<dd data-case-value="([^"]+)">)[\s\S]*?(<\/dd>)/g, (_, open, key, close) => open + escape(CASE_STUDIES[id][language][key]) + close);
-    card = card.replace(/<h3 class="case-name"([^>]*)>([\s\S]*?)<\/h3>/g, '<p class="case-name"$1>$2</p>');
     if (project.alt) card = card.replace(/(<img\b[^>]*\balt=")[^"]*/, `$1${escape(project.alt[language])}`);
     card = card.replace(/(<a class="project-media"[^>]*aria-label=")[^"]*/, `$1${escape(`${language === 'pl' ? 'Otwórz demo' : 'Open demo'} ${typeof project.name === 'string' ? project.name : project.name[language]}`)}`);
     return card;
   });
   source = replaceRegion(source, 'stackGrid', STACK.map(group => `<div class="col-stack"><div class="col-cat">${escape(group.label[language])}</div><div class="col-items">${escape(group.items.join(' · '))}</div></div>`).join('\n'));
-  source = replaceRegion(source, 'processGrid', PROCESS.map((step, i) => `<div class="col-step"><div class="col-num">0${i + 1}</div><h3 class="col-title"><span class="slash">/ </span>${escape(step.title[language])}</h3><p class="col-desc">${escape(step.desc[language])}</p></div>`).join('\n'));
-  const oldPricingComments = [...source.slice(source.indexOf('id="pricingGrid"'), source.indexOf('id="stack"')).matchAll(/<!--[\s\S]*?-->/g)].map(match => match[0]).filter(comment => !comment.includes('STACK'));
-  source = replaceRegion(source, 'pricingGrid', oldPricingComments.join('\n') + PRICING.items.map(item => `<div class="price-card"><div class="price-name">${escape(item.name[language])}</div><div class="price-value">${escape(item.price[language])}</div><p class="price-desc">${escape(item.desc[language])}</p></div>`).join('\n') + `<p class="pricing-note">${escape(PRICING.note[language])}<br>${escape(strings['pricing.rate'])}</p>`);
+  source = replaceRegion(source, 'processGrid', PROCESS.map((step, i) => `<div class="col-step"><div class="col-num">0${i + 1}</div><h3 class="col-title">${escape(step.title[language])}</h3><p class="col-desc">${escape(step.desc[language])}</p></div>`).join('\n'));
+  source = replaceRegion(source, 'pricingGrid', PRICING.items.map(item => `<div class="price-card"><div class="price-name">${escape(item.name[language])}</div><div class="price-value">${escape(item.price[language])}</div><p class="price-desc">${escape(item.desc[language])}</p></div>`).join('\n') + `<p class="pricing-note">${escape(PRICING.note[language])}<br>${escape(strings['pricing.rate'])}</p>`);
   source = replaceRegion(source, 'a11yGrid', A11Y.map(item => `<div class="col-step"><div class="col-cat">#${item.tag}</div><h3 class="col-title"><span class="slash">/ </span>${escape(item.title[language])}</h3><p class="col-desc">${escape(item.desc[language])}</p></div>`).join('\n'));
   source = source.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">\n${JSON.stringify(schema(language), null, 2)}\n</script>`);
   source = source.replace(/(<link rel="canonical" href=")[^"]+/, `$1https://dmytro-dev.pl/${language === 'en' ? 'en/' : ''}`);

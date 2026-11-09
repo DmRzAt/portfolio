@@ -24,12 +24,14 @@ vercel.json             - nagłówki bezpieczeństwa
 
 W środku:
 
-- Lato, zielony akcent i jasny/ciemny motyw; domyślnie jasny, wybór zapamiętywany,
+- Lato, kobaltowy akcent i chłodne jasne tło; jasny/ciemny motyw, wybór zapamiętywany,
 - język wynika z URL: `/` po polsku, `/en/` po angielsku; przełącznik działa bez JS,
-- karty: mierzalny fakt, dwa punkty, widoczny rezultat, szczegóły w `<details>` i demo,
+- pierwszy ekran z podglądami Kramo i Slotify, trzy rodzaje usług i bezpośrednia ścieżka do Useme,
+- wyróżnione Kramo, pozostałe projekty w siatce; nazwa, fakty, widoczny rezultat, szczegóły i demo,
 - Kramo jako pierwszy projekt z demo WordPress,
 - Etap 0 od 300 zł z odliczeniem po podpisaniu umowy na realizację w ciągu 30 dni od odbioru przeglądu,
-- struktura „Opis dzieła”, FAQ z odnośnikami do zasad Useme oraz trzy kroki do umowy,
+- widoczny proces i wycena; FAQ z odnośnikami do zasad Useme,
+- technologie, struktura „Opis dzieła” i symulator w rozwijanym bloku technicznym,
 - booking jako jawna symulacja usług przykładowych, bez zakupu i wysyłania danych,
 - sekcja Opinie pozostaje ukryta, dopóki `TESTIMONIALS` jest puste,
 - fonty lokalne z `font-display: swap`, bez zapytań do Google Fonts,
@@ -86,6 +88,12 @@ wtedy migracja na Astro/Next; nie wcześniej.
 | Bazarek | https://bazarek-taw.onrender.com | https://github.com/DmRzAt/bazarek |
 
 Weryfikacja i źródła: [raport z 22.10.2026](docs/verification-2026-10-22.md).
+
+Redesign i aktualne sprawdzenia: [raport z 09.11.2026](docs/verification-2026-11-09.md).
+Paleta: `#F6F8FC`, `#19212F`, `#254BE8`, `#E9EFFF`, `#FFFFFF`.
+Podgląd udostępniania można odtworzyć przez `node scripts/build-og.mjs`
+(wymaga developerskich narzędzi `sharp` i Python `fontTools`/Brotli;
+alternatywna lokalizacja Sharp: `--sharp-module <ścieżka>`).
 
 ## Kontakt
 

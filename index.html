@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <script src="/theme-init.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#faf9f6">
+<meta name="theme-color" content="#f6f8fc">
 <title data-i18n="seo.title">WordPress, WooCommerce i panele B2B | Dmytro Zatserkivnyi</title>
 <meta name="description" data-i18n-content="seo.description" content="Strony WordPress, sklepy WooCommerce i Elementor, panele B2B oraz integracje API. Zobacz 5 projektów i demo. 60 zł/h. Współpraca przez Useme.">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -28,11 +28,11 @@
 <link rel="alternate" hreflang="en" href="https://dmytro-dev.pl/en/">
 <link rel="alternate" hreflang="x-default" href="https://dmytro-dev.pl/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preload" href="/assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/lato-900-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=20261109c">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -118,19 +118,16 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <div>
-      <div class="mast-name">DMYTRO ZATSERKIVNYI</div>
-      <div class="mast-sub" data-i18n="mast.sub">FULLSTACK · WEB · B2B · PŁATNOŚCI</div>
-    </div>
+    <a class="mast-brand" href="#home"><span class="brand-mark" aria-hidden="true">dz.</span><span><span class="mast-name">Dmytro Zatserkivnyi</span><span class="mast-sub" data-i18n="mast.sub">Freelance web developer</span></span></a>
     <div class="mast-right">
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
         <span class="sr-only" data-i18n="nav.menu">Menu</span>
         <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
       </button>
       <nav class="nav-links" id="navLinks" aria-label="Główna nawigacja" data-i18n-aria-label="nav.label">
-        <a href="#projects" class="u-link" data-i18n="nav.projects">Projekty</a>
-        <a href="#process" class="u-link" data-i18n="nav.process">Proces</a>
-        <a href="#stack" class="u-link" data-i18n="nav.stack">Stack</a>
+        <a href="#services" class="u-link" data-i18n="nav.services">Usługi</a>
+        <a href="#projects" class="u-link" data-i18n="nav.projects">Realizacje</a>
+        <a href="#process" class="u-link" data-i18n="nav.process">Współpraca</a>
         <a href="#about" class="u-link" data-i18n="nav.about">O mnie</a>
         <a href="#contact" class="u-link" data-i18n="nav.contact">Kontakt</a>
       </nav>
@@ -150,41 +147,37 @@
     </div>
   </header>
 
-  <!-- PASEK META -->
-  <div class="meta-strip">
-    <span data-i18n="meta.nr">NR. 01 - PORTFOLIO</span>
-    <span data-i18n="meta.loc">TARNÓW / ZDALNIE</span>
-    <span>PL · UA · EN</span>
-    <span class="live" data-i18n="hero.eyebrow">dostępny do współpracy</span>
-  </div>
-
-  <!-- GIGANTYCZNY NAGŁÓWEK -->
-  <div class="headline">
-    <h1>
-      <span class="sr-only">Dmytro Zatserkivnyi - full-stack developer</span>
-      <span class="hl-line hl-solid anim" aria-hidden="true" style="--d:0ms">FULL<span class="dot">·</span>STACK</span>
-      <span class="hl-line hl-outline anim" aria-hidden="true" style="--d:80ms">DEVELOPER</span>
-    </h1>
-    <div class="hl-note anim" style="--d:160ms" data-i18n="hl.note">WordPress / WooCommerce · ASP.NET Core · Next.js</div>
-  </div>
-
-  <!-- KRÓTKI LEAD; dowód pracy zaczyna się bezpośrednio poniżej -->
-  <div class="hero-intro">
-    <p class="lead-text anim" style="--d:220ms" data-i18n-html="hero.sub">Tworzę strony i sklepy WordPress / WooCommerce, panele B2B oraz integracje API. Rozmawiasz bezpośrednio z osobą, która pisze kod.</p>
-    <div class="hero-actions"><div class="cta-row anim" style="--d:280ms">
-      <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.cta2">Zatrudnij mnie przez Useme</a>
-      <a href="#projects" class="text-link u-link"><span data-i18n="hero.cta1">Zobacz projekty</span> ↓</a>
-    </div><p class="hero-reply" data-i18n="hero.reply">Odpisuję zwykle tego samego dnia.</p><a class="hero-email u-link" href="mailto:dmytro.dev.zats@gmail.com" data-i18n="hero.email">Wolisz e-mail?</a></div>
-  </div>
-
   <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="hero-kicker"><span class="availability-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Dmytro Zatserkivnyi · freelance developer</span></p>
+        <h1 class="hero-title" data-i18n-html="hero.title"><span>Dobry pomysł</span> <span>zasługuje na</span> <span>dobrą stronę.</span></h1>
+        <p class="hero-description" data-i18n="hero.sub">Tworzę strony WordPress, sklepy WooCommerce i aplikacje webowe. Od pierwszej rozmowy po wdrożenie pracujesz bezpośrednio ze mną.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener"><span data-i18n="hero.cta2">Porozmawiajmy o projekcie</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#projects"><span data-i18n="hero.cta1">Zobacz realizacje</span><span aria-hidden="true">↓</span></a></div>
+        <ul class="hero-proof"><li data-i18n="hero.proof1">PL / EN / UA</li><li data-i18n="hero.proof2">Rozliczenie przez Useme</li><li data-i18n="hero.proof3">Bezpośredni kontakt</li></ul>
+      </div>
+      <a class="hero-visual" href="#projects" aria-label="Zobacz projekty Kramo i Slotify" data-i18n-aria-label="hero.previewLabel">
+        <div class="preview-window"><div class="preview-topbar"><i></i><i></i><i></i><span>Kramo / WooCommerce</span></div><img src="/assets/kramo.jpg" alt="" width="1265" height="712" fetchpriority="high" decoding="async"></div>
+        <div class="preview-secondary"><div class="preview-topbar"><i></i><i></i><i></i><span>Slotify / Next.js</span></div><img src="/assets/slotify.webp" alt="" width="1280" height="800" decoding="async"></div>
+        <p class="preview-caption"><span aria-hidden="true">↗</span><span data-i18n="hero.preview">Od sklepu po aplikację. Zajrzyj do realizacji.</span></p>
+      </a>
+    </section>
+    <section class="services" id="services">
+      <div class="services-heading"><h2 data-i18n="services.title">Czego potrzebuje Twój biznes?</h2><p data-i18n="services.copy">Nowa strona, sklep czy kolejny krok w rozwoju aplikacji — porozmawiajmy o tym, co chcesz zbudować.</p></div>
+      <div class="service-list">
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 6v6M10 18h8m-8 4h13"/></svg></span><h3 data-i18n="services.web.title">Strony internetowe</h3><p data-i18n="services.web.copy">Strony firmowe i landing pages na WordPressie. Czytelne treści, wygodna edycja i dopracowana wersja mobilna.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m7 10-2 17h22l-2-17H7Z"/><path d="M11 12V8a5 5 0 0 1 10 0v4M12 19c0 5 8 5 8 0"/></svg></span><h3 data-i18n="services.shop.title">Sklepy internetowe</h3><p data-i18n="services.shop.copy">WooCommerce od katalogu po koszyk. Warianty produktów, konto klienta, dostawa i płatności online.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+        <article class="service-item"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="10" height="10" rx="2"/><rect x="19" y="18" width="10" height="10" rx="2"/><path d="M13 9h7a4 4 0 0 1 4 4v5M19 23h-7a4 4 0 0 1-4-4v-5"/></svg></span><h3 data-i18n="services.app.title">Aplikacje i integracje</h3><p data-i18n="services.app.copy">Panele B2B, rezerwacje i integracje API. Łączę interfejs, dane i płatności w jeden przepływ.</p><a href="#contact"><span data-i18n="services.link">Omówmy Twój projekt</span><span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
 
-    <!-- PROJEKTY — wszystkie case studies mają równą rangę -->
+
+    <!-- REALIZACJE — publiczne demo i własny zakres pracy -->
     <section id="projects">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="projects.title">Projekty</h2>
+        <h2 class="fig-label" data-i18n="projects.title">Pomysły zamienione w działające projekty.</h2>
         <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="projects.eyebrow">5 projektów · 5 publicznych demo</span>
+        <span class="fig-sub" data-i18n="projects.eyebrow">5 projektów. Każdy możesz sprawdzić.</span>
       </div>
       <div class="projects-grid" id="projectsGrid">
 <article class="project-card reveal" data-project-id="kramo">
@@ -193,8 +186,7 @@
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">01</span>
-              <h3 class="case-headline" data-project-headline>1 sklep, pełna ścieżka zakupu</h3><p class="case-name" data-project-name>Kramo</p>
+              <h3 class="case-name" data-project-name>Kramo</h3><p class="case-headline" data-project-headline>1 sklep, pełna ścieżka zakupu</p>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Sklep internetowy z polskim rzemiosłem, wariantami produktów, ulubionymi i pełną ścieżką zakupową.</p>
 
@@ -220,8 +212,7 @@
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">02</span>
-              <h3 class="case-headline" data-project-headline>4 kategorie: od mebli po tekstylia</h3><p class="case-name" data-project-name>Velmora Home</p>
+              <h3 class="case-name" data-project-name>Velmora Home</h3><p class="case-headline" data-project-headline>4 kategorie: od mebli po tekstylia</p>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Meble, oświetlenie, dekoracje i tekstylia. Sklep demonstracyjny na WooCommerce z Elementorem i własnym motywem.</p>
 
@@ -243,8 +234,7 @@
           </a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">03</span>
-              <h3 class="case-headline" data-project-headline>3 role, od terminu do płatności</h3><p class="case-name" data-project-name>Slotify</p>
+              <h3 class="case-name" data-project-name>Slotify</h3><p class="case-headline" data-project-headline>3 role, od terminu do płatności</p>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Rezerwacje usług lokalnych - konkretny termin zamiast telefonów i podwójnych rezerwacji.</p>
 
@@ -258,7 +248,7 @@
             </dl></details>
             <div class="case-links">
               <a class="u-link" href="https://slotify-rho.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">Otwórz demo</a>
-              <a class="u-link" href="https://github.com/DmRzAt/Slotify" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+              <a class="u-link" href="https://github.com/DmRzAt/Slotify" target="_blank" rel="noopener" data-i18n="links.github">Kod na GitHubie</a>
             </div>
           </div>
         </article>
@@ -267,8 +257,7 @@
           <a class="project-media" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" aria-label="Otwórz demo Quotly"><img src="/assets/quotly.webp" alt="Quotly - landing z generatorem palet i płatnościami Stripe" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">04</span>
-              <h3 class="case-headline" data-project-headline>Podział 90/10 liczony w centach</h3><p class="case-name" data-project-name>Quotly</p>
+              <h3 class="case-name" data-project-name>Quotly</h3><p class="case-headline" data-project-headline>Podział 90/10 liczony w centach</p>
               <span class="case-status" data-project-status>demo</span>
               <p class="case-summary-copy" data-project-summary>Panel partnera obsługujący onboarding i rozliczenia przez Stripe Connect.</p>
 
@@ -282,7 +271,7 @@
               </dl></details>
               <div class="case-links">
                 <a class="u-link" href="https://quotly-flax.vercel.app" target="_blank" rel="noopener" data-i18n="links.demo">Otwórz demo</a>
-                <a class="u-link" href="https://github.com/DmRzAt/quotly" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+                <a class="u-link" href="https://github.com/DmRzAt/quotly" target="_blank" rel="noopener" data-i18n="links.github">Kod na GitHubie</a>
               </div>
           </div>
         </article>
@@ -291,8 +280,7 @@
           <a class="project-media" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" aria-label="Otwórz demo Bazarek"><img src="/assets/bazarek.webp" alt="Bazarek - strona główna platformy ogłoszeniowej" width="1280" height="800" loading="lazy" decoding="async" data-project-image></a>
           <div class="project-content">
             <header class="project-summary">
-              <span class="case-index">05</span>
-              <h3 class="case-headline" data-project-headline>7 testów API, 11 testów komponentów</h3><p class="case-name" data-project-name>Bazarek</p>
+              <h3 class="case-name" data-project-name>Bazarek</h3><p class="case-headline" data-project-headline>7 testów API, 11 testów komponentów</p>
               <span class="case-status case-status-warn" data-project-status>demo · pierwszy start może potrwać</span>
               <p class="case-summary-copy" data-project-summary>Platforma ogłoszeniowa łącząca frontend Angular z autorskim backendem.</p>
 
@@ -306,7 +294,7 @@
               </dl></details>
               <div class="case-links">
                 <a class="u-link" href="https://bazarek-taw.onrender.com" target="_blank" rel="noopener" data-i18n="links.demo">Otwórz demo</a>
-                <a class="u-link" href="https://github.com/DmRzAt/bazarek" target="_blank" rel="noopener" data-i18n="links.github">→ GitHub</a>
+                <a class="u-link" href="https://github.com/DmRzAt/bazarek" target="_blank" rel="noopener" data-i18n="links.github">Kod na GitHubie</a>
               </div>
           </div>
         </article>
@@ -315,6 +303,92 @@
     </section>
 
     <!-- INTERAKTYWNA SYMULACJA — po dowodach pracy -->
+
+
+    <!-- DOSTĘPNOŚĆ -->
+
+
+    <!-- PROCES -->
+    <section id="process">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="process.title">Dobry projekt zaczyna się od rozmowy.</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="process.eyebrow">Jasny zakres. Praca etapami.</span>
+      </div>
+
+      <div class="cols cols-4 reveal" id="processGrid">
+<div class="col-step"><div class="col-num">01</div><h3 class="col-title">Analiza</h3><p class="col-desc">Rozmawiamy o celu strony, odbiorcach i funkcjach. Sprawdzam, co już masz i czego potrzebujesz.</p></div>
+<div class="col-step"><div class="col-num">02</div><h3 class="col-title">Wycena etapowa</h3><p class="col-desc">Ustalamy zakres, cenę i termin każdego etapu. Wiesz, co obejmuje wycena i jak odbierzesz pracę.</p></div>
+<div class="col-step"><div class="col-num">03</div><h3 class="col-title">Realizacja</h3><p class="col-desc">Buduję i pokazuję postęp na działającej wersji. Sprawdzasz projekt i przekazujesz uwagi.</p></div>
+<div class="col-step"><div class="col-num">04</div><h3 class="col-title">Wsparcie</h3><p class="col-desc">Po wdrożeniu nie znikam: poprawki, monitoring, dalszy rozwój w miarę potrzeb.</p></div>
+      </div>
+      <h3 class="pricing-heading" data-i18n="pricing.title">Zakres dopasowany do Twojego projektu.</h3>
+      <div class="stage-offer reveal">
+        <div>
+          <h3 data-i18n="stage.title">Zacznij od przeglądu strony</h3>
+          <p class="stage-name" data-i18n="stage.name">Przegląd strony / Etap 0</p>
+          <p data-i18n="stage.copy">Otrzymasz raport z listą poprawek i wyceną realizacji. Najpierw ustalamy, co sprawdzam.</p>
+          <p class="stage-credit" data-i18n="stage.credit">Kwotę przeglądu odliczam od realizacji, jeśli umowa na poprawki lub wdrożenie zostanie podpisana w ciągu 30 dni od odbioru przeglądu.</p>
+        </div>
+        <div class="stage-action">
+          <p class="stage-price" data-i18n="stage.price">od 300 zł</p>
+          <a class="btn btn-primary" href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" data-i18n="stage.cta">Zapytaj o przegląd przez Useme</a>
+        </div>
+      </div>
+      <div class="pricing reveal" id="pricingGrid">
+<div class="price-card"><div class="price-name">Landing / strona wizytówka</div><div class="price-value">od 1 500 zł</div><p class="price-desc">Responsywna, szybka, z formularzem kontaktowym i SEO.</p></div>
+<div class="price-card"><div class="price-name">Integracja płatności</div><div class="price-value">od 2 500 zł</div><p class="price-desc">Stripe / Stripe Connect: checkout, webhooki, rozliczenia.</p></div>
+<div class="price-card"><div class="price-name">Sklep lub panel B2B</div><div class="price-value">od 3 000 zł</div><p class="price-desc">Konta, role, baza danych, API - aplikacja end-to-end.</p></div><p class="pricing-note">Progi orientacyjne „od&quot; - dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez Useme (escrow).<br>Stawka godzinowa: 60 zł/h. Ceny „od” są orientacyjne; zakres i ostateczną kwotę ustalamy przed startem.</p>
+      </div>
+    </section>
+
+    <!-- STACK -->
+
+
+
+    <!-- O MNIE -->
+    <section id="about">
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="about.title">Za projektem stoi człowiek.</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="about.eyebrow">Dmytro Zatserkivnyi</span>
+      </div>
+      <div class="about-grid reveal">
+        <div>
+          <p class="about-lead" data-i18n="about.lead">Cześć, jestem Dmytro. Projektuję rozwiązania i piszę kod.</p>
+          <p class="about-body" data-i18n-html="about.text">Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. Lubię wiedzieć, do czego strona ma służyć, zanim zacznę ją budować. Tutaj znajdziesz 5 projektów z publicznym demo, a kod 3 z nich jest na GitHubie.</p>
+        </div>
+        <div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.loc.label">Lokalizacja</span>
+            <span class="fact-v" data-i18n="about.location">Tarnów, Polska</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.av.label">Dostępność</span>
+            <span class="fact-v" data-i18n="about.av.value">Zdalnie - Polska i zagranica</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-k" data-i18n="about.lang.label">Języki</span>
+            <span class="fact-v" data-i18n="about.lang.value">Polski, ukraiński, angielski</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPINIE: ukryta, dopóki TESTIMONIALS w app.js jest puste -->
+    <section id="testimonials" hidden>
+      <div class="fig-head reveal">
+        <h2 class="fig-label" data-i18n="testimonials.title">Opinie</h2>
+        <span class="fig-rule"></span>
+        <span class="fig-sub" data-i18n="testimonials.eyebrow">opinie klientów</span>
+      </div>
+      <div class="cols reveal">
+        <div class="quotes" id="testimonialsGrid"></div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <div class="technical-notes"><details><summary><span data-i18n="technical.title">Chcesz zajrzeć pod maskę?</span><span class="technical-caption" data-i18n="technical.copy">Technologie, sposób odbioru i interaktywna demonstracja.</span></summary>
     <section id="demo" class="demo-section">
       <div class="fig-head reveal">
         <h2 class="fig-label" data-i18n="demo.sectionTitle">Interaktywne demo</h2>
@@ -350,60 +424,21 @@
       </div>
       </details>
     </section>
-
-    <!-- DOSTĘPNOŚĆ -->
     <section id="a11y">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="a11y.title">Dostępność</h2>
+        <h2 class="fig-label" data-i18n="a11y.title">Dostępność w praktyce</h2>
         <span class="fig-rule"></span>
         <span class="fig-sub" data-i18n="a11y.eyebrow">standard, nie dodatek</span>
       </div>
-      <p class="section-lead reveal" data-i18n="a11y.text">Buduję zgodnie z WCAG AA: pełna nawigacja klawiaturą, ARIA, kontrasty, poszanowanie prefers-reduced-motion. Ta strona też tak działa - sprawdź Tabem.</p>
+      <p class="section-lead reveal" data-i18n="a11y.text">Dbam o obsługę klawiaturą, widoczny fokus, czytelny kontrast i ograniczenie ruchu zgodnie z ustawieniami systemu.</p>
       <details class="secondary-details"><summary data-i18n="a11y.more">Jak sprawdzić dostępność tej strony</summary>
       <div class="cols cols-3 reveal" id="a11yGrid">
 <div class="col-step"><div class="col-cat">#keyboard</div><h3 class="col-title"><span class="slash">/ </span>Nawigacja klawiaturą</h3><p class="col-desc">Cała strona obsługiwana Tabem - widoczne focus-ringi i skip-link do treści.</p></div>
-<div class="col-step"><div class="col-cat">#contrast</div><h3 class="col-title"><span class="slash">/ </span>Kontrast WCAG AA</h3><p class="col-desc">Każdy tekst spełnia min. 4.5:1 - sprawdzone narzędziem, nie „na oko&quot;.</p></div>
+<div class="col-step"><div class="col-cat">#contrast</div><h3 class="col-title"><span class="slash">/ </span>Kontrast WCAG AA</h3><p class="col-desc">Czytelne kolory tekstu i widoczne stany aktywnych elementów.</p></div>
 <div class="col-step"><div class="col-cat">#motion</div><h3 class="col-title"><span class="slash">/ </span>prefers-reduced-motion</h3><p class="col-desc">Animacje wyłączają się, gdy system użytkownika o to prosi.</p></div>
       </div>
       </details>
     </section>
-
-    <!-- PROCES -->
-    <section id="process">
-      <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="process.title">Proces</h2>
-        <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="process.eyebrow">jak pracuję</span>
-      </div>
-      <details class="secondary-details"><summary data-i18n="process.more">Zobacz sposób pracy</summary>
-      <div class="cols cols-4 reveal" id="processGrid">
-<div class="col-step"><div class="col-num">01</div><h3 class="col-title"><span class="slash">/ </span>Analiza</h3><p class="col-desc">Zanim padnie wycena - pytania: cel biznesowy, edge case'y, integracje. To one kształtują architekturę.</p></div>
-<div class="col-step"><div class="col-num">02</div><h3 class="col-title"><span class="slash">/ </span>Wycena etapowa</h3><p class="col-desc">Projekt dzielę na etapy z osobną wyceną. Płacisz za ukończone etapy, nie za obietnice.</p></div>
-<div class="col-step"><div class="col-num">03</div><h3 class="col-title"><span class="slash">/ </span>Development</h3><p class="col-desc">Krótkie iteracje. Postęp oglądasz na działającym deployu, nie na screenshotach.</p></div>
-<div class="col-step"><div class="col-num">04</div><h3 class="col-title"><span class="slash">/ </span>Wsparcie</h3><p class="col-desc">Po wdrożeniu nie znikam: poprawki, monitoring, dalszy rozwój w miarę potrzeb.</p></div>
-      </div>
-
-      </details>
-      <div class="stage-offer reveal">
-        <div>
-          <h3 data-i18n="stage.title">Zacznij od przeglądu strony</h3>
-          <p class="stage-name" data-i18n="stage.name">Przegląd strony / Etap 0</p>
-          <p data-i18n="stage.copy">Otrzymasz raport z listą poprawek i wyceną realizacji. Najpierw ustalamy, co sprawdzam.</p>
-          <p class="stage-credit" data-i18n="stage.credit">Kwotę przeglądu odliczam od realizacji, jeśli umowa na poprawki lub wdrożenie zostanie podpisana w ciągu 30 dni od odbioru przeglądu.</p>
-        </div>
-        <div class="stage-action">
-          <p class="stage-price" data-i18n="stage.price">od 300 zł</p>
-          <a class="btn btn-primary" href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" data-i18n="stage.cta">Zapytaj o przegląd przez Useme</a>
-        </div>
-      </div>
-      <div class="pricing reveal" id="pricingGrid">
-<!-- fallback bez JS — JS nadpisuje ten sam układ z tłumaczeniem --><div class="price-card"><div class="price-name">Landing / strona wizytówka</div><div class="price-value">od 1 500 zł</div><p class="price-desc">Responsywna, szybka, z formularzem kontaktowym i SEO.</p></div>
-<div class="price-card"><div class="price-name">Integracja płatności</div><div class="price-value">od 2 500 zł</div><p class="price-desc">Stripe / Stripe Connect: checkout, webhooki, rozliczenia.</p></div>
-<div class="price-card"><div class="price-name">Sklep lub panel B2B</div><div class="price-value">od 3 000 zł</div><p class="price-desc">Konta, role, baza danych, API - aplikacja end-to-end.</p></div><p class="pricing-note">Progi orientacyjne „od&quot; - dokładna wycena po krótkiej, bezpłatnej analizie. Praca i płatność etapami, także przez Useme (escrow).<br>Stawka godzinowa: 60 zł/h. Ceny „od” są orientacyjne; zakres i ostateczną kwotę ustalamy przed startem.</p>
-      </div>
-    </section>
-
-    <!-- STACK -->
     <section id="handover">
       <div class="fig-head reveal"><h2 class="fig-label" data-i18n="handover.title">Jak wygląda odbiór pracy</h2><span class="fig-rule"></span><span class="fig-sub" data-i18n="handover.sub">wiesz, co odbierasz</span></div>
       <div class="handover-grid reveal">
@@ -421,7 +456,7 @@
     </section>
     <section id="stack">
       <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="nav.stack">Stack</h2>
+        <h2 class="fig-label" data-i18n="nav.stack">Technologie</h2>
         <span class="fig-rule"></span>
         <span class="fig-sub" data-i18n="stack.eyebrow">narzędzia</span>
       </div>
@@ -433,51 +468,9 @@
 <div class="col-stack"><div class="col-cat">Płatności / inne</div><div class="col-items">Stripe Connect · Docker · Git</div></div>
       </div>
     </section>
-
-    <!-- O MNIE -->
-    <section id="about">
-      <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="about.title">O mnie</h2>
-        <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="about.eyebrow">kim jestem</span>
-      </div>
-      <div class="about-grid reveal">
-        <div>
-          <p class="about-lead" data-i18n="about.lead">Zanim zacznę kodować, zadaję pytania, które realnie wpływają na architekturę i wycenę.</p>
-          <p class="about-body" data-i18n-html="about.text">Tworzę strony i sklepy WordPress / WooCommerce, panele B2B i integracje API. W portfolio jest 5 projektów z publicznym demo. Kod 3 projektów jest dostępny na GitHubie.</p>
-        </div>
-        <div>
-          <div class="fact-row">
-            <span class="fact-k" data-i18n="about.loc.label">Lokalizacja</span>
-            <span class="fact-v" data-i18n="about.location">Tarnów, Polska</span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-k" data-i18n="about.av.label">Dostępność</span>
-            <span class="fact-v" data-i18n="about.av.value">Zdalnie - Polska i zagranica</span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-k" data-i18n="about.lang.label">Języki</span>
-            <span class="fact-v" data-i18n="about.lang.value">Polski, ukraiński, angielski</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OPINIE: ukryta, dopóki TESTIMONIALS w app.js jest puste -->
-    <section id="testimonials" hidden>
-      <div class="fig-head reveal">
-        <h2 class="fig-label" data-i18n="testimonials.title">Opinie</h2>
-        <span class="fig-rule"></span>
-        <span class="fig-sub" data-i18n="testimonials.eyebrow">opinie klientów</span>
-      </div>
-      <div class="cols reveal">
-        <div class="quotes" id="testimonialsGrid"></div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
+    </details></div>
     <section id="faq">
-      <div class="fig-head reveal"><h2 class="fig-label" data-i18n="faq.title">Pytania przed współpracą</h2><span class="fig-rule"></span></div>
+      <div class="fig-head reveal"><h2 class="fig-label" data-i18n="faq.title">Warto wiedzieć przed startem.</h2><span class="fig-rule"></span></div>
       <div class="faq-list reveal">
         <details><summary data-i18n="faq.paymentQ">Jak działa płatność i faktura VAT?</summary><p data-i18n="faq.paymentA">Współpracę rozliczamy przez Useme. W trybie „Podpisz umowę” wpłacasz środki do Useme przed startem, a platforma wypłaca je po odbiorze zgodnie ze swoim regulaminem. Useme wystawia fakturę VAT.</p></details>
         <details><summary data-i18n="faq.timeQ">Kiedy projekt będzie gotowy?</summary><p data-i18n="faq.timeA">Termin ustalam po poznaniu zakresu, materiałów i potrzebnych dostępów. Przy większym projekcie umawiamy osobne terminy dla etapów.</p></details>
@@ -488,20 +481,13 @@
         <p class="faq-sources"><span data-i18n="faq.sources">Zasady Useme:</span> <a class="u-link" href="https://help.useme.com/faq-1" target="_blank" rel="noopener" data-i18n="faq.paymentLink">płatności i faktury</a> · <a class="u-link" href="https://help.useme.com/na-czym-polega-przekazanie-praw-autorskich-i-udzielenie-licencji" target="_blank" rel="noopener" data-i18n="faq.rightsLink">prawa autorskie i licencje</a></p>
       </div>
     </section>
-    <section id="next">
-      <div class="fig-head reveal"><h2 class="fig-label" data-i18n="next.title">Następny krok</h2><span class="fig-rule"></span><span class="fig-sub" data-i18n="hero.reply">Odpisuję zwykle tego samego dnia.</span></div>
-      <ol class="next-steps">
-        <li><h3 data-i18n="next.message">Wyślij opis lub link</h3><p data-i18n="next.messageCopy">Napisz przez Useme, co chcesz zmienić, jaki masz termin i co już działa.</p></li>
-        <li><h3 data-i18n="next.scope">Ustalamy zakres i cenę</h3><p data-i18n="next.scopeCopy">Dostajesz opis etapu, kryteria odbioru i wycenę. Uzgadniamy też termin oraz rundy poprawek.</p></li>
-        <li><h3 data-i18n="next.contract">Zawieramy umowę w Useme</h3><p data-i18n="next.contractCopy">Potwierdzamy warunki i korzystamy z „Podpisz umowę”, aby zabezpieczyć płatność przed rozpoczęciem pracy.</p></li>
-      </ol>
-    </section>
+
     <section id="contact" class="contact">
       <div class="fig-label" data-i18n="nav.contact">Kontakt</div>
-      <h2 class="contact-head" data-i18n-html="contact.head">Porozmawiajmy<span class="dot">.</span></h2>
+      <h2 class="contact-head" data-i18n-html="contact.head">Zróbmy coś dobrego.</h2>
       <div class="contact-row">
         <div>
-          <p class="contact-sub" data-i18n="contact.lead">Masz projekt albo pytanie o wycenę? Odpisuję zwykle tego samego dnia.</p>
+          <p class="contact-sub" data-i18n="contact.lead">Opowiedz mi o swoim pomyśle. Wyślij krótki opis, link do obecnej strony i planowany termin.</p>
           <a href="mailto:dmytro.dev.zats@gmail.com" class="mail-big u-link">dmytro.dev.zats@gmail.com</a>
           <div class="contact-links" style="margin-top:18px">
             <a href="https://github.com/DmRzAt" target="_blank" rel="noopener" class="u-link">GitHub ↗</a>
@@ -510,9 +496,9 @@
         <div class="contact-side">
           <span class="avail" data-i18n="hero.eyebrow">dostępny do współpracy</span>
           <a href="https://useme.com/pl/roles/contractor/dmytro-zatserkivnyi,629682/" target="_blank" rel="noopener" class="useme">
-            <span class="cu-k" data-i18n="contact.useme.k">preferowana ścieżka współpracy</span>
-            <span class="cu-v" data-i18n="contact.useme.v">Zatrudnij mnie przez Useme →</span>
-            <span class="cu-sub" data-i18n="contact.useme.sub">Faktura VAT przez Useme. W trybie „Podpisz umowę” środki czekają na odbiór pracy zgodnie z zasadami platformy.</span>
+            <span class="cu-k" data-i18n="contact.useme.k">Współpraca i rozliczenie</span>
+            <span class="cu-v" data-i18n="contact.useme.v">Napisz do mnie przez Useme</span>
+            <span class="cu-sub" data-i18n="contact.useme.sub">Zakres, etapy i cena ustalone przed startem. Rozliczenie oraz faktura przez Useme.</span>
           </a>
         </div>
       </div>
@@ -542,6 +528,6 @@
   </div>
 </noscript>
 
-<script src="/app.js" defer></script>
+<script src="/app.js?v=20261109" defer></script>
 </body>
 </html>
